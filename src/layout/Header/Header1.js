@@ -95,63 +95,6 @@ const Header1 = ({ toggleMenu, toggle }) => {
                     Գլխավոր
                   </a>
                 </Link>
-                {/* <ul className="sub-menu">
-                  <li aria-haspopup="true">
-                    <Link href="/demo-1">
-                      <a>Home Concept #1</a>
-                    </Link>
-                  </li>
-                  <li aria-haspopup="true">
-                    <Link href="/demo-3">
-                      <a>Home Concept #3</a>
-                    </Link>
-                  </li>
-                  <li aria-haspopup="true">
-                    <Link href="/demo-4">
-                      <a>Home Concept #4</a>
-                    </Link>
-                  </li>
-                  <li aria-haspopup="true">
-                    <Link href="/demo-5">
-                      <a>Home Concept #5</a>
-                    </Link>
-                  </li>
-                  <li aria-haspopup="true">
-                    <Link href="/demo-6">
-                      <a>Home Concept #6</a>
-                    </Link>
-                  </li>
-                  <li aria-haspopup="true">
-                    <Link href="/demo-7">
-                      <a>Home Concept #7</a>
-                    </Link>
-                  </li>
-                  <li aria-haspopup="true">
-                    <Link href="/demo-8">
-                      <a>Home Concept #8</a>
-                    </Link>
-                  </li>
-                  <li aria-haspopup="true">
-                    <Link href="/demo-9">
-                      <a>Home Concept #9</a>
-                    </Link>
-                  </li>
-                  <li aria-haspopup="true">
-                    <Link href="/demo-10">
-                      <a>Home Concept #10</a>
-                    </Link>
-                  </li>
-                  <li aria-haspopup="true">
-                    <Link href="/demo-11">
-                      <a>Home Concept #11</a>
-                    </Link>
-                  </li>
-                  <li aria-haspopup="true">
-                    <Link href="/demo-12">
-                      <a>Home Concept #12</a>
-                    </Link>
-                  </li>
-                </ul> */}
               </li>
               {/* END DROPDOWN MENU */}
               {/* NORUTYUNNER */}
@@ -480,14 +423,6 @@ const Header1 = ({ toggleMenu, toggle }) => {
                 {/* End wsmegamenu */}
               </li>
               {/* END MEGAMENU */}
-              {/* SIMPLE NAVIGATION LINK */}
-              {/* <li className="nl-news" aria-haspopup="true">
-                <Link href="/blog-listing">
-                  <a>
-                    Norutyunner
-                  </a>
-                </Link>
-              </li> */}
               {/* NAVIGATION MENU BUTTON */}
               <li className="nl-simple header-btn" aria-haspopup="true">
                 <Link href="/appointment">
