@@ -90,10 +90,12 @@ const Header1 = ({ toggleMenu, toggle }) => {
             <ul className="wsmenu-list">
               {/* DROPDOWN MENU */}
               <li aria-haspopup="true">
-                <a href="#">
-                  Home <span className="wsarrow" />
-                </a>
-                <ul className="sub-menu">
+                <Link href="/">
+                  <a>
+                    Գլխավոր
+                  </a>
+                </Link>
+                {/* <ul className="sub-menu">
                   <li aria-haspopup="true">
                     <Link href="/demo-1">
                       <a>Home Concept #1</a>
@@ -149,9 +151,18 @@ const Header1 = ({ toggleMenu, toggle }) => {
                       <a>Home Concept #12</a>
                     </Link>
                   </li>
-                </ul>
+                </ul> */}
               </li>
               {/* END DROPDOWN MENU */}
+              {/* NORUTYUNNER */}
+              <li className="nl-news" aria-haspopup="true">
+                <Link href="/blog-listing">
+                  <a>
+                    Նորություններ
+                  </a>
+                </Link>
+              </li>
+              {/* NORUTYUNNER VERJ */}
               {/* PAGES */}
               <li aria-haspopup="true">
                 <a href="#">
@@ -470,9 +481,13 @@ const Header1 = ({ toggleMenu, toggle }) => {
               </li>
               {/* END MEGAMENU */}
               {/* SIMPLE NAVIGATION LINK */}
-              <li className="nl-simple" aria-haspopup="true">
-                <a href="#">Simple Link</a>
-              </li>
+              {/* <li className="nl-news" aria-haspopup="true">
+                <Link href="/blog-listing">
+                  <a>
+                    Norutyunner
+                  </a>
+                </Link>
+              </li> */}
               {/* NAVIGATION MENU BUTTON */}
               <li className="nl-simple header-btn" aria-haspopup="true">
                 <Link href="/appointment">
