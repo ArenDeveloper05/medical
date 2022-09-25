@@ -4,12 +4,12 @@ const PageBanner = ({ pageTitle, motherTitle, url }) => {
     <div id="breadcrumb" className="division">
       <div className="container">
         <div className="row">
-          <div className="col">
-            <div className="breadcrumb-holder">
+          <div className="col d-flex align-items-center justify-content-center">
+            <div className="breadcrumb-holder d-flex align-items-center flex-column">
               {/* Breadcrumb Nav */}
               <nav aria-label="breadcrumb">
                 <ol className="breadcrumb">
-                  <li className="breadcrumb-item">
+                  <li className="breadcrumb-item ">
                     <Link href="/demo-1">Home</Link>
                   </li>
                   {motherTitle && (

@@ -4,7 +4,7 @@ import PageBanner from "../src/layout/PageBanner";
 
 const BlogListing = () => {
   return (
-    <Layouts>
+    <Layouts >
       <PageBanner pageTitle="Our Blogs &amp; Latest News" />
       <BlogPage />
     </Layouts>

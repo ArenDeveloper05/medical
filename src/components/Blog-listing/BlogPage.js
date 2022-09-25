@@ -19,7 +19,7 @@ const BlogPage = () => {
       <div className="container">
         <div className="row">
           {/* BLOG POSTS HOLDER */}
-          <div className="col-lg-8">
+          <div className="col-lg-8 m-auto">
             <div className="posts-holder pr-30">
               {/* BLOG POST #1 */}
               <div className="blog-post">
@@ -201,9 +201,8 @@ const BlogPage = () => {
                     {state &&
                       state.map((s, i) => (
                         <li
-                          className={`page-item  ${
-                            active == s ? "active" : ""
-                          }`}
+                          className={`page-item  ${active == s ? "active" : ""
+                            }`}
                           key={i}
                         >
                           <a
@@ -240,209 +239,7 @@ const BlogPage = () => {
           </div>
           {/* END BLOG POSTS HOLDER */}
           {/* SIDEBAR */}
-          <aside id="sidebar" className="col-lg-4">
-            {/* SEARCH FIELD */}
-            <div id="search-field" className="sidebar-div mb-50">
-              <div className="input-group mb-3">
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Search"
-                  aria-label="Search"
-                  aria-describedby="search-field"
-                />
-                <div className="input-group-append">
-                  <button className="btn" type="button">
-                    <i className="fa fa-search" aria-hidden="true" />
-                  </button>
-                </div>
-              </div>
-            </div>
-            {/* TEXT WIDGET */}
-            <div id="txt-widget" className="sidebar-div mb-50">
-              {/* Title */}
-              <h5 className="h5-sm steelblue-color">The Heart Of Clinic</h5>
-              {/* Head of Clinic */}
-              <div className="txt-widget-unit mb-15 clearfix d-flex align-items-center">
-                {/* Avatar */}
-                <div className="txt-widget-avatar">
-                  <img
-                    src="images/head-of-clinic.jpg"
-                    alt="testimonial-avatar"
-                  />
-                </div>
-                {/* Data */}
-                <div className="txt-widget-data">
-                  <h5 className="h5-md steelblue-color">Dr. Jonathan Barnes</h5>
-                  <span>Chief Medical Officer, Founder</span>
-                  <p className="blue-color">1-800-1234-567</p>
-                </div>
-              </div>
-              {/* End Head of Clinic */}
-              {/* Text */}
-              <p className="p-sm">
-                An enim nullam tempor sapien at gravida donec pretium ipsum
-                porta justo integer at odiovelna vitae auctor integer congue
-                magna purus
-              </p>
-              {/* Button */}
-              <Link href="/about">
-                <a className="btn btn-blue blue-hover">Learn More</a>
-              </Link>
-            </div>
-            {/* END TEXT WIDGET */}
-            {/* BLOG CATEGORIES */}
-            <div className="blog-categories sidebar-div mb-50">
-              {/* Title */}
-              <h5 className="h5-sm steelblue-color">Categories</h5>
-              <ul className="blog-category-list clearfix">
-                <li>
-                  <a href="#">
-                    <i className="fas fa-angle-double-right blue-color" />
-                    Elderly Care
-                  </a>
-                  <span>(5)</span>
-                </li>
-                <li>
-                  <a href="#">
-                    <i className="fas fa-angle-double-right blue-color" />
-                    Lifestyle
-                  </a>
-                  <span>(13)</span>
-                </li>
-                <li>
-                  <a href="#">
-                    <i className="fas fa-angle-double-right blue-color" />
-                    Medical
-                  </a>
-                  <span>(6)</span>
-                </li>
-                <li>
-                  <a href="#">
-                    <i className="fas fa-angle-double-right blue-color" />
-                    Treatment
-                  </a>
-                  <span>(8)</span>
-                </li>
-                <li>
-                  <a href="#">
-                    <i className="fas fa-angle-double-right blue-color" />
-                    Pharma
-                  </a>
-                  <span>(12)</span>
-                </li>
-              </ul>
-            </div>
-            {/* POPULAR POSTS */}
-            <div className="popular-posts sidebar-div mb-50">
-              {/* Title */}
-              <h5 className="h5-sm steelblue-color">Popular Posts</h5>
-              <ul className="popular-posts">
-                {/* Popular post #1 */}
-                <li className="clearfix d-flex align-items-center">
-                  {/* Image */}
-                  <img
-                    className="img-fluid"
-                    src="images/blog/latest-post-1.jpg"
-                    alt="blog-post-preview"
-                  />
-                  {/* Text */}
-                  <div className="post-summary">
-                    <Link href="/single-post">
-                      <a>Etiam sapien accumsan molestie ante empor ...</a>
-                    </Link>
-                    <p>43 Comments</p>
-                  </div>
-                </li>
-                {/* Popular post #2 */}
-                <li className="clearfix d-flex align-items-center">
-                  {/* Image */}
-                  <img
-                    className="img-fluid"
-                    src="images/blog/latest-post-2.jpg"
-                    alt="blog-post-preview"
-                  />
-                  {/* Text */}
-                  <div className="post-summary">
-                    <Link href="/single-post">
-                      <a>Blandit tempor sapien ipsum, porta justo ...</a>
-                    </Link>
-                    <p>38 Comments</p>
-                  </div>
-                </li>
-                {/* Popular post #3 */}
-                <li className="clearfix d-flex align-items-center">
-                  {/* Image */}
-                  <img
-                    className="img-fluid"
-                    src="images/blog/latest-post-3.jpg"
-                    alt="blog-post-preview"
-                  />
-                  {/* Text */}
-                  <div className="post-summary">
-                    <Link href="/single-post">
-                      <a>Cursus risus laoreet turpis auctor varius ...</a>
-                    </Link>
-                    <p>29 Comments</p>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            {/* TAGS CLOUD */}
-            <div className="tags-cloud sidebar-div mb-50">
-              {/* Title */}
-              <h5 className="h5-sm steelblue-color">Tags Cloud</h5>
-              <span className="badge">
-                <a href="#">Effective Treatment</a>
-              </span>
-              <span className="badge">
-                <a href="#">Molecular Biology</a>
-              </span>
-              <span className="badge">
-                <a href="#">Diagnostic</a>
-              </span>
-              <span className="badge">
-                <a href="#">Pediatrics</a>
-              </span>
-              <span className="badge">
-                <a href="#">Lifestyle</a>
-              </span>
-              <span className="badge">
-                <a href="#">Pharma</a>
-              </span>
-              <span className="badge">
-                <a href="#">Medicine</a>
-              </span>
-              <span className="badge">
-                <a href="#">Research</a>
-              </span>
-            </div>
-            {/* SIDEBAR TIMETABLE */}
-            <div className="sidebar-timetable sidebar-div mb-50">
-              {/* Title */}
-              <h5 className="h5-md mb-20 steelblue-color">Doctors Timetable</h5>
-              {/* Text */}
-              <p className="p-sm">
-                Porta semper lacus cursus, feugiat primis ultrice ligula risus
-                auctor at tempus feugiat dolor lacinia cursus nulla vitae massa
-              </p>
-              {/* Button */}
-              <Link href="/about">
-                <a className="btn btn-blue blue-hover mt-10">View Timetable</a>
-              </Link>
-            </div>
-            {/* END SIDEBAR TIMETABLE */}
-            {/* IMAGE WIDGET */}
-            <div className="image-widget sidebar-div">
-              <a href="#">
-                <img
-                  className="img-fluid"
-                  src="images/blog/image-widget.jpg"
-                  alt="image-widget"
-                />
-              </a>
-            </div>
-          </aside>
+
           {/* END SIDEBAR */}
         </div>
         {/* End row */}
