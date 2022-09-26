@@ -9,8 +9,6 @@ const AllDoctors = () => {
     <Layouts>
       <PageBanner pageTitle="Meet the Doctors" />
       <AllDoctorsDoctors3 />
-      <Statistic1 />
-      <Testimonials2 />
     </Layouts>
   );
 };

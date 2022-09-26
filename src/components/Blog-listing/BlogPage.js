@@ -19,8 +19,8 @@ const BlogPage = () => {
       <div className="container">
         <div className="row">
           {/* BLOG POSTS HOLDER */}
-          <div className="col-lg-8 m-auto">
-            <div className="posts-holder pr-30">
+          <div className="col-lg-12 ">
+            <div id="posts" className="posts-holder pr-30 d-flex flex-wrap justify-content-between">
               {/* BLOG POST #1 */}
               <div className="blog-post">
                 {/* BLOG POST IMAGE */}
@@ -182,59 +182,60 @@ const BlogPage = () => {
               </div>
               {/* END BLOG POST #4 */}
               {/* BLOG PAGE PAGINATION */}
-              <div className="blog-page-pagination b-top">
-                <nav aria-label="Page navigation">
-                  <ul className="pagination justify-content-center primary-theme">
-                    <li className="page-item disabled">
-                      <a
-                        className="page-link"
-                        href="#"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          setActive(active === 1 ? 1 : active - 1);
-                        }}
-                        tabIndex={-1}
-                      >
-                        <i className="fas fa-long-arrow-alt-left" />
-                      </a>
-                    </li>
-                    {state &&
-                      state.map((s, i) => (
-                        <li
-                          className={`page-item  ${active == s ? "active" : ""
-                            }`}
-                          key={i}
-                        >
-                          <a
-                            className="page-link"
-                            href="#"
-                            onClick={(e) => {
-                              e.preventDefault();
-                              setActive(s);
-                            }}
-                          >
-                            {s}
-                          </a>
-                        </li>
-                      ))}
 
-                    <li className="page-item next-page">
-                      <a
-                        className="page-link"
-                        href="#"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          setActive(
-                            active === state.length ? state.length : active + 1
-                          );
-                        }}
+            </div>
+            <div className="blog-page-pagination b-top">
+              <nav aria-label="Page navigation">
+                <ul className="pagination justify-content-center primary-theme">
+                  <li className="page-item disabled">
+                    <a
+                      className="page-link"
+                      href="#"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setActive(active === 1 ? 1 : active - 1);
+                      }}
+                      tabIndex={-1}
+                    >
+                      <i className="fas fa-long-arrow-alt-left" />
+                    </a>
+                  </li>
+                  {state &&
+                    state.map((s, i) => (
+                      <li
+                        className={`page-item  ${active == s ? "active" : ""
+                          }`}
+                        key={i}
                       >
-                        <i className="fas fa-long-arrow-alt-right" />
-                      </a>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
+                        <a
+                          className="page-link"
+                          href="#"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            setActive(s);
+                          }}
+                        >
+                          {s}
+                        </a>
+                      </li>
+                    ))}
+
+                  <li className="page-item next-page">
+                    <a
+                      className="page-link"
+                      href="#"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setActive(
+                          active === state.length ? state.length : active + 1
+                        );
+                      }}
+                    >
+                      <i className="fas fa-long-arrow-alt-right" />
+                    </a>
+                  </li>
+                </ul>
+              </nav>
             </div>
           </div>
           {/* END BLOG POSTS HOLDER */}

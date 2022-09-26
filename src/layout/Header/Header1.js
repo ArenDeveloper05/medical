@@ -107,6 +107,24 @@ const Header1 = ({ toggleMenu, toggle }) => {
               </li>
               {/* NORUTYUNNER VERJ */}
               {/* PAGES */}
+              {/* BJISHKNER */}
+              <li className="nl-doctors" aria-haspopup="true">
+                <Link href="/all-doctors">
+                  <a>
+                    Բժիշկներ
+                  </a>
+                </Link>
+              </li>
+              {/* BJISHKNER */}
+              {/* TESADARAN */}
+              <li className="nl-gallery" aria-haspopup="true">
+                <Link href="/gallery">
+                  <a>
+                    Տեսադարան
+                  </a>
+                </Link>
+              </li>
+              {/* TESADARAN */}
               <li aria-haspopup="true">
                 <a href="#">
                   Pages <span className="wsarrow" />
@@ -294,135 +312,6 @@ const Header1 = ({ toggleMenu, toggle }) => {
                 </div>
               </li>
               {/* END HALF MENU */}
-              {/* MEGAMENU */}
-              <li aria-haspopup="true">
-                <a href="#">
-                  Mega Menu <span className="wsarrow" />
-                </a>
-                <div className="wsmegamenu clearfix">
-                  <div className="container">
-                    <div className="row">
-                      {/* MEGAMENU QUICK LINKS */}
-                      <ul className="col-lg-3 col-md-12 col-xs-12 link-list">
-                        <li className="title">Quick Links:</li>
-                        <li>
-                          <a href="#">For Referring Doctors</a>
-                        </li>
-                        <li>
-                          <a href="#">Terms &amp; Privacy Policy</a>
-                        </li>
-                        <li>
-                          <a href="#">Donor Privacy Policy</a>
-                        </li>
-                        <li>
-                          <a href="#">Patient Info Sheets</a>
-                        </li>
-                        <li>
-                          <a href="#">Online Patients Portal</a>
-                        </li>
-                        <li>
-                          <a href="#">Insurance Information</a>
-                        </li>
-                        <li>
-                          <a href="#">Patients Testimonials</a>
-                        </li>
-                      </ul>
-                      {/* MEGAMENU FEATURED NEWS */}
-                      <div className="col-lg-5 col-md-12 col-xs-12">
-                        {/* Title */}
-                        <h3 className="title">Featured News:</h3>
-                        {/* Image */}
-                        <div className="fluid-width-video-wrapper">
-                          <img
-                            src="images/blog/featured-news.jpg"
-                            alt="featured-news"
-                          />
-                        </div>
-                        {/* Text */}
-                        <h5 className="h5-xs">
-                          <a href="#">5 Benefits of integrative medicine</a>
-                        </h5>
-                        <p className="wsmwnutxt">
-                          Porta semper lacus cursus, feugiat primis ultrice in
-                          ligula risus auctor tempus feugiat dolor impedit magna
-                          purus at pretium gravida donec
-                        </p>
-                      </div>
-                      {/* END MEGAMENU FEATURED NEWS */}
-                      {/* MEGAMENU LATEST NEWS */}
-                      <div className="col-lg-4 col-md-12 col-xs-12">
-                        {/* Title */}
-                        <h3 className="title">Latest News:</h3>
-                        {/* Latest News */}
-                        <ul className="latest-news">
-                          {/* Post #1 */}
-                          <li className="clearfix d-flex align-items-center">
-                            {/* Image */}
-                            <img
-                              className="img-fluid"
-                              src="images/blog/latest-post-1.jpg"
-                              alt="blog-post-preview"
-                            />
-                            {/* Text */}
-                            <div className="post-summary">
-                              <Link href="/single-post">
-                                <a>
-                                  Etiam sapien risus ante auctor tempus accumsan
-                                  an empor ...
-                                </a>
-                              </Link>
-                              <p>43 Comments</p>
-                            </div>
-                          </li>
-                          {/* Post #2 */}
-                          <li className="clearfix d-flex align-items-center">
-                            {/* Image */}
-                            <img
-                              className="img-fluid"
-                              src="images/blog/latest-post-2.jpg"
-                              alt="blog-post-preview"
-                            />
-                            {/* Text */}
-                            <div className="post-summary">
-                              <Link href="/single-post">
-                                <a>
-                                  Blandit tempor a sapien ipsum, porta risus
-                                  auctor justo ...
-                                </a>
-                              </Link>
-                              <p>38 Comments</p>
-                            </div>
-                          </li>
-                          {/* Post #3 */}
-                          <li className="clearfix d-flex align-items-center">
-                            {/* Image */}
-                            <img
-                              className="img-fluid"
-                              src="images/blog/latest-post-3.jpg"
-                              alt="blog-post-preview"
-                            />
-                            {/* Text */}
-                            <div className="post-summary">
-                              <Link href="/single-post">
-                                <a>
-                                  Cursus risus auctor tempus risus laoreet
-                                  turpis auctor varius ...
-                                </a>
-                              </Link>
-                              <p>29 Comments</p>
-                            </div>
-                          </li>
-                        </ul>
-                      </div>
-                      {/* END MEGAMENU LATEST NEWS */}
-                    </div>
-                    {/* End row */}
-                  </div>
-                  {/* End container */}
-                </div>
-                {/* End wsmegamenu */}
-              </li>
-              {/* END MEGAMENU */}
               {/* NAVIGATION MENU BUTTON */}
               <li className="nl-simple header-btn" aria-haspopup="true">
                 <Link href="/appointment">

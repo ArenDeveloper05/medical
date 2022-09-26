@@ -12,8 +12,7 @@ const Gallery3 = () => {
   };
   // Isotope
   const isotope = useRef();
-  const [filterKey, setFilterKey] = useState("*");
-  const [activeClass, setActiveClass] = useState("*");
+
   useEffect(() => {
     setTimeout(() => {
       isotope.current = new Isotope(".masonry-wrap", {
@@ -28,17 +27,7 @@ const Gallery3 = () => {
     }, 300);
     return () => isotope.current.destroy();
   }, []);
-  useEffect(() => {
-    if (isotope.current) {
-      filterKey === "*"
-        ? isotope.current.arrange({ filter: `*` })
-        : isotope.current.arrange({ filter: `.${filterKey}` });
-    }
-  }, [filterKey]);
-  const handleFilterKeyChange = (key) => () => {
-    setFilterKey(key);
-    setActiveClass(key);
-  };
+
   return (
     <div id="gallery-3" className="gallery-section division">
       {image && (
@@ -52,30 +41,7 @@ const Gallery3 = () => {
         <div className="row">
           <div className="col-md-12 text-center">
             <div className="gallery-filter mb-60">
-              <button
-                onClick={handleFilterKeyChange("*")}
-                className={activeClass == "*" ? "is-checked" : ""}
-              >
-                All
-              </button>
-              <button
-                onClick={handleFilterKeyChange("dental")}
-                className={activeClass == "dental" ? "is-checked" : ""}
-              >
-                Dental Care
-              </button>
-              <button
-                onClick={handleFilterKeyChange("pediatric")}
-                className={activeClass == "pediatric" ? "is-checked" : ""}
-              >
-                Pediatric
-              </button>
-              <button
-                onClick={handleFilterKeyChange("cardiology")}
-                className={activeClass == "cardiology" ? "is-checked" : ""}
-              >
-                Cardiology
-              </button>
+              <h2>Մեր նկարները</h2>
             </div>
           </div>
         </div>
