@@ -1,11 +1,13 @@
-import SwiperCore, { EffectFade, Navigation, Pagination } from "swiper";
-SwiperCore.use([Pagination, Navigation, EffectFade]);
+import SwiperCore, { EffectFade, Navigation, Pagination,Autoplay } from "swiper";
+SwiperCore.use([Pagination, Navigation, EffectFade,Autoplay]);
 
 export const heroSliderProps = {
   slidesPerView: 1,
   slidesPerGroup: 1,
   loop: true,
-  autoplay: true,
+  autoplay: {
+    delay:2000,
+  },
   speed: 800,
   pagination: {
     el: ".indicators",
