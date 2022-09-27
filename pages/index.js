@@ -1,3 +1,6 @@
+import useTranslation from 'next-translate/useTranslation';
+import { useRouter } from 'next/dist/client/router';
+import Link from 'next/link';
 import About5 from "../src/components/Common/About-5";
 import Info2 from "../src/components/Common/Info-2";
 import Demo2About4 from "../src/components/Demo-2/Demo2About4";
@@ -14,10 +17,37 @@ import Demo2Services2 from "../src/components/Demo-2/Demo2Services2";
 import Demo2Statistic2 from "../src/components/Demo-2/Demo2Statistic2";
 import Demo2Tabs1 from "../src/components/Demo-2/Demo2Tabs1";
 import Layouts from "../src/layout/Layouts";
+import uuid from 'react-uuid';
 
 const Home = () => {
+  const { t } = useTranslation('common');
+  const router = useRouter();
+
   return (
     <Layouts footer={3}>
+      {/* this code is just for example and should be deleted soon */}
+      <h1 style={{color: "red", textAlign:"center"}}>{t("hello")}</h1>
+      <ul style={{ textAlign: "center", fontWeight: "bold"}}>
+        {
+          router.locales.map(locale => (
+            <li 
+              key={uuid()}
+            >
+              <Link
+                href={router.asPath}
+                locale={locale}
+              >
+                <a>
+                  click here to change language od greeting text >>> {locale}
+                </a>
+              </Link>
+            </li>
+
+          ))
+        }
+      </ul>
+      {/* end of example-code part */}
+
       <Demo2Hero2 />
       {/* END HERO-2 */}
       {/* ABOUT-4
@@ -76,36 +106,6 @@ const Home = () => {
 			============================================= */}
       <Demo2Banner8 />
     </Layouts>
-    // <div id="page" className="page-wrapper demo">
-    //   {/* HERO
-    //     ============================================= */}
-    //   {/* <HomeHero /> */}
-    //   {/* END HERO */}
-    //   {/* SELECT
-    //     ============================================= */}
-    //   {/* <HomeSelect /> */}
-    //   {/* END SELECT */}
-    //   {/* FEATURES
-    //     ============================================= */}
-    //   {/* <HomeFeatures /> */}
-    //   {/* END FEATURES */}
-    //   {/* BANNER-1
-    //     ============================================= */}
-    //   {/* <HomeBanner /> */}
-    //   {/* END BANNER-1 */}
-    //   {/* INNER PAGES
-    //     ============================================= */}
-    //   {/* <HomeInnerPage /> */}
-    //   {/* END INNER PAGES */}
-    //   {/* BANNER-2
-    //     ============================================= */}
-    //   {/* <HomeBanner2 /> */}
-    //   {/* END BANNER-2 */}
-    //   {/* FOOTER
-    //     ============================================= */}
-    //   {/* <HomeFooter /> */}
-    //   {/* END FOOTER */}
-    // </div>
   );
 };
 
