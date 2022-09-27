@@ -20,8 +20,8 @@ const Demo2Hero2 = () => {
                     <div className="caption-txt">
                       {/* Title */}
                       <h2 className="steelblue-color">
-                        We will help you
-                        <span className="blue-color">to become healthy</span>
+                        Մենք կօգնենք ձեզ
+                        <span className="blue-color"> դառնալ առողջ</span>
                       </h2>
                       {/* Option Box #1 */}
                       <div className="box-list">
