@@ -26,7 +26,6 @@ const Doctor1 = () => {
         {/* End container */}
       </section>
       <Doctor1Details />
-      <Doctor1Reviews2 />
     </Layouts>
   );
 };

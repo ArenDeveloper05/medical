@@ -1,3 +1,30 @@
 {
-    "hello": "Привет всем!"
+  "header-home": "Главная",
+  "header-aboutus": "О Нас",
+  "header-news": "Новости",
+  "header-doctors": "Доктора",
+  "header-gallery": "Галерея",
+  "home-slide1": {
+    "title": {
+      "1": "МЫ ВАМ ПОМОЖЕМ",
+      "2": "БЫТЬ ЗДОРОВЫМ"
+    },
+    "description": "Lorem ipsum dolor",
+    "button": "О НАС"
+  },
+  "home-slide2": {
+    "title": {
+      "1": "КВАЛИФИЦИРОВАННОЕ ",
+      "2": "ЛЕЧЕНИЕ"
+    },
+    "description": "Lorem ipsum dolor",
+    "button": "ОТДЕЛЕНИЯ"
+  },
+  "home-slide3": {
+    "title": {
+      "1": "РЕШЕНИЕ СЛОЖНЫХ ",
+      "2": "МЕДИЦИНСКИХ ПРОБЛЕМ"
+    },
+    "description": "Lorem ipsum dolor"
+  }
 }

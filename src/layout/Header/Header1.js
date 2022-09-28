@@ -1,8 +1,12 @@
+import useTranslation from "next-translate/useTranslation";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import MobileMenu from "../MobileMenu";
 
+
 const Header1 = ({ toggleMenu, toggle }) => {
+  const { t } = useTranslation('common');
   return (
     <header id="header" className="header">
       {/* MOBILE HEADER */}
@@ -87,45 +91,53 @@ const Header1 = ({ toggleMenu, toggle }) => {
           </div>
           {/* MAIN MENU */}
           <nav className="wsmenu clearfix">
-            <ul className="wsmenu-list">
-              {/* DROPDOWN MENU */}
-              <li aria-haspopup="true">
+            <ul className="wsmenu-list d-flex justify-content-center align-items-center">
+              {/* HOME*/}
+              <li>
                 <Link href="/">
                   <a>
-                    Գլխավոր
+                    {t("header-home")}
                   </a>
                 </Link>
               </li>
-              {/* END DROPDOWN MENU */}
-              {/* NORUTYUNNER */}
-              <li className="nl-news" aria-haspopup="true">
+              {/* END HOME */}
+              {/* ABOUT US */}
+              <li className="nl-about-us">
+                <Link href="/about-us">
+                  <a>
+                    {t("header-aboutus")}
+                  </a>
+                </Link>
+              </li>
+              {/* END ABOUT US */}
+              {/* NEWS */}
+              <li className="nl-news">
                 <Link href="/blog-listing">
                   <a>
-                    Նորություններ
+                    {t("header-news")}
                   </a>
                 </Link>
               </li>
-              {/* NORUTYUNNER VERJ */}
-              {/* PAGES */}
-              {/* BJISHKNER */}
-              <li className="nl-doctors" aria-haspopup="true">
+              {/* END NEWS */}
+              {/* DOCTORS */}
+              <li className="nl-doctors">
                 <Link href="/all-doctors">
                   <a>
-                    Բժիշկներ
+                    {t("header-doctors")}
                   </a>
                 </Link>
               </li>
-              {/* BJISHKNER */}
-              {/* TESADARAN */}
-              <li className="nl-gallery" aria-haspopup="true">
+              {/* END DOCTORS */}
+              {/* GALLERY */}
+              <li className="nl-gallery" >
                 <Link href="/gallery">
                   <a>
-                    Տեսադարան
+                    {t("header-gallery")}
                   </a>
                 </Link>
               </li>
-              {/* TESADARAN */}
-              <li aria-haspopup="true">
+              {/* END GALLERY */}
+              <li>
                 <a href="#">
                   Pages <span className="wsarrow" />
                 </a>
@@ -261,63 +273,36 @@ const Header1 = ({ toggleMenu, toggle }) => {
                 {/* End wsmegamenu */}
               </li>
               {/* END PAGES */}
-              {/* HALF MENU */}
-              <li aria-haspopup="true">
-                <a href="#">
-                  Half Menu <span className="wsarrow" />
-                </a>
-                <div className="wsmegamenu clearfix halfmenu">
-                  <div className="container-fluid">
-                    <div className="row">
-                      {/* Links */}
-                      <ul className="col-lg-6 col-md-12 col-xs-12 link-list">
-                        <li className="title">For Patients:</li>
-                        <li>
-                          <a href="#">Meet The Doctors</a>
-                        </li>
-                        <li>
-                          <a href="#">Patient Info Sheets</a>
-                        </li>
-                        <li>
-                          <a href="#">Online Patients Portal</a>
-                        </li>
-                        <li>
-                          <a href="#">Patients Testimonials</a>
-                        </li>
-                        <li>
-                          <a href="#">Blog &amp; Latest News</a>
-                        </li>
-                      </ul>
-                      {/* Links */}
-                      <ul className="col-lg-6 col-md-12 col-xs-12 link-list">
-                        <li className="title">Quick Links:</li>
-                        <li>
-                          <a href="#">Terms &amp; Privacy Policy</a>
-                        </li>
-                        <li>
-                          <a href="#">Donor Privacy Policy</a>
-                        </li>
-                        <li>
-                          <a href="#">Workers Compensation</a>
-                        </li>
-                        <li>
-                          <a href="#">Insurance Information</a>
-                        </li>
-                        <li>
-                          <a href="#">After Hours Care</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
+              {/* LANGUAGES */}
+              <li className="nl-languages d-flex">
+                <div className="language hy">
+                  <Link locale="hy" href="/hy" passHref>
+                    <a>
+                      <Image src="/images/am-flag.webp" alt="qwe" width={"100%"} height={"100%"} style={{ borderRadius: "50%" }} />
+                    </a>
+                  </Link>
                 </div>
+                <div className="language ru">
+                  <Link locale="ru" href="/ru" passHref>
+                    <a>
+                      <Image src="/images/rs-flag.webp" alt="qwe" width={"100%"} height={"100%"} style={{ borderRadius: "50%" }} />
+                      {/* Русский */}
+                      {/* ру */}
+                    </a>
+                  </Link>
+                </div>
+                <div className="language en">
+                  <Link locale="en" href="/en" passHref>
+                    <a>
+                      <Image src="/images/us-flag.webp" alt="qwe" width={"100%"} height={"100%"} style={{ borderRadius: "50%" }} />
+                      {/* English */}
+                      {/* en */}
+                    </a>
+                  </Link>
+                </div>
+
               </li>
-              {/* END HALF MENU */}
-              {/* NAVIGATION MENU BUTTON */}
-              <li className="nl-simple header-btn" aria-haspopup="true">
-                <Link href="/appointment">
-                  <a>Make an Appointment</a>
-                </Link>
-              </li>
+              {/* END LANGUAGES */}
             </ul>
           </nav>
           {/* END MAIN MENU */}
@@ -325,7 +310,7 @@ const Header1 = ({ toggleMenu, toggle }) => {
       </div>
       <MobileMenu />
       {/* END NAVIGATION MENU */}
-    </header>
+    </header >
   );
 };
 

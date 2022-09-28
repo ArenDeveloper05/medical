@@ -1,9 +1,11 @@
+import useTranslation from "next-translate/useTranslation";
 import Link from "next/link";
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { heroSliderProps } from "../../sliderProps";
 
 const Demo2Hero2 = () => {
+  const { t } = useTranslation('common');
   return (
     <section id="hero-2" className="hero-section division">
       {/* SLIDER */}
@@ -20,8 +22,8 @@ const Demo2Hero2 = () => {
                     <div className="caption-txt">
                       {/* Title */}
                       <h2 className="steelblue-color">
-                        Մենք կօգնենք ձեզ
-                        <span className="blue-color"> դառնալ առողջ</span>
+                        {t("home-slide1.title.1")}
+                        <span className="blue-color"> {t("home-slide1.title.2")}</span>
                       </h2>
                       {/* Option Box #1 */}
                       <div className="box-list">
@@ -58,7 +60,7 @@ const Demo2Hero2 = () => {
                       {/* Button */}
                       <Link href="/about-us">
                         <a className="btn btn-blue blue-hover">
-                          More About Clinic
+                          {t("home-slide1.button")}
                         </a>
                       </Link>
                     </div>
@@ -82,8 +84,8 @@ const Demo2Hero2 = () => {
                     <div className="caption-txt">
                       {/* Title */}
                       <h2 className="steelblue-color">
-                        <span className="blue-color">Highest Quality</span>
-                        Medical Treatment
+                        <span className="blue-color">{t("home-slide2.title.1")}</span>
+                        {t("home-slide2.title.2")}
                       </h2>
                       {/* Text */}
                       <p className="p-md">
@@ -95,7 +97,7 @@ const Demo2Hero2 = () => {
                       {/* Button */}
                       <Link href="/all-departments">
                         <a className="btn btn-blue blue-hover">
-                          Our Departments
+                          {t("home-slide2.button")}
                         </a>
                       </Link>
                     </div>
@@ -120,8 +122,8 @@ const Demo2Hero2 = () => {
                     <div className="caption-txt white-color">
                       {/* Title */}
                       <h2>
-                        Solutions to complex
-                        <span>medical problems</span>
+                        {t("home-slide3.title.1")}
+                        <span>{t("home-slide3.title.2")}</span>
                       </h2>
                       {/* CONTENT BOX #1 */}
                       <div className="box-list">

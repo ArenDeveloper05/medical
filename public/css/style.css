@@ -6480,3 +6480,12 @@ nav a#pull {
 .blog-page-section .container {
   width: 1400px;
 }
+
+.language {
+  color: black;
+  margin-left: 8px;
+  box-shadow: 1px 2px 6px 0px #847a85;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}

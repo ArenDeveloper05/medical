@@ -41,9 +41,11 @@ img.mfp-img {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
 .mfp-img-container .mfp-content {
   max-width: 400px !important;
 }
+
 .mfp-img-container .mfp-close {
   top: -110px;
   right: -24px;
@@ -52,6 +54,7 @@ img.mfp-img {
 .stricky-fixed .headtoppart {
   display: none;
 }
+
 .stricky-fixed .menu {
   position: fixed;
   top: 0px;

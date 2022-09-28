@@ -1,7 +1,9 @@
+import useTranslation from "next-translate/useTranslation";
 import Link from "next/dist/client/link";
 import React from "react";
 
 const Footer4 = () => {
+  const { t } = useTranslation('common');
   return (
     <footer className="bg-image wide-40 footer division">
       <div className="container">
@@ -20,8 +22,7 @@ const Footer4 = () => {
               />
               {/* Text */}
               <p className="p-sm mt-20">
-                Aliquam orci nullam tempor sapien gravida donec an enim ipsum
-                porta justo at velna auctor congue
+                {t("footer-social")}
               </p>
               {/* Social Icons */}
               <div className="footer-socials-links mt-20">
@@ -65,19 +66,19 @@ const Footer4 = () => {
           <div className="col-md-6 col-lg-3">
             <div className="footer-box mb-40">
               {/* Title */}
-              <h5 className="h5-xs">Our Location</h5>
+              <h5 className="h5-xs">{t("footer-location.title")}</h5>
               {/* Address */}
-              <p>121 King Street, Melbourne,</p>
-              <p>Victoria 3000 Australia</p>
+              <p>{t("footer-location.address.street")}</p>
+              <p>{t("footer-location.address.country")}</p>
               {/* Email */}
               <p className="foo-email mt-20">
                 E:
                 <Link href="#">
-                  <a href="mailto:yourdomain@mail.com">hello@yourdomain.com</a>
+                  <a href="mailto:yourdomain@mail.com">{t("footer-location.email")}</a>
                 </Link>
               </p>
               {/* Phone */}
-              <p>P: +12 9 8765 4321</p>
+              <p>P: {t("footer-location.phone")}</p>
             </div>
           </div>
           {/* FOOTER WORKING HOURS */}
@@ -86,31 +87,19 @@ const Footer4 = () => {
               {/* Title */}
               <h5 className="h5-xs">Working Time</h5>
               {/* Working Hours */}
-              <p className="p-sm">
-                Mon - Wed - <span>9:00 AM - 7:00 PM</span>
-              </p>
-              <p className="p-sm">
-                Thursday - <span>9:00 AM - 6:30 PM</span>
-              </p>
-              <p className="p-sm">
-                Friday - <span>9:00 AM - 6:00 PM</span>
-              </p>
-              <p className="p-sm">
-                Sat - Sun - <span>Closed</span>
-              </p>
+              <p>{t("footer-timetable")}</p>
             </div>
           </div>
           {/* FOOTER PHONE NUMBER */}
           <div className="col-md-6 col-lg-3">
             <div className="footer-box mb-40">
               {/* Title */}
-              <h5 className="h5-xs">Emergency Cases</h5>
+              <h5 className="h5-xs">{t("footer-emergency.title")}</h5>
               {/* Footer List */}
               <h5 className="h5-xl blue-color">1-800-123-4560</h5>
               {/* Text */}
               <p className="p-sm mt-15">
-                Aliquam orci nullam undo tempor sapien gravida donec enim ipsum
-                porta justo velna aucto magna
+                {t("footer-emergency.description")}
               </p>
             </div>
           </div>
