@@ -1,14 +1,12 @@
 import useTranslation from "next-translate/useTranslation";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 import uuid from "react-uuid";
 import MobileMenu from "../MobileMenu";
-
+import { images } from "../../enums";
 
 const Header1 = ({ toggleMenu, toggle }) => {
   const { t } = useTranslation('common');
-  const [images] = useState([{ locale: 'hy', src: "/images/am-flag.webp" }, { locale: 'ru', src: "/images/rs-flag.webp" }, { locale: 'en', src: "/images/us-flag.webp" }]);
 
   return (
     <header id="header" className="header">
