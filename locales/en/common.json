@@ -1,3 +1,71 @@
 {
-    "hello": "Hello world!"
+  "header-home": "Home",
+  "header-aboutus": "About Us",
+  "header-news": "News",
+  "header-doctors": "Doctors",
+  "header-gallery": "Gallery",
+  "home-slide1": {
+    "title": {
+      "1": "WE WILL HELP YOU",
+      "2": "BECOME HEALTY"
+    },
+    "description": "Lorem ipsum dolor",
+    "button": "MORE ABOUT CLINIC"
+  },
+  "home-slide2": {
+    "title": {
+      "1": "HIGHEST QUALITY",
+      "2": "MEDICAL TREATMENT"
+    },
+    "description": "Lorem ipsum dolor",
+    "button": "OUR DEPARTMENTS"
+  },
+  "home-slide3": {
+    "title": {
+      "1": "SOLUTIONS TO COMPLEX",
+      "2": "MEDICAL PROBLEMS"
+    },
+    "description": "Lorem ipsum dolor"
+  },
+  "home-welcome": {
+    "title": "WELCOME TO MED SERVICE",
+    "description": "Lorem ipsum dolor"
+  },
+  "home-news": {
+    "title": "Latest News",
+    "description": "Lorem ipsum dolor",
+    "button": "READ MORE POSTS"
+  },
+  "home-depatrments": {
+    "title": "Choose Depatrment",
+    "description": "Lorem ipsum dolor"
+  },
+  "home-doctors": {
+    "title": "Our Medical Specialists",
+    "description": "Lorem ipsum dolor",
+    "button": "Meet All Doctors"
+  },
+  "home-gallery": {
+    "title": "Total Health Care Solutions",
+    "description": "Lorem ipsum dolor"
+  },
+  "footer-social": "Lorem ipsum dolor",
+  "footer-location": {
+    "title": "Our Location",
+    "address": {
+      "street": "116 Aram Khachartyan street, Artashat",
+      "country": "Ararat province, Armenia"
+    },
+    "email": "Unknown",
+    "phone": "+374-235-25364"
+  },
+  "footer-timetable": "24 hours",
+  "footer-emergency": {
+    "title": "Emergency Cases",
+    "description": "Lorem ipsum dolor"
+  },
+  "footer-rights": {
+    "title1": "MedServices",
+    "title2": "All rights reserved"
+  }
 }

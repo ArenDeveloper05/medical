@@ -11,21 +11,6 @@ const AboutUs = () => {
     <Layouts>
       <PageBanner pageTitle="About Us" />
       <AboutUsInfo4 />
-      {/* END INFO-4 */}
-      {/* STATISTIC-1
-			============================================= */}
-      <Statistic1 />
-      {/* END STATISTIC-1 */}
-      {/* VIDEO-2
-			============================================= */}
-      <AboutUsVideo2 />
-      {/* END VIDEO-2 */}
-      {/* SERVICES-7
-			============================================= */}
-      <Services7 />
-      {/* END SERVICES-7 */}
-      {/* BANNER-5
-			============================================= */}
       <Banner5 />
     </Layouts>
   );

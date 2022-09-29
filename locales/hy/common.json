@@ -1,3 +1,30 @@
 {
-    "hello": "Ողջու~յն"
+  "header-home": "Գլխավոր",
+  "header-aboutus": "Մեր Մասին",
+  "header-news": "Նորություններ",
+  "header-doctors": "Բժիշկներ",
+  "header-gallery": "Տեսադարան",
+  "home-slide1": {
+    "title": {
+      "1": "ՄԵՆՔ ԿՕԳՆԵՆՔ ՁԵԶ",
+      "2": "ԴԱՌՆԱԼ ԱՌՈՂՋ"
+    },
+    "description": "Lorem ipsum dolor",
+    "button": "ԱՎԵԼԻՆ ՄԵՐ ՄԱՍԻՆ"
+  },
+  "home-slide2": {
+    "title": {
+      "1": "ԲԱՐՁՐՈՐԱԿ",
+      "2": "ԲՈՒԺՈՒՄ"
+    },
+    "description": "Lorem ipsum dolor",
+    "button": "ՄԵՐ ԲԱԺԻՆՆԵՐԸ"
+  },
+  "home-slide3": {
+    "title": {
+      "1": "ԲԱՐԴ ԲԺՇԿԱԿԱՆ",
+      "2": "ԽՆԴԻՐՆԵՐԻ ԼՈՒԾՈՒՄ"
+    },
+    "description": "Lorem ipsum dolor"
+  }
 }
