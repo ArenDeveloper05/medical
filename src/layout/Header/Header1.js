@@ -1,12 +1,15 @@
 import useTranslation from "next-translate/useTranslation";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import { useState } from "react";
+import uuid from "react-uuid";
 import MobileMenu from "../MobileMenu";
 
 
 const Header1 = ({ toggleMenu, toggle }) => {
   const { t } = useTranslation('common');
+  const [images] = useState([{ locale: 'hy', src: "/images/am-flag.webp" }, { locale: 'ru', src: "/images/rs-flag.webp" }, { locale: 'en', src: "/images/us-flag.webp" }]);
+
   return (
     <header id="header" className="header">
       {/* MOBILE HEADER */}
@@ -275,32 +278,25 @@ const Header1 = ({ toggleMenu, toggle }) => {
               {/* END PAGES */}
               {/* LANGUAGES */}
               <li className="nl-languages d-flex">
-                <div className="language hy">
-                  <Link locale="hy" href="/hy" passHref>
-                    <a>
-                      <Image src="/images/am-flag.webp" alt="qwe" width={"100%"} height={"100%"} style={{ borderRadius: "50%" }} />
-                    </a>
-                  </Link>
-                </div>
-                <div className="language ru">
-                  <Link locale="ru" href="/ru" passHref>
-                    <a>
-                      <Image src="/images/rs-flag.webp" alt="qwe" width={"100%"} height={"100%"} style={{ borderRadius: "50%" }} />
-                      {/* Русский */}
-                      {/* ру */}
-                    </a>
-                  </Link>
-                </div>
-                <div className="language en">
-                  <Link locale="en" href="/en" passHref>
-                    <a>
-                      <Image src="/images/us-flag.webp" alt="qwe" width={"100%"} height={"100%"} style={{ borderRadius: "50%" }} />
-                      {/* English */}
-                      {/* en */}
-                    </a>
-                  </Link>
-                </div>
-
+                {
+                  images.map(image => {
+                    return (
+                      <div key={uuid()} className={"language"}>
+                        <Link locale={image.locale} href={`/${image.locale}`} passHref>
+                          <a>
+                            <Image
+                              src={image.src}
+                              alt={image.locale}
+                              width={"100%"}
+                              height={"100%"}
+                              style={{ borderRadius: "50%" }}>
+                            </Image>
+                          </a>
+                        </Link>
+                      </div>
+                    )
+                  })
+                }
               </li>
               {/* END LANGUAGES */}
             </ul>
