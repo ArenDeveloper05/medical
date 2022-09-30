@@ -42,7 +42,6 @@ const AllDoctors2 = () => {
                                     <Link href="/doctor-details">
                                         <a
                                             className="btn btn-sm btn-tra-white black-hover"
-                                            title
                                         >
                                             View More Info
                                         </a>
@@ -84,7 +83,6 @@ const AllDoctors2 = () => {
                                     <Link href="/doctor-details">
                                         <a
                                             className="btn btn-sm btn-tra-white black-hover"
-                                            title
                                         >
                                             View More Info
                                         </a>
@@ -126,7 +124,6 @@ const AllDoctors2 = () => {
                                     <Link href="/doctor-details">
                                         <a
                                             className="btn btn-sm btn-tra-white black-hover"
-                                            title
                                         >
                                             View More Info
                                         </a>
