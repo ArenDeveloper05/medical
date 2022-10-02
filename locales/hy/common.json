@@ -26,5 +26,46 @@
       "2": "ԽՆԴԻՐՆԵՐԻ ԼՈՒԾՈՒՄ"
     },
     "description": "Lorem ipsum dolor"
+  },
+  "home-welcome": {
+    "title": "Բարի գալուստ մեր բժշկական կենտրոն",
+    "description": "Lorem ipsum dolor"
+  },
+  "home-news": {
+    "title": "Վերջին նորությունները",
+    "description": "Lorem ipsum dolor",
+    "button": "Տեսնել Ավելին"
+  },
+  "home-depatrments": {
+    "title": "Ընտրել բաժանմունքը",
+    "description": "Lorem ipsum dolor"
+  },
+  "home-doctors": {
+    "title": "Մեր մասնագետները",
+    "description": "Lorem ipsum dolor",
+    "button": "Տեսնել բոլոր բժիշկներին"
+  },
+  "home-gallery": {
+    "title": "Total Health Care Solutions",
+    "description": "Lorem ipsum dolor"
+  },
+  "footer-social": "Lorem ipsum dolor",
+  "footer-location": {
+    "title": "Մեր հասցեն",
+    "address": {
+      "street": "116 Արամ Խաչատրյան փողոց, Արտաշատ",
+      "country": "Արարատի մարզ, Հայաստան"
+    },
+    "email": "Unknown",
+    "phone": "+374-235-25364"
+  },
+  "footer-timetable": "24 ժամ",
+  "footer-emergency": {
+    "title": "Արտակարգ Դեպքեր",
+    "description": "Lorem ipsum dolor"
+  },
+  "footer-rights": {
+    "title1": "MedServices",
+    "title2": "Բոլոր իրավունքները պաշտպանված են"
   }
 }

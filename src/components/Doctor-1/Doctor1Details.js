@@ -166,7 +166,6 @@ const Doctor1Details = () => {
                           }}
                           className="image-link"
                           href="images/certificate-1.png"
-                          title
                         >
                           <img
                             className="img-fluid"
@@ -187,7 +186,6 @@ const Doctor1Details = () => {
                           }}
                           className="image-link"
                           href="images/certificate-2.png"
-                          title
                         >
                           <img
                             className="img-fluid"
@@ -208,7 +206,6 @@ const Doctor1Details = () => {
                           }}
                           className="image-link"
                           href="images/certificate-3.png"
-                          title
                         >
                           <img
                             className="img-fluid"
@@ -229,7 +226,7 @@ const Doctor1Details = () => {
                           }}
                           className="image-link"
                           href="images/certificate-4.png"
-                          title
+
                         >
                           <img
                             className="img-fluid"
@@ -250,7 +247,7 @@ const Doctor1Details = () => {
                           }}
                           className="image-link"
                           href="images/certificate-5.png"
-                          title
+
                         >
                           <img
                             className="img-fluid"
