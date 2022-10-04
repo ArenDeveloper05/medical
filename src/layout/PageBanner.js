@@ -1,5 +1,7 @@
 import Link from "next/dist/client/link";
+import useTranslation from "next-translate/useTranslation";
 const PageBanner = ({ pageTitle, motherTitle, url }) => {
+  const { t } = useTranslation('common');
   return (
     <div id="breadcrumb" className="division">
       <div className="container">
@@ -10,7 +12,7 @@ const PageBanner = ({ pageTitle, motherTitle, url }) => {
               <nav aria-label="breadcrumb">
                 <ol className="breadcrumb">
                   <li className="breadcrumb-item ">
-                    <Link href="/">Home</Link>
+                    <Link href="/">{t("header-home")}</Link>
                   </li>
                   {motherTitle && (
                     <li className="breadcrumb-item">

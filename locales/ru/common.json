@@ -1,9 +1,11 @@
 {
   "header-home": "Главная",
   "header-aboutus": "О Нас",
+  "header-departments":"Отделения",
   "header-news": "Новости",
   "header-doctors": "Доктора",
   "header-gallery": "Галерея",
+  "header-contactus": "Связь С Нами",
   "home-slide1": {
     "title": {
       "1": "МЫ ВАМ ПОМОЖЕМ",
@@ -26,5 +28,29 @@
       "2": "МЕДИЦИНСКИХ ПРОБЛЕМ"
     },
     "description": "Lorem ipsum dolor"
+  },
+  "departments":{
+    "page-banner-title":"Наши Отделения",
+    "experienced-doctors":{
+      "title":"Наши Сертифицированные и Опытные Врачи",
+      "description":"Lorem ipsum dolor"
+    }
+  },
+  "contactus":{
+    "phone":"Тел:",
+    "email":"Эл-почта:",
+    "section1":{
+      "title":"Основная Информация"
+    },
+    "section2":{
+      "title":"Опыт Пациента",
+      "cordinator":"Имя - Координатор Пациентов"
+    },
+    "section3":{
+      "title":"Рабочее Время",
+      "monday-friday":"Понедельник - Пятница",
+      "saturday":"Суббота",
+      "sunday":"Воскресенье"
+    }
   }
 }

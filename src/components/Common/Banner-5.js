@@ -1,6 +1,8 @@
 import React from "react";
+import useTranslation from "next-translate/useTranslation";
 
 const Banner5 = () => {
+    const { t } = useTranslation('common');
     return (
         <section id="banner-5" className="pt-100 banner-section division">
             <div className="container">
@@ -9,7 +11,7 @@ const Banner5 = () => {
                     <div className="col-lg-10 offset-lg-1 section-title">
                         {/* Title 	*/}
                         <h3 className="h3-md steelblue-color">
-                            Certified and Experienced Doctors
+                        {t("departments.experienced-doctors.title")}
                         </h3>
                         {/* Text */}
                         <p>

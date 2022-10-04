@@ -6489,3 +6489,9 @@ nav a#pull {
   height: 20px;
   border-radius: 50%;
 }
+.department-box{
+  max-width: 370px;
+}
+.contact-info{
+  justify-content: space-around;
+}
