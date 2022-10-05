@@ -1,9 +1,11 @@
 {
   "header-home": "Գլխավոր",
   "header-aboutus": "Մեր Մասին",
+  "header-departments":"Բաժիններ",
   "header-news": "Նորություններ",
   "header-doctors": "Բժիշկներ",
   "header-gallery": "Տեսադարան",
+  "header-contactus": "Կապ Մեզ Հետ",
   "home-slide1": {
     "title": {
       "1": "ՄԵՆՔ ԿՕԳՆԵՆՔ ՁԵԶ",
@@ -27,6 +29,29 @@
     },
     "description": "Lorem ipsum dolor"
   },
+  "departments":{
+    "page-banner-title":"Մեր Բաժինները",
+    "experienced-doctors":{
+      "title":"Մեր Վկայագրված և Փորձառու Բժիշկները",
+      "description":"Lorem ipsum dolor"
+    }
+  },
+  "contactus":{
+    "phone":"Հեռ:",
+    "email":"Էլ-հասցե:",
+    "section1":{
+      "title":"Հիմնական Տեղեկություններ"
+    },
+    "section2":{
+      "title":"Այցելուների փորձը",
+      "cordinator":"Անուն - Այցելուների Համակարգող"
+    },
+    "section3":{
+      "title":"Աշխատանքային Ժամերը",
+      "monday-friday":"Երկուշաբթի-Ուրբաթ",
+      "saturday":"Շաբաթ",
+      "sunday":"Կիրակի"
+    },
   "home-welcome": {
     "title": "Բարի գալուստ մեր բժշկական կենտրոն",
     "description": "Lorem ipsum dolor"
@@ -67,5 +92,5 @@
   "footer-rights": {
     "title1": "MedServices",
     "title2": "Բոլոր իրավունքները պաշտպանված են"
-  }
+  },
 }

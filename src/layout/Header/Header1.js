@@ -110,7 +110,14 @@ const Header1 = ({ toggleMenu, toggle }) => {
                   </a>
                 </Link>
               </li>
-              {/* END ABOUT US */}
+              <li className="nl-departments">
+                <Link href="/all-departments">
+                  <a>
+                    {t("header-departments")}
+                  </a>
+                </Link>
+              </li>
+              {/* END DEPARTMENTS */}
               {/* NEWS */}
               <li className="nl-news">
                 <Link href="/blog-listing">
@@ -138,6 +145,13 @@ const Header1 = ({ toggleMenu, toggle }) => {
                 </Link>
               </li>
               {/* END GALLERY */}
+              <li className="nl-contact" >
+                <Link href="/contact-us">
+                  <a>
+                    {t("header-contactus")}
+                  </a>
+                </Link>
+              </li>
               <li>
                 <a href="#">
                   Pages <span className="wsarrow" />
