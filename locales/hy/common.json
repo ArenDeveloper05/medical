@@ -51,7 +51,8 @@
       "monday-friday":"Երկուշաբթի-Ուրբաթ",
       "saturday":"Շաբաթ",
       "sunday":"Կիրակի"
-    },
+    }
+  },
   "home-welcome": {
     "title": "Բարի գալուստ մեր բժշկական կենտրոն",
     "description": "Lorem ipsum dolor"
@@ -92,5 +93,5 @@
   "footer-rights": {
     "title1": "MedServices",
     "title2": "Բոլոր իրավունքները պաշտպանված են"
-  },
+  }
 }

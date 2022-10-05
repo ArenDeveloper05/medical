@@ -51,7 +51,8 @@
       "monday-friday":"Понедельник - Пятница",
       "saturday":"Суббота",
       "sunday":"Воскресенье"
-    },
+    }
+  },
   "home-welcome": {
     "title": "Добро пожаловать в Мед․ Центер",
     "description": "Lorem ipsum dolor"
