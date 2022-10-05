@@ -1,6 +1,36 @@
 import Link from "next/link";
 import React from "react";
-import { servicesPrices } from "../../enums";
+const servicesPrices = [{
+    id:1,
+    name:"Bronchoscopy",
+    price:"$1340.00"
+},
+{
+    id:1,
+    name:"Bronchoscopy",
+    price:"$1340.00"
+},
+{
+    id:1,
+    name:"Bronchoscopy",
+    price:"$1340.00"
+},
+{
+    id:1,
+    name:"Bronchoscopy",
+    price:"$1340.00"
+},
+{
+    id:1,
+    name:"Bronchoscopy",
+    price:"$1340.00"
+},
+{
+    id:1,
+    name:"Bronchoscopy",
+    price:"$1340.00"
+}
+];
 
 const Service2Page = () => {
     return (

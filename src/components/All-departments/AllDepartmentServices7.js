@@ -1,7 +1,49 @@
 import Link from "next/link";
 import React from "react";
-import { departmentsData } from "../../enums";
 
+const departmentsData = [{
+    id:1,
+    title:"Neurology",
+    className:"flaticon-047-head blue-color",
+    desc:" Porta semper lacus at cursus primis ultrice in ligularisus an auctor tempus feugiat dolor"
+},
+{
+    id:2,
+    title:"Neurology",
+    className:"flaticon-047-head blue-color",
+    desc:" Porta semper lacus at cursus primis ultrice in ligularisus an auctor tempus feugiat dolor"
+},
+{
+    id:3,
+    title:"Neurology",
+    className:"flaticon-047-head blue-color",
+    desc:" Porta semper lacus at cursus primis ultrice in ligularisus an auctor tempus feugiat dolor"
+},
+{
+    id:4,
+    title:"Neurology",
+    className:"flaticon-047-head blue-color",
+    desc:" Porta semper lacus at cursus primis ultrice in ligularisus an auctor tempus feugiat dolor"
+},
+{
+    id:5,
+    title:"Neurology",
+    className:"flaticon-047-head blue-color",
+    desc:" Porta semper lacus at cursus primis ultrice in ligularisus an auctor tempus feugiat dolor"
+},
+{
+    id:6,
+    title:"Neurology",
+    className:"flaticon-047-head blue-color",
+    desc:" Porta semper lacus at cursus primis ultrice in ligularisus an auctor tempus feugiat dolor"
+},
+{
+    id:7,
+    title:"Neurology",
+    className:"flaticon-047-head blue-color",
+    desc:" Porta semper lacus at cursus primis ultrice in ligularisus an auctor tempus feugiat dolor"
+}
+];
 const AllDepartmentServices7 = () => {
     return (
         <section
