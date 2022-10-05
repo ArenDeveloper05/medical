@@ -51,6 +51,46 @@
       "monday-friday":"Понедельник - Пятница",
       "saturday":"Суббота",
       "sunday":"Воскресенье"
-    }
+    },
+  "home-welcome": {
+    "title": "Добро пожаловать в Мед․ Центер",
+    "description": "Lorem ipsum dolor"
+  },
+  "home-news": {
+    "title": "Последние новости",
+    "description": "Lorem ipsum dolor",
+    "button": "Читать больше"
+  },
+  "home-depatrments": {
+    "title": "Выберите отделение",
+    "description": "Lorem ipsum dolor"
+  },
+  "home-doctors": {
+    "title": "Наши специалисты",
+    "description": "Lorem ipsum dolor",
+    "button": "Все доктора"
+  },
+  "home-gallery": {
+    "title": "Total Health Care Solutions",
+    "description": "Lorem ipsum dolor"
+  },
+  "footer-social": "Lorem ipsum dolor",
+  "footer-location": {
+    "title": "Наше местоположение",
+    "address": {
+      "street": "116 улица Арама Хачатряна, Арташат",
+      "country": "Арарат, Армения"
+    },
+    "email": "Unknown",
+    "phone": "+374-235-25364"
+  },
+  "footer-timetable": "24 часа",
+  "footer-emergency": {
+    "title": "Экстренные Случаи",
+    "description": "Lorem ipsum dolor"
+  },
+  "footer-rights": {
+    "title1": "MedServices",
+    "title2": "Все права защищены"
   }
 }
