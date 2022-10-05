@@ -1,7 +1,7 @@
 {
   "header-home": "Home",
   "header-aboutus": "About Us",
-  "header-departments":"Departments",
+  "header-departments": "Departments",
   "header-news": "News",
   "header-doctors": "Doctors",
   "header-gallery": "Gallery",
@@ -70,28 +70,28 @@
     "title1": "MedServices",
     "title2": "All rights reserved"
   },
-  "departments":{
-    "page-banner-title":"Our Departments",
-    "experienced-doctors":{
-      "title":"Certified and Experienced Doctors",
-      "description":"Lorem ipsum dolor"
+  "departments": {
+    "page-banner-title": "Our Departments",
+    "experienced-doctors": {
+      "title": "Certified and Experienced Doctors",
+      "description": "Lorem ipsum dolor"
     }
   },
-  "contactus":{
-    "phone":"Phone:",
-    "email":"Email:",
-    "section1":{
-      "title":"General Information"
+  "contactus": {
+    "phone": "Phone:",
+    "email": "Email:",
+    "section1": {
+      "title": "General Information"
     },
-    "section2":{
-      "title":"Patient Experience",
-      "cordinator":"Name - Patient Experience Coordinator"
+    "section2": {
+      "title": "Patient Experience",
+      "cordinator": "Name - Patient Experience Coordinator"
     },
-    "section3":{
-      "title":"Working Hours",
-      "monday-friday":"Monday-Friday",
-      "saturday":"Saturday",
-      "sunday":"Sunday"
+    "section3": {
+      "title": "Working Hours",
+      "monday-friday": "Monday-Friday",
+      "saturday": "Saturday",
+      "sunday": "Sunday"
     }
   }
 }

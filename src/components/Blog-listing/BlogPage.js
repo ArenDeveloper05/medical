@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { getPagination, pagination } from "../../utils";
 import Popup from "../Popup";
 
@@ -35,9 +35,10 @@ const BlogPage = () => {
                 <div className="blog-post-txt">
                   {/* Post Title */}
                   <h5 className="h5-xl steelblue-color">
-                    <Link href="/single-post">
+                    <Link href={`/blog-listing/${1}`}>
                       <a>5 Benefits Of Integrative Medicine</a>
                     </Link>
+                    {/* Testing single page routing */}
                   </h5>
                   {/* Post Data */}
                   <span>
