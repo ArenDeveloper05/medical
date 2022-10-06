@@ -4,6 +4,7 @@ import Link from "next/link";
 import uuid from "react-uuid";
 import MobileMenu from "../MobileMenu";
 import { images } from "../../enums";
+import { CONFIG } from "../../config"
 
 const Header1 = ({ toggleMenu, toggle }) => {
   const { t } = useTranslation('common');
@@ -22,18 +23,13 @@ const Header1 = ({ toggleMenu, toggle }) => {
           </a>
         </Link>
         <span className="smllogo">
-          <img
-            src="images/logo.png"
+          <Image
+            src="/images/logo.png"
             width={180}
             height={40}
             alt="mobile-logo"
           />
         </span>
-        <Link href="#">
-          <a href="tel:123456789" className="callusbtn">
-            <i className="fas fa-phone" />
-          </a>
-        </Link>
       </div>
       {/* HEADER STRIP */}
       <div className="headtoppart bg-blue clearfix">
@@ -94,64 +90,16 @@ const Header1 = ({ toggleMenu, toggle }) => {
           <nav className="wsmenu clearfix">
             <ul className="wsmenu-list d-flex justify-content-center align-items-center">
               {/* HOME*/}
-              <li>
-                <Link href="/">
-                  <a>
-                    {t("header-home")}
-                  </a>
-                </Link>
-              </li>
-              {/* END HOME */}
-              {/* ABOUT US */}
-              <li className="nl-about-us">
-                <Link href="/about-us">
-                  <a>
-                    {t("header-aboutus")}
-                  </a>
-                </Link>
-              </li>
-              <li className="nl-departments">
-                <Link href="/all-departments">
-                  <a>
-                    {t("header-departments")}
-                  </a>
-                </Link>
-              </li>
-              {/* END DEPARTMENTS */}
-              {/* NEWS */}
-              <li className="nl-news">
-                <Link href="/blog-listing">
-                  <a>
-                    {t("header-news")}
-                  </a>
-                </Link>
-              </li>
-              {/* END NEWS */}
-              {/* DOCTORS */}
-              <li className="nl-doctors">
-                <Link href="/all-doctors">
-                  <a>
-                    {t("header-doctors")}
-                  </a>
-                </Link>
-              </li>
-              {/* END DOCTORS */}
-              {/* GALLERY */}
-              <li className="nl-gallery" >
-                <Link href="/gallery">
-                  <a>
-                    {t("header-gallery")}
-                  </a>
-                </Link>
-              </li>
-              {/* END GALLERY */}
-              <li className="nl-contact" >
-                <Link href="/contact-us">
-                  <a>
-                    {t("header-contactus")}
-                  </a>
-                </Link>
-              </li>
+              {CONFIG.headerConfig.map((item) => {
+                return (
+                  <li key={uuid()}>
+                    <Link href={`/${item.link}`}>
+                      <a>{t(item.name)}</a>
+                    </Link>
+                  </li>
+                )
+
+              })}
               <li>
                 <a href="#">
                   Pages <span className="wsarrow" />
