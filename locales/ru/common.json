@@ -36,6 +36,10 @@
       "description":"Lorem ipsum dolor"
     }
   },
+  "news":{
+    "page-banner-title": "Последние Новости",
+    "popularposts":"Важные Посты"
+  },
   "contactus":{
     "phone":"Тел:",
     "email":"Эл-почта:",
@@ -52,6 +56,11 @@
       "saturday":"Суббота",
       "sunday":"Воскресенье"
     }
+  },
+  "doctorsearchfields":{
+    "doctorName":"Имя Доктора",
+    "doctorSurname":"Фамилия Доктора",
+    "searchButton":"Искать"
   },
   "home-welcome": {
     "title": "Добро пожаловать в Мед․ Центер",

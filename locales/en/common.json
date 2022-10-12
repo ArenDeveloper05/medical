@@ -77,6 +77,10 @@
       "description": "Lorem ipsum dolor"
     }
   },
+  "news":{
+    "page-banner-title": "Latest News",
+    "popularposts":"Popular Posts"
+  },
   "contactus": {
     "phone": "Phone:",
     "email": "Email:",
@@ -93,5 +97,10 @@
       "saturday": "Saturday",
       "sunday": "Sunday"
     }
+  },
+  "doctorsearchfields":{
+    "doctorName":"Doctor Name",
+    "doctorSurname":"Doctor SurName",
+    "searchButton":"Search"
   }
 }

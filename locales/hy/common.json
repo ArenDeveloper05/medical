@@ -36,6 +36,10 @@
       "description":"Lorem ipsum dolor"
     }
   },
+  "news":{
+    "page-banner-title": "Վերջին Նորությունները",
+    "popularposts":"Կարևոր Հրապարակումներ"
+  },
   "contactus":{
     "phone":"Հեռ:",
     "email":"Էլ-հասցե:",
@@ -52,6 +56,11 @@
       "saturday":"Շաբաթ",
       "sunday":"Կիրակի"
     }
+  },
+  "doctorsearchfields":{
+    "doctorName":"Բժշկի Անուն",
+    "doctorSurname":"Բժշկի Ազգանուն",
+    "searchButton":"Փնտրել"
   },
   "home-welcome": {
     "title": "Բարի գալուստ մեր բժշկական կենտրոն",
