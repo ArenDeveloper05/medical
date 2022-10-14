@@ -6489,9 +6489,82 @@ nav a#pull {
   height: 20px;
   border-radius: 50%;
 }
-.department-box{
+
+.department-box {
   max-width: 370px;
 }
-.contact-info{
+
+.contact-info {
   justify-content: space-around;
+}
+
+.services-nesteds {
+  color: #666;
+  max-width: max-content;
+  position: absolute;
+  z-index: 111;
+  border-radius: 0px 0px 16px 16px;
+  background-color: #ffffff;
+}
+
+.services-nesteds>li {
+  font-size: 16px;
+  text-align: start;
+  cursor: pointer;
+}
+
+.services-nesteds>li>p {
+  margin-left: 16px;
+}
+
+.nav-department a {
+  background-color: rgb(235, 235, 235) !important;
+  color: grey;
+}
+
+#selected {
+  background-color: #f8f8f8;
+  transition: 0.3s;
+  animation-name: selected;
+  animation-duration: 0.5s;
+  border-right: 2px solid #00a3c8;
+}
+
+#selected>a {
+  color: rgb(73, 71, 71) !important;
+  font-weight: 600;
+}
+
+.nested {
+  cursor: pointer;
+  color: #666666;
+  margin-left: 32px;
+  margin-top: 8px;
+  text-align: start;
+}
+
+.nested-list {
+  text-align: start;
+  margin-left: 48px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+#responsive-nav {
+  max-height: 700px;
+  overflow: auto;
+}
+
+.fs-16 {
+  font-size: 16px !important;
+}
+
+@keyframes selected {
+  0% {
+    background-color: white;
+  }
+
+  100% {
+    background-color: #f8f8f8;
+  }
 }

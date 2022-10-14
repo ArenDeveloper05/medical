@@ -1,5 +1,3 @@
-import useTranslation from 'next-translate/useTranslation';
-import { useRouter } from "next/dist/client/router";
 import About5 from "../src/components/Common/About-5";
 import Demo2Blog1 from "../src/components/Demo-2/Demo2Blog1";
 import Demo2Doctors1 from "../src/components/Demo-2/Demo2Doctors1";

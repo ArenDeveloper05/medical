@@ -1,7 +1,64 @@
 {
   "header-home": "Home",
   "header-aboutus": "About Us",
-  "header-departments": "Departments",
+  "header-services": {
+    "title": "Services",
+    "ambulatory": {
+      "title": "Outpatient polyclinic",
+      "therapeutic": "Therapeutic",
+      "surgical": "Surgical",
+      "diagnostic": "Diagnostic",
+      "pediatric-consultation": "Pediatric consultation",
+      "womens-consultation": "Women's consultation"
+    },
+    "stationary": {
+      "title": "Stationary",
+      "reception": "Reception and emergency medical care",
+      "resuscitation": "Resuscitation and intensive care",
+      "therapeutic": {
+        "title": "Therapeutic",
+        "internal-diseases": "Internal diseases",
+        "rheumatology": "Rheumatology",
+        "endocrinology": "Endocrinology"
+      },
+      "surgical": {
+        "title": "Surgical",
+        "surgical-department": "Surgical department",
+        "traumatology-department": "Department of Traumatology",
+        "urology-andrology-department": "Department of Urology and Andrology",
+        "otorhinolaryngology-service": "Otorhinolaryngology service"
+      },
+      "anesthesiology": "Anesthesiology",
+      "childrens": {
+        "title": "Children's",
+        "pediatric-department": "Pediatric department",
+        "neonatal-service": "Neonatal service"
+      },
+      "infectious": {
+        "title": "Infectious",
+        "adult-service": "Adult service",
+        "childrens-service": "Neonatal service"
+      },
+      "diagnostic": {
+        "title": "Diagnostic",
+        "clinical": "Clinical",
+        "biochemical": "Biochemical",
+        "serological": "Serological",
+        "computational-stratigraphy": "Computational stratigraphy",
+        "ultrasound": "Ultrasound Examination",
+        "roentgen": "Roentgen"
+      },
+      "obstetric-gynecological": {
+        "title": "Obstetric-gynecological",
+        "birthplace": "Birthplace"
+      }
+    },
+    "ambulance": "Ambulance",
+    "pharmacy": "Pharmacy",
+    "bloodbank": "Bloodbank",
+    "pathological-anatomical": "Pathological-anatomical",
+    "disinfection-station": "Disinfection station"
+  },
   "header-news": "News",
   "header-doctors": "Doctors",
   "header-gallery": "Gallery",

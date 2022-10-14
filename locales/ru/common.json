@@ -1,7 +1,64 @@
 {
   "header-home": "Главная",
   "header-aboutus": "О Нас",
-  "header-departments":"Отделения",
+  "header-services": {
+    "title": "Услуги",
+    "ambulatory": {
+      "title": "Амбулаторная поликлиника",
+      "therapeutic": "Терапевтический",
+      "surgical": "Хирургический",
+      "diagnostic": "Диагностика",
+      "pediatric-consultation": "Педиатрическая консультация",
+      "womens-consultation": "Женская консультация"
+    },
+    "stationary": {
+      "title": "Стационарный",
+      "reception": "Прием и неотложная медицинская помощь",
+      "resuscitation": "Реанимация и интенсивная терапия",
+      "therapeutic": {
+        "title": "Терапевтический",
+        "internal-diseases": "Внутренние болезни",
+        "rheumatology": "Ревматология",
+        "endocrinology": "Эндокринология"
+      },
+      "surgical": {
+        "title": "Хирургический",
+        "surgical-department": "Хирургическое отделение",
+        "traumatology-department": "Травматологическое отделение",
+        "urology-andrology-department": "Отделение урологии и андрологии",
+        "otorhinolaryngology-service": "Оториноларингологическая служба"
+      },
+      "anesthesiology": "Анестезиология",
+      "childrens": {
+        "title": "Детская",
+        "pediatric-department": "Մանկաբուժական բաժանմունք",
+        "neonatal-service": "Педиатрическое отделение"
+      },
+      "infectious": {
+        "title": "Инфекционный",
+        "adult-service": "Услуги для взрослых",
+        "childrens-service": "Неонатальная служба"
+      },
+      "diagnostic": {
+        "title": "Диагностика",
+        "clinical": "Клинический",
+        "biochemical": "Биохимический",
+        "serological": "Серологический",
+        "computational-stratigraphy": "Расчетно-стратиграфический",
+        "ultrasound": "УЗИ",
+        "roentgen": "Рентген"
+      },
+      "obstetric-gynecological": {
+        "title": "Акушерско-гинекологический",
+        "birthplace": "Роддом"
+      }
+    },
+    "ambulance": "Скорая помощь",
+    "pharmacy": "Аптека",
+    "bloodbank": "Банк крови",
+    "pathological-anatomical": "Патолого-анатомический",
+    "disinfection-station": "Станция дезинфекции"
+  },
   "header-news": "Новости",
   "header-doctors": "Доктора",
   "header-gallery": "Галерея",
@@ -29,28 +86,28 @@
     },
     "description": "Lorem ipsum dolor"
   },
-  "departments":{
-    "page-banner-title":"Наши Отделения",
-    "experienced-doctors":{
-      "title":"Наши Сертифицированные и Опытные Врачи",
-      "description":"Lorem ipsum dolor"
+  "departments": {
+    "page-banner-title": "Наши Отделения",
+    "experienced-doctors": {
+      "title": "Наши Сертифицированные и Опытные Врачи",
+      "description": "Lorem ipsum dolor"
     }
   },
-  "contactus":{
-    "phone":"Тел:",
-    "email":"Эл-почта:",
-    "section1":{
-      "title":"Основная Информация"
+  "contactus": {
+    "phone": "Тел:",
+    "email": "Эл-почта:",
+    "section1": {
+      "title": "Основная Информация"
     },
-    "section2":{
-      "title":"Опыт Пациента",
-      "cordinator":"Имя - Координатор Пациентов"
+    "section2": {
+      "title": "Опыт Пациента",
+      "cordinator": "Имя - Координатор Пациентов"
     },
-    "section3":{
-      "title":"Рабочее Время",
-      "monday-friday":"Понедельник - Пятница",
-      "saturday":"Суббота",
-      "sunday":"Воскресенье"
+    "section3": {
+      "title": "Рабочее Время",
+      "monday-friday": "Понедельник - Пятница",
+      "saturday": "Суббота",
+      "sunday": "Воскресенье"
     }
   },
   "home-welcome": {

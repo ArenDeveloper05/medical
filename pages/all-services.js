@@ -9,7 +9,6 @@ const AllServices = () => {
     <Layouts>
       <PageBanner pageTitle="Our Services" />
       <AllServicesTabs2 />
-      <AllServicesTestimonials2 />
       <Banner5 />
     </Layouts>
   );
