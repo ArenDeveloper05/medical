@@ -10,9 +10,7 @@ const AllDoctorsDoctors3 = () => {
     const { t } = useTranslation('common');
 
     const getSearchedDoctor = useCallback (()=>{
-        console.log(doctorName);
-        console.log(doctorSurname);
-    },[doctorName,doctorSurname])
+    },[])
 
     return (
         <section

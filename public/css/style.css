@@ -6533,3 +6533,12 @@ nav a#pull {
   display: flex;
   justify-content: space-between;
 }
+.home-news{
+  margin-top: 100px;
+}
+.more-news-button{
+  margin-top: 50px;
+}
+.news-cards{
+ width: auto;
+}

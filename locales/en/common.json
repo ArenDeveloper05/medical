@@ -70,6 +70,10 @@
     "title1": "MedServices",
     "title2": "All rights reserved"
   },
+  "aboutUs":{
+    "title":"Our Staff",
+    "button":"Meet All Employers"
+  },
   "departments": {
     "page-banner-title": "Our Departments",
     "experienced-doctors": {

@@ -1,4 +1,5 @@
 import React from "react";
+import OurStaff from "./OurStaff"
 
 const AboutUsInfo4 = () => {
     return (
@@ -75,6 +76,9 @@ const AboutUsInfo4 = () => {
                     </div>
                     {/* End row */}
                 </div>
+                {/* ADMINISTRATION*/}
+                <OurStaff/>
+                {/*END ADMINISTRATION*/}
                 {/* END TOP ROW */}
                 {/* BOTTOM ROW */}
                 <div className="bottom-row">
