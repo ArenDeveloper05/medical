@@ -3,7 +3,7 @@ import React from "react";
 
 const Demo2Blog1 = () => {
     return (
-        <section id="blog-1" className="wide-60 blog-section division">
+        <section id="blog-1" className="wide-60 blog-section division home-news">
             <div className="container">
                 {/* SECTION TITLE */}
                 <div className="row">
@@ -25,7 +25,7 @@ const Demo2Blog1 = () => {
                     {/* BLOG POST #1 */}
                     <div className="col-lg-4">
                         <div
-                            className="blog-post wow fadeInUp"
+                            className="blog-post wow fadeInUp news-cards"
                             data-wow-delay="0.4s"
                         >
                             {/* BLOG POST IMAGE */}
@@ -64,7 +64,7 @@ const Demo2Blog1 = () => {
                     {/* BLOG POST #2 */}
                     <div className="col-lg-4">
                         <div
-                            className="blog-post wow fadeInUp"
+                            className="blog-post wow fadeInUp news-cards"
                             data-wow-delay="0.6s"
                         >
                             {/* BLOG POST IMAGE */}
@@ -101,7 +101,7 @@ const Demo2Blog1 = () => {
                     {/* BLOG POST #3 */}
                     <div className="col-lg-4">
                         <div
-                            className="blog-post wow fadeInUp"
+                            className="blog-post wow fadeInUp news-cards"
                             data-wow-delay="0.8s"
                         >
                             {/* BLOG POST IMAGE */}
@@ -145,7 +145,7 @@ const Demo2Blog1 = () => {
                             data-wow-delay="1s"
                         >
                             <Link href="/blog-listing">
-                                <a className="btn btn-blue blue-hover">
+                                <a className="btn btn-blue blue-hover more-news-button">
                                     Read More Posts
                                 </a>
                             </Link>

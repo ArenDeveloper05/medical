@@ -1,9 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useCallback, useState } from "react";
+import useTranslation from "next-translate/useTranslation";
 
 const AllDoctorsDoctors3 = () => {
     const [doctorsTest, setDoctorsTest] = useState([{ name: "Doktor 1", src: "images/doctor-1.jpg" }, { name: "Doktor 2", src: "images/doctor-2.jpg" }, { name: "Doktor 3", src: "images/doctor-3.jpg" }]);
+    const [doctorName,setDoctorName] = useState("");
+    const [doctorSurname,setDoctorSurname] = useState("");
+    const { t } = useTranslation('common');
+
+    const getSearchedDoctor = useCallback (()=>{
+    },[])
 
     return (
         <section
@@ -11,6 +18,38 @@ const AllDoctorsDoctors3 = () => {
             className="bg-lightgrey wide-60 doctors-section division"
         >
             <div className="container">
+            <div className="doctor-search-container">
+            <div className="doctors-search">
+            <input 
+             type = "text"
+             placeholder={t("doctorsearchfields.doctorName")}
+             id='doctorName'
+             value={doctorName}
+             onChange={(e) => setDoctorName(e.target.value)}
+             className = "doctor-search-input"
+             >   
+             </input>
+
+             <input 
+             type = "text"
+             placeholder={t("doctorsearchfields.doctorSurname")}
+             id='doctorSurname'
+             value={doctorSurname}
+             onChange={(e) => setDoctorSurname(e.target.value)}
+             className = "doctor-search-input"
+             >   
+             </input>
+             <button
+             type = "button"
+             onClick={getSearchedDoctor}
+             className = "doctor-search-button"
+             >
+                {t("doctorsearchfields.searchButton")}
+             </button>
+             </div>
+        </div>
+
+
                 <div className="row">
                     {
                         doctorsTest.map((doctor, idx) => {

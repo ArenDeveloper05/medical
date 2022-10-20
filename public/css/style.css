@@ -6495,3 +6495,50 @@ nav a#pull {
 .contact-info{
   justify-content: space-around;
 }
+
+.wide-60 {
+  padding-top: 20px;
+}
+.doctor-search-container{
+  max-width: 100%;
+  background-color: #f8f9fb;
+  display: flex;
+  justify-content: end;
+  margin-bottom: 100px;
+}
+.doctors-search{
+  width: 60%;
+  padding: 24px 0px ;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.doctor-search-input{
+  width:40%;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0 0 5px rgb(10 10 10 / 20%);
+  padding-left: 10px;
+}
+.doctor-search-button{
+  border-radius: 6px;
+  border: none;
+  box-shadow: 0 0 5px rgb(10 10 10 / 20%);
+  background-color: #00a3c8;
+  color: #fff;
+  cursor: pointer;
+}
+.pr-31{
+  display: flex;
+  justify-content: space-between;
+}
+.home-news{
+  margin-top: 100px;
+}
+.more-news-button{
+  margin-top: 50px;
+}
+.news-cards{
+ width: auto;
+}
