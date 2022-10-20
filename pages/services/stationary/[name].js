@@ -1,6 +1,6 @@
 import useTranslation from 'next-translate/useTranslation';
 import { useRouter } from 'next/router'
-import { useCallback, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { Nav, Tab } from 'react-bootstrap';
 import uuid from 'react-uuid';
 import { CONFIG } from '../../../src/config';
@@ -12,6 +12,13 @@ const StationaryDynamic = () => {
     const { t } = useTranslation("common");
     const [selected, setSelected] = useState(0);
 
+    const baseSelectedUrl = CONFIG.servicesConfig[pageUrl].nesteds;
+
+    useEffect(() => {
+        console.log("render");
+        setSelected(0)
+    }, [pageUrl]);
+
     const handleSelectDepartment = useCallback((idx) => {
         if (CONFIG.servicesConfig[pageUrl].nesteds.length != 1 && idx != selected) {
             setSelected(idx);
@@ -19,9 +26,9 @@ const StationaryDynamic = () => {
     }, [selected, pageUrl])
 
 
-    if (CONFIG.servicesConfig[pageUrl].nesteds[selected] == undefined) {
-        setSelected(0);
-    }
+    // if (CONFIG.servicesConfig[pageUrl].nesteds[selected] == undefined) {
+    //     setSelected(0);
+    // }
 
     return (
         <Layouts>
@@ -32,8 +39,8 @@ const StationaryDynamic = () => {
                             <div className="col-lg-4">
                                 <div className="list-group text-center clearfix">
                                     <Nav className="nav nav-pills" id="pills-tab" as="ul">
-                                        {CONFIG.servicesConfig[pageUrl].nesteds &&
-                                            CONFIG.servicesConfig[pageUrl].nesteds.map((item, idx) => {
+                                        {baseSelectedUrl &&
+                                            baseSelectedUrl.map((item, idx) => {
                                                 return (
                                                     <Nav.Item className={"nav-item "} id={selected === idx ? "selected" : ""} key={uuid()} onClick={() => handleSelectDepartment(idx)}>
                                                         <Nav.Link >
@@ -55,7 +62,7 @@ const StationaryDynamic = () => {
                                         aria-labelledby="tab11-list"
                                     >
                                         {
-                                            CONFIG.servicesConfig[pageUrl].nesteds[selected] == undefined ? CONFIG.servicesConfig[pageUrl].nesteds[0].component : CONFIG.servicesConfig[pageUrl].nesteds[selected].component
+                                            baseSelectedUrl[selected] == undefined ? baseSelectedUrl[0].component : baseSelectedUrl[selected].component
                                         }
                                     </Tab.Pane>
                                 </Tab.Content>

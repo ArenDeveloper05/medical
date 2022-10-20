@@ -43,6 +43,10 @@ import Childrens from "../pages/services/stationary/infectious/childrens/Childre
 import Internal from "../pages/services/stationary/therapeutic/internal/Internal";
 import Endocrinology from "../pages/services/stationary/therapeutic/endocrinology/Endocrinology";
 import Rheumatology from "../pages/services/stationary/therapeutic/rheumatology/Rheumatology";
+//Admin Panel
+
+import NewsAdmin from "./components/adminPanel/NewsAdmin";
+import DoctorsAdmin from "./components/adminPanel/DoctorsAdmin";
 
 
 export const CONFIG = {
@@ -350,5 +354,19 @@ export const CONFIG = {
             ]
         }
 
-    }
+    },
+    adminPanelConfig: [
+        {
+            name: "Նորություններ",
+            component: <NewsAdmin />
+        },
+        {
+            name: "Բժիշկներ",
+            component: <DoctorsAdmin />
+        },
+        {
+            name: "Տեսադարան"
+        },
+
+    ]
 }
