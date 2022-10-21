@@ -39,7 +39,6 @@ const AllDoctors1 = () => {
                                     <Link href="/doctor-1">
                                         <a
                                             className="btn btn-sm btn-tra-white black-hover"
-                                            title
                                         >
                                             View More Info
                                         </a>

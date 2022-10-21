@@ -4,7 +4,8 @@ import Link from "next/link";
 import uuid from "react-uuid";
 import MobileMenu from "../MobileMenu";
 import { images } from "../../enums";
-import { CONFIG } from "../../config"
+import { CONFIG } from "../../config";
+import { socialLinks } from "../../enums";
 
 const Header1 = ({ toggleMenu, toggle }) => {
   const { t } = useTranslation('common');
@@ -13,15 +14,13 @@ const Header1 = ({ toggleMenu, toggle }) => {
     <header id="header" className="header">
       {/* MOBILE HEADER */}
       <div className="wsmobileheader clearfix">
-        <Link href="#">
-          <a
-            id="wsnavtoggle"
-            onClick={() => toggleMenu()}
-            className="wsanimated-arrow"
-          >
-            <span />
-          </a>
-        </Link>
+        <a
+          id="wsnavtoggle"
+          onClick={() => toggleMenu()}
+          className="wsanimated-arrow"
+        >
+          <span />
+        </a>
         <span className="smllogo">
           <Image
             src="/images/logo.png"
@@ -39,34 +38,26 @@ const Header1 = ({ toggleMenu, toggle }) => {
             <div className="address clearfix">
               <span>
                 <i className="fas fa-map-marker-alt" />
-                121 King St, Melbourne, VIC 3000
+                {t("footer-location.address.street")}
               </span>
-              <Link href="#">
-                <a href="tel:123456789" className="callusbtn">
+              <Link href="contact-us">
+                <a className="callusbtn">
                   <i className="fas fa-phone" />
-                  (800)-569-7890
+                  {t("footer-location.phone")}
                 </a>
               </Link>
             </div>
           </div>
           {/* Social Links */}
           <div className="headertopright">
-            <a className="googleicon" title="Google" href="#">
-              <i className="fab fa-google" />
-              <span className="mobiletext02">Google</span>
-            </a>
-            <a className="linkedinicon" title="Linkedin" href="#">
-              <i className="fab fa-linkedin-in" />
-              <span className="mobiletext02">Linkedin</span>
-            </a>
-            <a className="twittericon" title="Twitter" href="#">
-              <i className="fab fa-twitter" />
-              <span className="mobiletext02">Twitter</span>
-            </a>
-            <a className="facebookicon" title="Facebook" href="#">
-              <i className="fab fa-facebook-f" />
-              <span className="mobiletext02">Facebook</span>
-            </a>
+            {socialLinks.map(({ icon, title, className, href }) => {
+              return (
+                <a className={className} title="Facebook" href={href} key={uuid()}>
+                  <i className={icon} />
+                  <span className="mobiletext02">{title}</span>
+                </a>
+              )
+            })}
           </div>
         </div>
       </div>
@@ -77,20 +68,64 @@ const Header1 = ({ toggleMenu, toggle }) => {
           {/* LOGO IMAGE */}
           {/* For Retina Ready displays take a image with double the amount of pixels that your image will be displayed (e.g 360 x 80 pixels) */}
           <div className="desktoplogo">
-            <a href="#">
-              <img
-                src="images/logo.png"
-                width={180}
-                height={40}
-                alt="header-logo"
-              />
-            </a>
+            <Link href={"/"}>
+              <a>
+                <Image
+                  src="/images/logo.png"
+                  width={180}
+                  height={40}
+                  alt="header-logo"
+                />
+              </a>
+            </Link>
           </div>
           {/* MAIN MENU */}
           <nav className="wsmenu clearfix">
             <ul className="wsmenu-list d-flex justify-content-center align-items-center">
               {/* HOME*/}
               {CONFIG.headerConfig.map((item) => {
+                if (item.nesteds) {
+                  return (
+                    <li key={uuid()} style={{ position: "relative" }}>
+                      <a style={{ cursor: "pointer" }}>{t(item.name)}</a>
+                      <ul className="services-nesteds sub-menu">
+                        {
+                          item.nesteds.map((nested1) => {
+                            if (nested1.nesteds) {
+                              return (
+                                <li key={uuid()} style={{ position: "relative" }}>
+                                  <p>{t(nested1.title)}</p>
+                                  <ul className="services-nesteds sub-menu">
+                                    {nested1.nesteds.map((nested2) => {
+                                      return (
+                                        <li key={uuid()}>
+                                          <Link href={`/${nested2.link}`}>
+                                            <a>
+                                              <p>{t(nested2.title)}</p>
+                                            </a>
+                                          </Link>
+                                        </li>
+                                      )
+                                    })}
+                                  </ul>
+                                </li>
+                              )
+                            }
+                            return (
+                              <li key={uuid()} style={{ position: "relative" }}>
+                                <Link href={`/${nested1.link}`}>
+                                  <a>
+                                    <p>{t(nested1.title)}</p>
+                                  </a>
+                                </Link>
+                              </li>
+                            )
+                          })
+                        }
+                      </ul>
+                    </li>
+                  )
+                }
                 return (
                   <li key={uuid()}>
                     <Link href={`/${item.link}`}>
@@ -98,7 +133,6 @@ const Header1 = ({ toggleMenu, toggle }) => {
                     </Link>
                   </li>
                 )
-
               })}
               <li>
                 <a href="#">
@@ -241,7 +275,7 @@ const Header1 = ({ toggleMenu, toggle }) => {
                 {
                   images.map(image => {
                     return (
-                      <div key={uuid()} className={"language"}>
+                      <div key={uuid()} className={"language"} >
                         <Link locale={image.locale} href={`/${image.locale}`} passHref>
                           <a>
                             <Image
@@ -263,7 +297,7 @@ const Header1 = ({ toggleMenu, toggle }) => {
           </nav>
           {/* END MAIN MENU */}
         </div>
-      </div>
+      </div >
       <MobileMenu />
       {/* END NAVIGATION MENU */}
     </header >

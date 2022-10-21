@@ -3,63 +3,62 @@ import Link from "next/link";
 import { useCallback, useState } from "react";
 import useTranslation from "next-translate/useTranslation";
 
-const AllDoctorsDoctors3 = () => {
-    const [doctorsTest, setDoctorsTest] = useState([{ name: "Doktor 1", src: "images/doctor-1.jpg" }, { name: "Doktor 2", src: "images/doctor-2.jpg" }, { name: "Doktor 3", src: "images/doctor-3.jpg" }]);
-    const [doctorName,setDoctorName] = useState("");
-    const [doctorSurname,setDoctorSurname] = useState("");
+const AllDoctorsDoctors3 = ({ doctorsData }) => {
+    const [doctorName, setDoctorName] = useState("");
+    const [doctorSurname, setDoctorSurname] = useState("");
     const { t } = useTranslation('common');
 
-    const getSearchedDoctor = useCallback (()=>{
-    },[])
-
+    const getSearchedDoctor = useCallback(() => {
+    }, [])
+    console.log(doctorsData, "uraa");
     return (
         <section
             id="doctors-3"
             className="bg-lightgrey wide-60 doctors-section division"
         >
             <div className="container">
-            <div className="doctor-search-container">
-            <div className="doctors-search">
-            <input 
-             type = "text"
-             placeholder={t("doctorsearchfields.doctorName")}
-             id='doctorName'
-             value={doctorName}
-             onChange={(e) => setDoctorName(e.target.value)}
-             className = "doctor-search-input"
-             >   
-             </input>
+                <div className="doctor-search-container">
+                    <div className="doctors-search">
+                        <input
+                            type="text"
+                            placeholder={t("doctorsearchfields.doctorName")}
+                            id='doctorName'
+                            value={doctorName}
+                            onChange={(e) => setDoctorName(e.target.value)}
+                            className="doctor-search-input"
+                        >
+                        </input>
 
-             <input 
-             type = "text"
-             placeholder={t("doctorsearchfields.doctorSurname")}
-             id='doctorSurname'
-             value={doctorSurname}
-             onChange={(e) => setDoctorSurname(e.target.value)}
-             className = "doctor-search-input"
-             >   
-             </input>
-             <button
-             type = "button"
-             onClick={getSearchedDoctor}
-             className = "doctor-search-button"
-             >
-                {t("doctorsearchfields.searchButton")}
-             </button>
-             </div>
-        </div>
+                        <input
+                            type="text"
+                            placeholder={t("doctorsearchfields.doctorSurname")}
+                            id='doctorSurname'
+                            value={doctorSurname}
+                            onChange={(e) => setDoctorSurname(e.target.value)}
+                            className="doctor-search-input"
+                        >
+                        </input>
+                        <button
+                            type="button"
+                            onClick={getSearchedDoctor}
+                            className="doctor-search-button"
+                        >
+                            {t("doctorsearchfields.searchButton")}
+                        </button>
+                    </div>
+                </div>
 
 
                 <div className="row">
-                    {
-                        doctorsTest.map((doctor, idx) => {
+                    {doctorsData &&
+                        doctorsData.map(({ dataValues }, idx) => {
                             return (
-                                <div className="col-md-6 col-lg-4" key={idx}>
+                                <div className="col-md-6 col-lg-4" key={dataValues.id}>
                                     <div className="doctor-2">
                                         <div className="hover-overlay">
                                             <img
                                                 className="img-fluid"
-                                                src={doctor.src}
+                                                src={"images/doctor-1.jpg"}
                                                 alt="doctor-foto"
                                             />
                                             {/* this part of code is for testing and for future changes */}
@@ -74,10 +73,10 @@ const AllDoctorsDoctors3 = () => {
                                         </div>
                                         <div className="doctor-meta">
                                             <h5 className="h5-xs blue-color">
-                                                {doctor.name}
+                                                {dataValues.firstName}{dataValues.lastName}
                                             </h5>
-                                            <span>Anesthesiologist</span>
-                                            <Link href={`/all-doctors/${idx}?name=${doctor.name}`}>
+                                            <span>{dataValues.position}</span>
+                                            <Link href={`/all-doctors/${idx}?name=${dataValues.firstName}`}>
                                                 <a
                                                     className="btn btn-sm btn-blue blue-hover mt-15"
                                                     title

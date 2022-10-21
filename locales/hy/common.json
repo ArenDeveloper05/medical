@@ -1,7 +1,64 @@
 {
   "header-home": "Գլխավոր",
   "header-aboutus": "Մեր Մասին",
-  "header-departments":"Բաժիններ",
+  "header-services": {
+    "title": "Ծառայություններ",
+    "ambulatory": {
+      "title": "Ամբուլատոր-պոլիկլինիկական",
+      "therapeutic": "Թերապևտիկ",
+      "surgical": "Վիրաբուժական",
+      "diagnostic": "Ախտորոշիչ",
+      "pediatric-consultation": "Մանկական կոնսոււլտացիա",
+      "womens-consultation": "Կանանց կոնսուլտացիա"
+    },
+    "stationary": {
+      "title": "Ստացիոնար",
+      "reception": "Ընդունարան և անհետաձգելի բուժօգնություն",
+      "resuscitation": "Վերակենդանացում և ինտենսիվ թերապիա",
+      "therapeutic": {
+        "title": "Թերապևտիկ",
+        "internal-diseases": "Ներքին հիվանդություններ",
+        "rheumatology": "Ռևմատոլոգիա",
+        "endocrinology": "Էնդոկրինոլոգիա"
+      },
+      "surgical": {
+        "title": "Վիրաբուժական",
+        "surgical-department": "Վիրաբուժական բաժանմունք",
+        "traumatology-department": "Վնասվածքաբանական  բաժանմունք",
+        "urology-andrology-department": "Ոուրոլոգիայի և անդրոլոգիայի բաժանմունք",
+        "otorhinolaryngology-service": "Քիթ-կոկորդ-ականջաբանական ծառայություն"
+      },
+      "anesthesiology": "Անէսթեզիոլոգիա",
+      "childrens": {
+        "title": "Մանկական",
+        "pediatric-department": "Մանկաբուժական բաժանմունք",
+        "neonatal-service": "Նորածնային ծառայություն"
+      },
+      "infectious": {
+        "title": "Ինֆեկցիոն",
+        "adult-service": "Մեծահասակների ծառայություն",
+        "childrens-service": "Նորածնային ծառայություն"
+      },
+      "diagnostic": {
+        "title": "Ախտորոշիչ",
+        "clinical": "Կլինիկական",
+        "biochemical": "Բիոքիմիական",
+        "serological": "Շճաբանական",
+        "computational-stratigraphy": "ՀՇ",
+        "ultrasound": "ՈւՁՀ",
+        "roentgen": "Ռենտգեն"
+      },
+      "obstetric-gynecological": {
+        "title": "Մանկաբարձա-գինեկոլոգիական",
+        "birthplace": "Ծննդատուն"
+      }
+    },
+    "ambulance": "Շտապօգնություն",
+    "pharmacy": "Դեղատուն",
+    "bloodbank": "Արյան բանկ",
+    "pathological-anatomical": "Ախտաբանա-անատոմիական",
+    "disinfection-station": "Ախտահանման կայան"
+  },
   "header-news": "Նորություններ",
   "header-doctors": "Բժիշկներ",
   "header-gallery": "Տեսադարան",
@@ -29,42 +86,42 @@
     },
     "description": "Lorem ipsum dolor"
   },
-  "departments":{
-    "page-banner-title":"Մեր Բաժինները",
-    "experienced-doctors":{
-      "title":"Մեր Վկայագրված և Փորձառու Բժիշկները",
-      "description":"Lorem ipsum dolor"
+  "departments": {
+    "page-banner-title": "Մեր Բաժինները",
+    "experienced-doctors": {
+      "title": "Մեր Վկայագրված և Փորձառու Բժիշկները",
+      "description": "Lorem ipsum dolor"
     }
   },
-  "aboutUs":{
-    "title":"Մեր Աշխատակազմը",
-    "button":"ՏԵՍՆԵԼ ԲՈԼՈՐ ԱՇԽԱՏԱԿԻՑՆԵՐԻՆ"
+  "aboutUs": {
+    "title": "Մեր Աշխատակազմը",
+    "button": "ՏԵՍՆԵԼ ԲՈԼՈՐ ԱՇԽԱՏԱԿԻՑՆԵՐԻՆ"
   },
-  "news":{
+  "news": {
     "page-banner-title": "Վերջին Նորությունները",
-    "popularposts":"Կարևոր Հրապարակումներ"
+    "popularposts": "Կարևոր Հրապարակումներ"
   },
-  "contactus":{
-    "phone":"Հեռ:",
-    "email":"Էլ-հասցե:",
-    "section1":{
-      "title":"Հիմնական Տեղեկություններ"
+  "contactus": {
+    "phone": "Հեռ:",
+    "email": "Էլ-հասցե:",
+    "section1": {
+      "title": "Հիմնական Տեղեկություններ"
     },
-    "section2":{
-      "title":"Այցելուների փորձը",
-      "cordinator":"Անուն - Այցելուների Համակարգող"
+    "section2": {
+      "title": "Այցելուների փորձը",
+      "cordinator": "Անուն - Այցելուների Համակարգող"
     },
-    "section3":{
-      "title":"Աշխատանքային Ժամերը",
-      "monday-friday":"Երկուշաբթի-Ուրբաթ",
-      "saturday":"Շաբաթ",
-      "sunday":"Կիրակի"
+    "section3": {
+      "title": "Աշխատանքային Ժամերը",
+      "monday-friday": "Երկուշաբթի-Ուրբաթ",
+      "saturday": "Շաբաթ",
+      "sunday": "Կիրակի"
     }
   },
-  "doctorsearchfields":{
-    "doctorName":"Բժշկի Անուն",
-    "doctorSurname":"Բժշկի Ազգանուն",
-    "searchButton":"Փնտրել"
+  "doctorsearchfields": {
+    "doctorName": "Բժշկի Անուն",
+    "doctorSurname": "Բժշկի Ազգանուն",
+    "searchButton": "Փնտրել"
   },
   "home-welcome": {
     "title": "Բարի գալուստ մեր բժշկական կենտրոն",

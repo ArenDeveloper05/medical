@@ -6489,39 +6489,45 @@ nav a#pull {
   height: 20px;
   border-radius: 50%;
 }
-.department-box{
+
+.department-box {
   max-width: 370px;
 }
-.contact-info{
+
+.contact-info {
   justify-content: space-around;
 }
 
 .wide-60 {
   padding-top: 20px;
 }
-.doctor-search-container{
+
+.doctor-search-container {
   max-width: 100%;
   background-color: #f8f9fb;
   display: flex;
   justify-content: end;
   margin-bottom: 100px;
 }
-.doctors-search{
+
+.doctors-search {
   width: 60%;
-  padding: 24px 0px ;
+  padding: 24px 0px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
 }
-.doctor-search-input{
-  width:40%;
+
+.doctor-search-input {
+  width: 40%;
   border-radius: 8px;
   border: none;
   box-shadow: 0 0 5px rgb(10 10 10 / 20%);
   padding-left: 10px;
 }
-.doctor-search-button{
+
+.doctor-search-button {
   border-radius: 6px;
   border: none;
   box-shadow: 0 0 5px rgb(10 10 10 / 20%);
@@ -6529,16 +6535,216 @@ nav a#pull {
   color: #fff;
   cursor: pointer;
 }
-.pr-31{
+
+.pr-31 {
   display: flex;
   justify-content: space-between;
 }
-.home-news{
+
+.home-news {
   margin-top: 100px;
 }
-.more-news-button{
+
+.more-news-button {
   margin-top: 50px;
 }
-.news-cards{
- width: auto;
+
+.news-cards {
+  width: auto;
+}
+
+.services-nesteds {
+  color: #666;
+  max-width: max-content;
+  position: absolute;
+  z-index: 111;
+  border-radius: 0px 0px 16px 16px;
+  background-color: #ffffff;
+}
+
+.services-nesteds>li {
+  font-size: 16px;
+  text-align: start;
+  cursor: pointer;
+}
+
+.services-nesteds>li>p {
+  margin-left: 16px;
+}
+
+.nav-department a {
+  background-color: rgb(235, 235, 235) !important;
+  color: grey;
+}
+
+#selected {
+  background-color: #f8f8f8;
+  transition: 0.3s;
+  animation-name: selected;
+  animation-duration: 0.5s;
+  border-right: 2px solid #00a3c8;
+}
+
+#selected>a {
+  color: rgb(73, 71, 71) !important;
+  font-weight: 600;
+}
+
+.nested {
+  cursor: pointer;
+  color: #666666;
+  margin-left: 32px;
+  margin-top: 8px;
+  text-align: start;
+}
+
+.nested-list {
+  text-align: start;
+  margin-left: 48px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+#responsive-nav {
+  max-height: 700px;
+  overflow: auto;
+}
+
+.fs-16 {
+  font-size: 16px !important;
+}
+
+.admin-panel {
+  width: 100%;
+}
+
+.admin-panel-sidebar {
+  width: 25%;
+  height: 100vh;
+  background-color: #00a3c8;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.admin-panel-sidebar-department {
+  width: 100%;
+  min-height: 80px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  padding-left: 2rem;
+  transition: 0.3s;
+}
+
+.admin-panel-sidebar-department>a {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0px;
+  color: #0f2546;
+}
+
+.admin-panel-sidebar-department:hover {
+  background-color: #086dcb;
+  padding-left: 3rem;
+}
+
+.admin-panel-content {
+  min-height: 100vh;
+  margin-left: 25%;
+  background-color: #e3f5f9;
+  padding: 20px;
+}
+
+.doctors-admin-panel-edit {
+  max-width: 800px;
+  padding: 32px;
+  border-radius: 20px;
+  box-shadow: 1px 1px 6px #525252;
+}
+
+.doctors-admin-panel-edit button {
+  background-color: #0dc176;
+  border: none;
+  padding: 4px 8px;
+  box-shadow: 2px 2px 5px #525252;
+  outline: none;
+}
+
+.doctors-admin-panel-edit button:active {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+
+.doctors-admin-panel-edit-row {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+
+}
+
+.doctors-admin-panel-edit-row input {
+  flex-grow: 1;
+  margin-left: 3rem;
+  outline: none;
+  border: none;
+  box-shadow: 4px 3px 3px #c7c7c7;
+  text-indent: 8px;
+}
+
+
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: beige;
+}
+
+.error-div {
+  max-width: 300px;
+  min-height: 100px;
+  box-shadow: 2px 2px 10px grey;
+  padding: 0 10px;
+  position: absolute;
+  left: 40%;
+  top: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation-name: error-div;
+  animation-duration: 0.2s;
+}
+
+.error-div>h6 {
+  color: red;
+}
+
+.error {
+  background-color: red;
+}
+
+@keyframes selected {
+  0% {
+    background-color: white;
+  }
+
+  100% {
+    background-color: #f8f8f8;
+  }
+}
+
+@keyframes error-div {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1.5);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
