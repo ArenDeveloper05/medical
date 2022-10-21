@@ -25,8 +25,7 @@ const SinglePostBlogPage = () => {
                 </h4>
                 {/* Post Data */}
                 <span>
-                  Posted May 03, 2019 by
-                  <span>Dr.Jeremy Smith</span>
+                  Posted May 03, 2019 
                 </span>
                 {/* Post Text */}
                 <p className="mt-30">

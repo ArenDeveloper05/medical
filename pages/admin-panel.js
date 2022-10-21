@@ -6,8 +6,6 @@ const Admin = () => {
     return (
         <AdminPanel />
     )
-
-
 }
 
 export default Admin

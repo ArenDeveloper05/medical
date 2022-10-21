@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import React, { useCallback, useState } from 'react';
-import { accessToken, login } from '../src/DataServices';
+import { login } from '../src/DataServices';
 
 const Login = () => {
     //input values controls

@@ -2,190 +2,150 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { getPagination, pagination } from "../../utils";
 import Popup from "../Popup";
+import useTranslation from "next-translate/useTranslation";
 
+const newsData = [
+  {
+    id: 1,
+    popular: false,
+    img: "images/blog/post-4-img.jpg",
+    title: "5 Benefits Of Integrative Medicine",
+    data: "May 03, 2019",
+    text: " Donec sodales, nibh vel tristique aliquet, nisi liberosuscipit diam, sed tempus ante nulla ut purus. Donec dolormagna, suscipit in magna dignissim, porttitor hendrerit.gravida ultrices felis ..."
+  },
+  {
+    id: 2,
+    popular: true,
+    img: "images/blog/post-5-img.jpg",
+    title: "How Weather Impacts Your Health",
+    data: "Apr 17, 2019",
+    text: " Donec sodales, nibh vel tristique aliquet, nisi liberosuscipit diam, sed tempus ante nulla ut purus. Donec dolormagna, suscipit in magna dignissim, porttitor hendrerit.gravida ultrices felis ..."
+  },
+  {
+    id: 3,
+    popular: true,
+    img: "images/blog/post-6-img.jpg",
+    title: "HYour Health Is In Your Hands",
+    data: "Apr 28, 2019",
+    text: " Donec sodales, nibh vel tristique aliquet, nisi liberosuscipit diam, sed tempus ante nulla ut purus. Donec dolormagna, suscipit in magna dignissim, porttitor hendrerit.gravida ultrices felis ..."
+  },
+  {
+    id:4,
+    popular: true,
+    img: "images/blog/post-6-img.jpg",
+    title: "20 Years of Caring. 15 Fact About MedService,Melbourne's First Choice for Healthcare",
+    data: "Apr 17, 2019",
+    text: " Donec sodales, nibh vel tristique aliquet, nisi liberosuscipit diam, sed tempus ante nulla ut purus. Donec dolormagna, suscipit in magna dignissim, porttitor hendrerit.gravida ultrices felis ..."
+  },
+];
+
+const popularData = [
+  {
+    id:1,
+    img: "images/blog/latest-post-1.jpg",
+    title: "Title",
+    desc: "Etiam sapien accumsan molestie ante empor ..."
+  },
+  {
+    id:2,
+    img: "images/blog/latest-post-2.jpg",
+    title: "Title",
+    desc: "Blandit tempor sapien ipsum, porta justo ..."
+  },
+  {
+    id:3,
+    img: "images/blog/latest-post-3.jpg",
+    title: "Title",
+    desc: "Cursus risus laoreet turpis auctor varius ..."
+  },
+]
 const BlogPage = () => {
   const [video, setVideo] = useState(false);
   let sort = 3;
   const [active, setActive] = useState(1);
   const [state, setstate] = useState([]);
+  const { t } = useTranslation('common');
   useEffect(() => {
     pagination(".blog-post", sort, active);
     let list = document.querySelectorAll(".blog-post");
     setstate(getPagination(list.length, sort));
-  }, [active]);
+  }, [active,sort]);
   return (
     <div id="blog-page" className="wide-100 blog-page-section division">
       {video && <Popup close={setVideo} />}
       <div className="container">
-        <div className="row">
+        <div className="row new-row">
           {/* BLOG POSTS HOLDER */}
           <div className="col-lg-12 ">
-            <div id="posts" className="posts-holder pr-30 d-flex flex-wrap justify-content-between">
+            <div id="posts" className="posts-holder pr-30 pr-31">
               {/* BLOG POST #1 */}
-              <div className="blog-post">
-                {/* BLOG POST IMAGE */}
-                <div className="blog-post-img">
-                  <img
-                    className="img-fluid"
-                    src="images/blog/post-4-img.jpg"
-                    alt="blog-post-image"
-                  />
-                </div>
-                {/* BLOG POST TITLE */}
-                <div className="blog-post-txt">
-                  {/* Post Title */}
-                  <h5 className="h5-xl steelblue-color">
-                    <Link href={`/blog-listing/${1}`}>
-                      <a>5 Benefits Of Integrative Medicine</a>
-                    </Link>
-                    {/* Testing single page routing */}
-                  </h5>
-                  {/* Post Data */}
-                  <span>
-                    May 03, 2019 by
-                    <span>Dr.Jeremy Smith</span>
-                  </span>
-                  {/* Post Text */}
-                  <p>
-                    Donec sodales, nibh vel tristique aliquet, nisi libero
-                    suscipit diam, sed tempus ante nulla ut purus. Donec dolor
-                    magna, suscipit in magna dignissim, porttitor hendrerit.
-                    gravida ultrices felis ...
-                  </p>
-                </div>
-              </div>
-              {/* END BLOG POST #1 */}
-              {/* BLOG POST #2 */}
-              <div className="blog-post">
-                {/* BLOG POST IMAGE */}
-                <div className="blog-post-img">
-                  <div className="video-preview text-center">
-                    {/* Change the link HERE!!! */}
-                    <Link href="#">
-                      <a
-                        className="video-popup1"
-                        href="#"
-                        onClick={() => setVideo(true)}
-                      >
-                        {/* Play Icon */}
-                        <div className="video-btn play-icon-blue">
-                          <div className="video-block-wrapper">
-                            <i className="fas fa-play" />
-                          </div>
-                        </div>
-                        {/* Preview Image */}
-                        <img
-                          className="img-fluid"
-                          src="images/blog/post-5-img.jpg"
-                          alt="blog-post-image"
-                        />
-                      </a>
-                    </Link>
-                  </div>
-                </div>
-                {/* BLOG POST TEXT */}
-                <div className="blog-post-txt">
-                  {/* Post Title */}
-                  <h5 className="h5-xl steelblue-color">
-                    <Link href="/single-post">
-                      <a>How Weather Impacts Your Health</a>
-                    </Link>
-                  </h5>
-                  {/* Post Data */}
-                  <span>
-                    Apr 17, 2019 by
-                    <span>Dr.Megan Coleman</span>
-                  </span>
-                  {/* Post Text */}
-                  <p>
-                    Donec dolor magna, suscipit in magna dignissim, porttitor
-                    hendrerit diam. Nunc gravida ultrices felis eget faucibus.
-                    Praesent aliquet lorem purus, quis mollis nisi laoreet
-                    vitae. Mauris consequat tortor. Duis fermentum a massa in
-                    convallis. Quisque eu ultrices enim, et interdum augue...
-                  </p>
-                </div>
-              </div>
-              {/* END BLOG POST #2 */}
-              {/* BLOG POST #3 */}
-              <div className="blog-post">
-                {/* BLOG POST IMAGE */}
-                <div className="blog-post-img">
-                  <img
-                    className="img-fluid"
-                    src="images/blog/post-6-img.jpg"
-                    alt="blog-post-image"
-                  />
-                </div>
-                {/* BLOG POST TEXT */}
-                <div className="blog-post-txt">
-                  {/* Post Title */}
-                  <h5 className="h5-xl steelblue-color">
-                    <Link href="/single-post">
-                      <a>Your Health Is In Your Hands</a>
-                    </Link>
-                  </h5>
-                  {/* Post Data */}
-                  <span>
-                    Apr 28, 2019 by
-                    <span>Dr.Jonathan Barnes</span>
-                  </span>
-                  {/* Post Text */}
-                  <p>
-                    Suscipit in magna dignissim, porttitor hendrerit diam. Nunc
-                    gravida ultrices felis eget faucibus. Praesent aliquet lorem
-                    purus, quis mollis nisi laoreet vitae. Mauris nec consequat
-                    tortor. Duis and massa in convallis quisque eu interdum
-                    augue faucibus orci luctus et ultrices posuere ...
-                  </p>
-                </div>
-              </div>
-              {/* END BLOG POST #3 */}
-              {/* BLOG POST #4 */}
-              <div className="blog-post">
-                {/* BLOG YOUTUBE LINK */}
-                <div className="blog-post-img">
-                  <div className="embed-responsive embed-responsive-16by9">
-                    <iframe
-                      width={730}
-                      height={450}
-                      src="https://www.youtube.com/embed/7e90gBu4pas"
-                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    />
-                  </div>
-                </div>
-                {/* BLOG POST TEXT */}
-                <div className="blog-post-txt">
-                  {/* Post Title */}
-                  <h5 className="h5-xl steelblue-color">
-                    <Link href="/single-post">
-                      <a>
-                        {`20 Years of Caring. 15 Fact About MedService,
-                        Melbourne's First Choice for Healthcare`}
-                      </a>
-                    </Link>
-                  </h5>
-                  {/* Post Data */}
-                  <span>
-                    Apr 17, 2019 by
-                    <span>Dr.Jonathan Barnes</span>
-                  </span>
-                  {/* Post Text */}
-                  <p>
-                    Donec dolor magna, suscipit in magna dignissim, porttitor
-                    hendrerit diam. Nunc gravida ultrices felis eget faucibus.
-                    Praesent aliquet lorem purus, quis mollis nisi laoreet
-                    vitae. Mauris consequat tortor. Duis fermentum a massa in
-                    convallis. Quisque eu ultrices enim, et interdum augue...
-                  </p>
-                </div>
-              </div>
-              {/* END BLOG POST #4 */}
-              {/* BLOG PAGE PAGINATION */}
+              <div className="posts-holder-pr-30-left">
 
+                {newsData && newsData.map((item) => 
+                   <div key ={item.id}className="blog-post">
+                   {/* BLOG POST IMAGE */}
+                   <div className="blog-post-img">
+                     <img
+                       className="img-fluid"
+                       src={item.img}
+                       alt="blog-post-image"
+                     />
+                   </div>
+                   {/* BLOG POST TITLE */}
+                   <div className="blog-post-txt">
+                     {/* Post Title */}
+                     <h5 className="h5-xl steelblue-color">
+                       <Link href={`/blog-listing/${item.id}`}>
+                         <a>{item.title}</a>
+                       </Link>
+                       {/* Testing single page routing */}
+                     </h5>
+                     {/* Post Data */}
+                     <span>
+                       {item.data}
+                     </span>
+                     {/* Post Text */}
+                     <p>
+                       {item.text}
+                     </p>
+                   </div>
+                 </div>
+                )}
             </div>
-            <div className="blog-page-pagination b-top">
+          {/* SIDEBAR */}
+          <aside id="sidebar" className="col-lg-4">
+             {/* POPULAR POSTS */}
+             <div className="popular-posts sidebar-div mb-50">
+              {/* Title */}
+              <h5 className="h5-sm steelblue-color">{t("news.popularposts")}</h5>
+              <ul className="popular-posts">
+                  {popularData && popularData.map((item,idx) =>
+                      <li 
+                      key = {item.id}
+                      className="clearfix d-flex align-items-center">
+                      <img
+                        className="img-fluid"
+                        src={item.img}
+                        alt="blog-post-preview"
+                      />
+                      <div className="post-summary">
+                       <h5>{item.title}</h5>
+                        <Link href={`/single-post ${item.id}`}>
+                          <a>{item.desc}</a>
+                        </Link>
+                      </div>
+                    </li>
+                   )}
+              </ul>
+            </div>
+            {/*END POPULAR POSTS */}
+          </aside>
+
+          {/* END SIDEBAR */}
+            
+            </div>
+          {/* BLOG PAGE PAGINATION */}
+          <div className="blog-page-pagination b-top">
               <nav aria-label="Page navigation">
                 <ul className="pagination justify-content-center primary-theme">
                   <li className="page-item disabled">
@@ -238,11 +198,9 @@ const BlogPage = () => {
                 </ul>
               </nav>
             </div>
+            {/*END BLOG PAGE PAGINATION */}
           </div>
           {/* END BLOG POSTS HOLDER */}
-          {/* SIDEBAR */}
-
-          {/* END SIDEBAR */}
         </div>
         {/* End row */}
       </div>
