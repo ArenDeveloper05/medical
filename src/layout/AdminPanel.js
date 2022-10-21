@@ -11,7 +11,6 @@ const AdminPanel = () => {
         accessToken = window.localStorage.getItem("token");
     }
 
-
     function Redirect({ to }) {
         const router = useRouter();
         useEffect(() => {

@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { accessToken, login } from '../src/DataServices';
 
 const Login = () => {
@@ -11,24 +11,8 @@ const Login = () => {
     //Router
     const router = useRouter();
 
-    // useEffect(() => {
-    //     document.addEventListener("keydown", async (e) => {
-    //         if (e.keyCode === 13) {
-    //             await postForm()
-    //         }
-    //     })
-    //     return () => {
-    //         document.removeEventListener("keydown", async (e) => {
-    //             if (e.keyCode === 13) {
-    //                 await postForm()
-    //             }
-    //         })
-    //     }
-    // })
-
-    //This is for future changing side
-    const postForm = useCallback(async () => {
-        console.log(123);
+    const postForm = useCallback(async (e) => {
+        e.preventDefault();
         try {
             const { data } = await login({ email, password });
             console.log(data.data.token);
@@ -48,7 +32,7 @@ const Login = () => {
             {error && <div className='error-div'>
                 <h6>Գաղտնաբառը կամ email-ը սխալ է !</h6>
             </div>}
-            <form >
+            <form onSubmit={postForm}>
                 <div className="form-group">
                     <label htmlFor="exampleInputEmail1">Email հասցե</label>
                     <input
@@ -76,9 +60,8 @@ const Login = () => {
                 </div>
                 <br />
                 <button
-                    type="button"
+                    type="submit"
                     className={error ? "error" : "btn-primary"}
-                    onClick={postForm}
                 >Submit</button>
             </form>
         </div>
