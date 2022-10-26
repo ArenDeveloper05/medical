@@ -11,6 +11,7 @@ const AllDoctorsDoctors3 = ({ doctorsData }) => {
     const getSearchedDoctor = useCallback(() => {
     }, [])
     console.log(doctorsData, "uraa");
+
     return (
         <section
             id="doctors-3"
@@ -68,7 +69,7 @@ const AllDoctorsDoctors3 = ({ doctorsData }) => {
                                                     alt={doctor.name}
                                                     width={306}
                                                     height={349}
-                                                /> */}
+                                                />w */}
                                             {/* this part of code is for testing and for future changes */}
                                         </div>
                                         <div className="doctor-meta">

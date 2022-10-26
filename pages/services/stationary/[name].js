@@ -15,7 +15,6 @@ const StationaryDynamic = () => {
     const baseSelectedUrl = CONFIG.servicesConfig[pageUrl].nesteds;
 
     useEffect(() => {
-        console.log("render");
         setSelected(0)
     }, [pageUrl]);
 

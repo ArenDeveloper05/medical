@@ -16,7 +16,7 @@ const Login = () => {
         try {
             const { data } = await login({ email, password });
             console.log(data.data.token);
-            localStorage.setItem("token", data.data.token)
+            localStorage.setItem("token", data.data.token);
             if (error) {
                 setError(false)
             }
