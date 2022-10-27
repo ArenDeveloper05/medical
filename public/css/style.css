@@ -6638,7 +6638,7 @@ nav a#pull {
   transition: 0.3s;
 }
 
-.admin-panel-sidebar-department>a {
+.admin-panel-sidebar-department>p {
   font-size: 18px;
   font-weight: 500;
   margin: 0px;

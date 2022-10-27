@@ -1,8 +1,16 @@
 import { useCallback, useEffect, useState, useRef } from "react";
 import { addDoctor, changeDoctor, getAllDoctors } from "../../DataServices";
+import CKeditor from "../CKeditor";
 import Table from "./Table";
 
 const DoctorsAdmin = () => {
+  //EDITOR
+  const [editorLoaded, setEditorLoaded] = useState(false);
+  useEffect(() => {
+    setEditorLoaded(true);
+  }, []);
+
+  //Input Values
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [patronymic, setPatronymic] = useState("");
@@ -177,14 +185,17 @@ const DoctorsAdmin = () => {
           />
         </div>
         <div className="doctors-admin-panel-edit-row">
-          <label htmlFor="biography">Կենսագրություն</label>
-          <input
-            type="text"
-            id="biography"
-            value={biography}
-            onChange={(e) => setBiography(e.target.value)}
-          />
+          <label>Կենսագրություն</label>
         </div>
+        <CKeditor
+          name="description"
+          value={biography}
+          onChange={(data) => {
+            setBiography(data);
+          }}
+          editorLoaded={editorLoaded}
+        />
+        {/* {biography} */}
         <div
           className="doctors-admin-panel-edit-row"
           style={{ marginTop: "2rem" }}

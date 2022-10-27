@@ -54,6 +54,7 @@ const Login = () => {
                         placeholder="գաղտնաբառ..."
                         value={password}
                         onChange={(e) => setPassword(() => e.target.value)}
+                        autoComplete="on"
                     />
                 </div>
                 <div className="form-check">
