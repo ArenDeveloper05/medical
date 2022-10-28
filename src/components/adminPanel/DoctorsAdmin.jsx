@@ -11,13 +11,15 @@ const DoctorsAdmin = () => {
   }, []);
 
   //Input Values
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [patronymic, setPatronymic] = useState("");
-  const [specialization, setSpecialization] = useState("");
-  const [position, setPosition] = useState("");
-  const [services, setServices] = useState("");
-  const [biography, setBiography] = useState("");
+  const [doctorData, setDoctorData] = useState({
+    firstName: "",
+    lastName: "",
+    patronymic: "",
+    specialization: "",
+    position: "",
+    services: "",
+    biography: "",
+  });
 
   //Refs
   const firstNameRef = useRef(null);
@@ -37,72 +39,69 @@ const DoctorsAdmin = () => {
   const [selectedDoctor, setSelectedDoctor] = useState({});
 
   //Functions
-  const fetchData = useCallback(async () => {
+  const fetchData = async () => {
     setLoadDoctors(true);
     const {
       data: { data },
     } = await getAllDoctors();
     setLoadDoctors(false);
     setAllDoctors(data);
-  }, []);
+  };
 
-  const clearInputValues = useCallback(() => {
-    setFirstName("");
-    setLastName("");
-    setPatronymic("");
-    setSpecialization("");
-    setPosition("");
-    setServices("");
-    setBiography("");
-  }, []);
+  const clearInputValues = () => {
+    setDoctorData({
+      firstName: "",
+      lastName: "",
+      patronymic: "",
+      specialization: "",
+      position: "",
+      services: "",
+      biography: "",
+    });
+  };
+
+  const handleChange = (event) => {
+    const value = event.target.value;
+    setDoctorData((prevData) => {
+      return {
+        ...prevData,
+        [event.target.name]: value,
+      };
+    });
+  };
 
   useEffect(() => {
     fetchData();
-  }, [fetchData]);
+  }, []);
 
   const postDoctor = useCallback(async () => {
-    if (!firstName) {
+    if (!doctorData.firstName) {
       firstNameRef.current.style.border = "1px solid red";
     } else {
       firstNameRef.current.style.border = "none";
     }
 
-    if (!lastName) {
+    if (!doctorData.lastName) {
       lastNameRef.current.style.border = "1px solid red";
     } else {
       lastNameRef.current.style.border = "none";
     }
 
-    if (!patronymic) {
+    if (!doctorData.patronymic) {
       patronymicRef.current.style.border = "1px solid red";
     } else {
       patronymicRef.current.style.border = "none";
     }
     try {
-      if (firstName.trim() && lastName.trim() && patronymic.trim()) {
+      if (
+        doctorData.firstName.trim() &&
+        doctorData.lastName.trim() &&
+        doctorData.patronymic.trim()
+      ) {
         if (edit) {
-          await addDoctor({
-            firstName,
-            lastName,
-            patronymic,
-            specialization,
-            position,
-            services,
-            biography,
-          });
+          await addDoctor(doctorData);
         } else {
-          await changeDoctor(
-            {
-              firstName,
-              lastName,
-              patronymic,
-              specialization,
-              position,
-              services,
-              biography,
-            },
-            selectedDoctor.id
-          );
+          await changeDoctor(doctorData, selectedDoctor.id);
         }
         fetchData();
         clearInputValues();
@@ -110,19 +109,7 @@ const DoctorsAdmin = () => {
     } catch (error) {
       console.log(error, "chavelacav");
     }
-  }, [
-    firstName,
-    lastName,
-    patronymic,
-    specialization,
-    position,
-    biography,
-    services,
-    selectedDoctor.id,
-    edit,
-    fetchData,
-    clearInputValues,
-  ]);
+  }, [doctorData, edit, selectedDoctor]);
 
   return (
     <div className="doctors-admin-panel">
@@ -132,8 +119,9 @@ const DoctorsAdmin = () => {
           <input
             type="text"
             id="firstname"
-            value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
+            name="firstName"
+            value={doctorData.firstName}
+            onChange={(e) => handleChange(e)}
             ref={firstNameRef}
           />
         </div>
@@ -142,8 +130,9 @@ const DoctorsAdmin = () => {
           <input
             type="text"
             id="lastname"
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
+            name="lastName"
+            value={doctorData.lastName}
+            onChange={(e) => handleChange(e)}
             ref={lastNameRef}
           />
         </div>
@@ -152,8 +141,9 @@ const DoctorsAdmin = () => {
           <input
             type="text"
             id="patronymic"
-            value={patronymic}
-            onChange={(e) => setPatronymic(e.target.value)}
+            name="patronymic"
+            value={doctorData.patronymic}
+            onChange={(e) => handleChange(e)}
             ref={patronymicRef}
           />
         </div>
@@ -162,8 +152,9 @@ const DoctorsAdmin = () => {
           <input
             type="text"
             id="specialization"
-            value={specialization}
-            onChange={(e) => setSpecialization(e.target.value)}
+            name="specialization"
+            value={doctorData.specialization}
+            onChange={(e) => handleChange(e)}
           />
         </div>
         <div className="doctors-admin-panel-edit-row">
@@ -171,8 +162,9 @@ const DoctorsAdmin = () => {
           <input
             type="text"
             id="position"
-            value={position}
-            onChange={(e) => setPosition(e.target.value)}
+            name="position"
+            value={doctorData.position}
+            onChange={(e) => handleChange(e)}
           />
         </div>
         <div className="doctors-admin-panel-edit-row">
@@ -180,22 +172,27 @@ const DoctorsAdmin = () => {
           <input
             type="text"
             id="services"
-            value={services}
-            onChange={(e) => setServices(e.target.value)}
+            name="services"
+            value={doctorData.services}
+            onChange={(e) => handleChange(e)}
           />
         </div>
         <div className="doctors-admin-panel-edit-row">
           <label>Կենսագրություն</label>
         </div>
         <CKeditor
-          name="description"
-          value={biography}
+          name="biography"
+          value={doctorData.biography}
           onChange={(data) => {
-            setBiography(data);
+            setDoctorData((prevData) => {
+              return {
+                ...prevData,
+                biography: data,
+              };
+            });
           }}
           editorLoaded={editorLoaded}
         />
-        {/* {biography} */}
         <div
           className="doctors-admin-panel-edit-row"
           style={{ marginTop: "2rem" }}
@@ -221,13 +218,7 @@ const DoctorsAdmin = () => {
       <section className="doctors-admin-panel-table">
         <Table
           data={allDoctors}
-          setFirstName={setFirstName}
-          setLastName={setLastName}
-          setPatronymic={setPatronymic}
-          setSpecialization={setSpecialization}
-          setPosition={setPosition}
-          setServices={setServices}
-          setBiography={setBiography}
+          setDoctorData={setDoctorData}
           loadDoctors={loadDoctors}
           edit={edit}
           setEdit={setEdit}

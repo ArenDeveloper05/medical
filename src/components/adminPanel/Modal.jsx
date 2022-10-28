@@ -1,29 +1,29 @@
-import { useCallback } from "react";
 import { deleteDoctor } from "../../DataServices";
 
-const Modal = ({ text, setDeleteDoctor, doctor, fetchData }) => {
-  const removeDoctor = useCallback(async () => {
+const Modal = ({ text, setDeleteDoctor, selectedDoctor, fetchData }) => {
+  const removeDoctor = async () => {
     try {
       const data = await deleteDoctor(
         {
-          firstName: doctor.firstName,
-          lastName: doctor.lastName,
-          patronymic: doctor.patronymic,
-          specialization: doctor.specialization,
-          position: doctor.position,
-          services: doctor.services,
-          biography: doctor.biography,
+          firstName: selectedDoctor.firstName,
+          lastName: selectedDoctor.lastName,
+          patronymic: selectedDoctor.patronymic,
+          specialization: selectedDoctor.specialization,
+          position: selectedDoctor.position,
+          services: selectedDoctor.services,
+          biography: selectedDoctor.biography,
         },
-        doctor.id
+        selectedDoctor.id
       );
 
       setDeleteDoctor((prev) => !prev);
       fetchData();
+
       return data;
     } catch (error) {
       console.log(error, "Modal error");
     }
-  }, [doctor, setDeleteDoctor, fetchData]);
+  };
 
   return (
     <div className="modal-parent">

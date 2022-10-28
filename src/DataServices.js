@@ -12,7 +12,7 @@ const api = axios.create({
     baseURL: APIUrl,
     headers: {
         'Content-Type': 'application/json',
-        "Authorization": `Bearer ${"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjY2ODg4MDUwLCJleHAiOjE2NjY4OTE2NTB9.KsQqCI6bbPdLFpdwZquOnPYr1GKAQL5aDe7BTHN96r4"}`,
+        "Authorization": `Bearer ${"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjY2OTYxMjUzLCJleHAiOjE2NjY5NjQ4NTN9.jgvqer4MyfZ_W2JXhRBGtLJVI728ykqLBIFsVudb2q0"}`,
     }
 })
 //Stex petq a back-y ta tokeny normal tesqov, aranc Authorization=....

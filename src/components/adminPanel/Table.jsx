@@ -5,13 +5,7 @@ import Modal from "./Modal";
 const Table = ({
   data,
   loadDoctors,
-  setFirstName,
-  setLastName,
-  setPatronymic,
-  setSpecialization,
-  setPosition,
-  setServices,
-  setBiography,
+  setDoctorData,
   edit,
   setEdit,
   selectedDoctor,
@@ -39,26 +33,18 @@ const Table = ({
         <tbody>
           {!loadDoctors &&
             data &&
-            data.map((item) => (
-              <tr key={item.dataValues.id}>
-                <td className="font-weight-normal">
-                  {item.dataValues.firstName}
-                </td>
-                <td className="font-weight-normal">
-                  {item.dataValues.lastName}
-                </td>
-                <td className="font-weight-normal">
-                  {item.dataValues.patronymic}
-                </td>
-                <td className="font-weight-normal">
-                  {item.dataValues.services}
-                </td>
+            data.map(({ dataValues }) => (
+              <tr key={dataValues.id}>
+                <td className="font-weight-normal">{dataValues.firstName}</td>
+                <td className="font-weight-normal">{dataValues.lastName}</td>
+                <td className="font-weight-normal">{dataValues.patronymic}</td>
+                <td className="font-weight-normal">{dataValues.services}</td>
                 <td className="font-weight-normal">
                   <button
                     className="rounded bg-danger button"
                     onClick={() => {
                       setDeleteDoctor((prev) => !prev);
-                      setSelectedDoctor(item.dataValues);
+                      setSelectedDoctor(dataValues);
                     }}
                   >
                     Ջնջել
@@ -69,16 +55,18 @@ const Table = ({
                     className="rounded button edit-button"
                     onClick={() => {
                       // change input values
-                      setFirstName(item.dataValues.firstName);
-                      setLastName(item.dataValues.lastName);
-                      setPatronymic(item.dataValues.patronymic);
-                      setSpecialization(item.dataValues.specialization);
-                      setPosition(item.dataValues.position);
-                      setServices(item.dataValues.services);
-                      setBiography(item.dataValues.biography);
+                      setDoctorData({
+                        firstName: dataValues.firstName,
+                        lastName: dataValues.lastName,
+                        patronymic: dataValues.patronymic,
+                        specialization: dataValues.specialization,
+                        position: dataValues.position,
+                        services: dataValues.services,
+                        biography: dataValues.biography,
+                      });
                       edit && setEdit(false);
-                      selectedDoctor !== item.dataValues &&
-                        setSelectedDoctor(item.dataValues);
+                      selectedDoctor !== dataValues &&
+                        setSelectedDoctor(dataValues);
                     }}
                   >
                     Խմբագրել
@@ -93,7 +81,7 @@ const Table = ({
         <Modal
           text={`Դուք վստա՞հ եք, որ ցանկանում եք ջնջել ${selectedDoctor.firstName} ${selectedDoctor.lastName}-ին բժիշկների ցանկից`}
           setDeleteDoctor={setDeleteDoctor}
-          doctor={selectedDoctor}
+          selectedDoctor={selectedDoctor}
           fetchData={fetchData}
         />
       )}
