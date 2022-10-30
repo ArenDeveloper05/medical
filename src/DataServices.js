@@ -12,7 +12,7 @@ const api = axios.create({
     baseURL: APIUrl,
     headers: {
         'Content-Type': 'application/json',
-        "Authorization": `Bearer ${token}`,
+        "Authorization": `Bearer ${"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjY2OTYxMjUzLCJleHAiOjE2NjY5NjQ4NTN9.jgvqer4MyfZ_W2JXhRBGtLJVI728ykqLBIFsVudb2q0"}`,
     }
 })
 //Stex petq a back-y ta tokeny normal tesqov, aranc Authorization=....
@@ -24,12 +24,18 @@ export const getAllDoctors = async () => {
 
 export const login = async (loginData) => {
     return await api.post('/login', loginData)
-
-}
+};
 
 export const addDoctor = async (doctorData) => {
-    return api.post('/doctors', doctorData)
+    return await api.post('/doctors', doctorData)
+};
 
-}
+export const deleteDoctor = async (doctorData, id) => {
+    console.log(doctorData, "console");
+    return await api.delete(`/doctors/${id}`, doctorData)
+};
 
+export const changeDoctor = async (changedData, id) => {
+    return await api.put(`/doctors/${id}`, changedData)
+};
 

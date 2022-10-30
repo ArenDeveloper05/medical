@@ -16,7 +16,7 @@ const Login = () => {
         try {
             const { data } = await login({ email, password });
             console.log(data.data.token);
-            localStorage.setItem("token", data.data.token)
+            localStorage.setItem("token", data.data.token);
             if (error) {
                 setError(false)
             }
@@ -54,6 +54,7 @@ const Login = () => {
                         placeholder="գաղտնաբառ..."
                         value={password}
                         onChange={(e) => setPassword(() => e.target.value)}
+                        autoComplete="on"
                     />
                 </div>
                 <div className="form-check">
