@@ -4,7 +4,6 @@ import Layouts from "../src/layout/Layouts";
 import PageBanner from "../src/layout/PageBanner";
 
 const AllDoctors = ({ data }) => {
-  console.log(data);
   return (
     <Layouts>
       <PageBanner pageTitle="Meet the Doctors" />
@@ -16,7 +15,6 @@ const AllDoctors = ({ data }) => {
 export async function getServerSideProps() {
 
   const { data } = await getAllDoctors();
-  console.log(data, " dataaaaaaaaaaa");
   return {
     props: {
       data

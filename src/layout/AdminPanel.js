@@ -29,8 +29,9 @@ const AdminPanel = () => {
                         <div key={uuid()}
                             className="admin-panel-sidebar-department"
                             onClick={() => setSelectedPanel(idx)}
+                            style={{ cursor: "pointer" }}
                         >
-                            <p href={item.link} key={uuid()} style={{ cursor: "pointer" }}>
+                            <p key={uuid()}>
                                 {item.name}
                             </p>
                         </div>))}

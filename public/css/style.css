@@ -6748,3 +6748,53 @@ nav a#pull {
     transform: scale(1);
   }
 }
+.gallery-admin-panel-functional{
+  max-width: 800px;
+  padding: 32px;
+  border-radius: 20px;
+  box-shadow: 1px 1px 6px #525252;
+  display: flex;
+  justify-content: space-around;
+}
+.gallery-admin-panel-functional>button{
+  cursor: pointer ;
+  background:"#00a3c8";
+  border-radius: "10px";
+  box-shadow: 1px 1px 6px #525252;
+}
+.news-admin-panel{
+  max-width: 800px;
+  padding: 32px;
+  border-radius: 20px;
+  height: 500px;
+  box-shadow: 1px 1px 6px #525252;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.news-admin-panel>textarea{
+    min-height: 200px;
+    border-radius: 20px;
+    padding: 10px;
+}
+.checkbox{
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.news-title{
+  border:1px solid #525252;
+  border-radius: 10px;
+  padding-left: 10px;
+}
+.news-admin-panel>button{
+  border-radius: 10px;
+  background-color: #086dcb;
+  color:white;
+  font-size: 25px;
+  border: none;
+  cursor: pointer;
+}
+
+  

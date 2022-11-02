@@ -47,7 +47,7 @@ import Rheumatology from "../pages/services/stationary/therapeutic/rheumatology/
 
 import NewsAdmin from "./components/adminPanel/NewsAdmin";
 import DoctorsAdmin from "./components/adminPanel/DoctorsAdmin";
-
+import GalleryAdmin from "./components/adminPanel/GalleryAdmin";
 
 export const CONFIG = {
     headerConfig: [
@@ -365,7 +365,8 @@ export const CONFIG = {
             component: <DoctorsAdmin />
         },
         {
-            name: "Տեսադարան"
+            name: "Տեսադարան",
+            component: <GalleryAdmin/>
         },
 
     ]

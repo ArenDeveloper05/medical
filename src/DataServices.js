@@ -12,7 +12,9 @@ const api = axios.create({
     baseURL: APIUrl,
     headers: {
         'Content-Type': 'application/json',
-        "Authorization": `Bearer ${token}`,
+        // "Authorization": `Bearer ${token}`,
+        "Authorization": `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjY2NjA4NzE2LCJleHAiOjE2NjY2MTIzMTZ9.hmbQOCONKY7Rd5u7d-8wfPWaoMHClehuqc7S35M0-YU`,
+        
     }
 })
 //Stex petq a back-y ta tokeny normal tesqov, aranc Authorization=....
@@ -31,5 +33,10 @@ export const addDoctor = async (doctorData) => {
     return api.post('/doctors', doctorData)
 
 }
-
+export const addPhoto = async (photoData) => {
+    return api.post('/gallery', photoData)
+}
+export const getSingleDoctor = async (singleDoctorId) =>{
+    return api.get(`/doctors/${singleDoctorId}`)
+}
 

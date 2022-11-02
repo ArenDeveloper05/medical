@@ -10,7 +10,6 @@ const AllDoctorsDoctors3 = ({ doctorsData }) => {
 
     const getSearchedDoctor = useCallback(() => {
     }, [])
-    console.log(doctorsData, "uraa");
     return (
         <section
             id="doctors-3"
@@ -76,7 +75,7 @@ const AllDoctorsDoctors3 = ({ doctorsData }) => {
                                                 {dataValues.firstName}{dataValues.lastName}
                                             </h5>
                                             <span>{dataValues.position}</span>
-                                            <Link href={`/all-doctors/${idx}?name=${dataValues.firstName}`}>
+                                            <Link href={`/all-doctors/${dataValues.firstName}?idx=${dataValues.id}`}>
                                                 <a
                                                     className="btn btn-sm btn-blue blue-hover mt-15"
                                                     title

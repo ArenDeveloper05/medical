@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
-const Doctor1Details = () => {
+const Doctor1Details = (props) => {
   return (
     <section id="doctor-1-details" className="doctor-details-section division">
       <div className="container">
@@ -21,14 +21,14 @@ const Doctor1Details = () => {
                   <tbody>
                     <tr>
                       <td>Degrees</td>
-                      <td>M.D. of Medicine</td>
+                      <td>{props.specialization}</td>
                     </tr>
                     <tr>
                       <td>Areas of Expertise</td>
                       <td>
                         <span>
                           <i className="fas fa-angle-double-right" />
-                          Neurology
+                          {props.services}
                         </span>
                         <span>
                           <i className="fas fa-angle-double-right" />
@@ -88,11 +88,7 @@ const Doctor1Details = () => {
             <div className="doctor-bio">
               {/* Text */}
               <p>
-                Etiam sapien sem magna at vitae pulvinar congue augue egestas
-                pretium neque id viverra suscipit egestas magna porta ratione,
-                mollis risus lectus porta rutrum arcu aenean primis in augue
-                luctus neque purus ipsum neque dolor primis suscipit in magna
-                dignissim, porttitor hendrerit diam
+                {props.biography}
               </p>
               {/* Text */}
               <p>
