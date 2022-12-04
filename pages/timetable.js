@@ -1,13 +1,13 @@
 import TimetablePage from "../src/components/Timetable/TimetablePage";
-import Layouts from "../src/layout/Layouts";
+import Layout from "../src/layout/Layout";
 import PageBanner from "../src/layout/PageBanner";
 
 const Timetable = () => {
   return (
-    <Layouts>
+    <Layout>
       <PageBanner pageTitle="Timetable" />
       <TimetablePage />
-    </Layouts>
+    </Layout>
   );
 };
 

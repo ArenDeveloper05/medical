@@ -1,10 +1,10 @@
 import Doctor1Details from "../src/components/Doctor-1/Doctor1Details";
 import Doctor1Reviews2 from "../src/components/Doctor-1/Doctor1Reviews2";
-import Layouts from "../src/layout/Layouts";
+import Layout from "../src/layout/Layout";
 
 const Doctor1 = () => {
   return (
-    <Layouts>
+    <Layout>
       <section
         id="doctor-breadcrumbs"
         className="bg-fixed doctor-details-section division"
@@ -26,7 +26,7 @@ const Doctor1 = () => {
         {/* End container */}
       </section>
       <Doctor1Details />
-    </Layouts>
+    </Layout>
   );
 };
 

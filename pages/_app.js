@@ -15,14 +15,14 @@ function MyApp({ Component, pageProps }) {
   return (
     <Fragment>
       <Head>
-        <link
+        {/* <link
           href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap"
           rel="stylesheet"
         />
         <link
           href="https://fonts.googleapis.com/css?family=Lato:400,700,900,900&display=swap"
           rel="stylesheet"
-        />
+        /> */}
         <title>
           MedService - Medical & Medical Health Landing Page Template
         </title>
@@ -31,12 +31,11 @@ function MyApp({ Component, pageProps }) {
           href="images/favicon.ico"
           type="image/x-icon"
         />
-        <link rel="icon" href="images/favicon.ico" type="image/x-icon"></link>
+        <link rel="icon" href="/images/favicon.ico" type="image/x-icon"></link>
       </Head>
       {loader && <Preloader />}
       <Component {...pageProps} />
     </Fragment>
   );
-}
-
+};
 export default MyApp;

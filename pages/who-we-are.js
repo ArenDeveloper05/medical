@@ -5,12 +5,12 @@ import WhoWeAreDoctors1 from "../src/components/Who-we-are/WhoWeAreDoctors1";
 import WhoWeAreInfo1 from "../src/components/Who-we-are/WhoWeAreInfo1";
 import WhoWeAreInfo9 from "../src/components/Who-we-are/WhoWeAreInfo9";
 import WhoWeAreReviews2 from "../src/components/Who-we-are/WhoWeAreReviews2";
-import Layouts from "../src/layout/Layouts";
+import Layout from "../src/layout/Layout";
 import PageBanner from "../src/layout/PageBanner";
 
 const WhoWeAre = () => {
   return (
-    <Layouts>
+    <Layout>
       <PageBanner pageTitle="Who We Are" />
       {/* END BREADCRUMB */}
       {/* INFO-1
@@ -40,7 +40,7 @@ const WhoWeAre = () => {
       {/* DOCTORS-1
 			============================================= */}
       <WhoWeAreDoctors1 />
-    </Layouts>
+    </Layout>
   );
 };
 

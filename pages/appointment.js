@@ -1,13 +1,13 @@
 import AppointmentPage from "../src/components/Appointment/AppointmentPage";
-import Layouts from "../src/layout/Layouts";
+import Layout from "../src/layout/Layout";
 import PageBanner from "../src/layout/PageBanner";
 
 const Appointment = () => {
   return (
-    <Layouts>
+    <Layout>
       <PageBanner pageTitle="Appointment" />
       <AppointmentPage />
-    </Layouts>
+    </Layout>
   );
 };
 

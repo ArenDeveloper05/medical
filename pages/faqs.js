@@ -1,13 +1,13 @@
 import FaqsPage from "../src/components/Faqs/FaqsPage";
-import Layouts from "../src/layout/Layouts";
+import Layout from "../src/layout/Layout";
 import PageBanner from "../src/layout/PageBanner";
 
 const Faqs = () => {
   return (
-    <Layouts>
+    <Layout>
       <PageBanner pageTitle="FAQs" />
       <FaqsPage />
-    </Layouts>
+    </Layout>
   );
 };
 

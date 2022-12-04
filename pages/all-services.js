@@ -1,16 +1,16 @@
 import AllServicesTabs2 from "../src/components/All-services/AllServicesTabs2";
 import AllServicesTestimonials2 from "../src/components/All-services/AllServicesTestimonials2";
 import Banner5 from "../src/components/Common/Banner-5";
-import Layouts from "../src/layout/Layouts";
+import Layout from "../src/layout/Layout";
 import PageBanner from "../src/layout/PageBanner";
 
 const AllServices = () => {
   return (
-    <Layouts>
+    <Layout>
       <PageBanner pageTitle="Our Services" />
       <AllServicesTabs2 />
       <Banner5 />
-    </Layouts>
+    </Layout>
   );
 };
 
