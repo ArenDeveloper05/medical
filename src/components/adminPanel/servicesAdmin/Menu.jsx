@@ -74,7 +74,7 @@ const Menu = ({
                     setServicesData((prev) => {
                       return {
                         ...prev,
-                        name: item.name,
+                        name: item.name ? item.name : "",
                         isFinal: item.isFinal == 1 ? "final" : "nonFinal",
                         parrent_id: item.id ? item.id + "" : item.ID + "",
                         isFinal: "final",
@@ -108,7 +108,7 @@ const Menu = ({
                     }
 
                     setServicesData({
-                      name: item.name,
+                      name: item.name ? item.name : "",
                       isFinal: item.isFinal == 1 ? "final" : "nonFinal",
                       parrent_id: item.id ? item.id + "" : item.ID + "",
                     });
@@ -119,8 +119,8 @@ const Menu = ({
                   setSelectedService({
                     parrent_id: item.parrent_id,
                     id: item.id,
-                    description: item.Description,
-                    doctorsIdList: item.DoctorsIdList,
+                    description: item.Description ? item.Description : "",
+                    doctorsIdList: item.DoctorsIdList ? item.DoctorsIdList : "",
                   });
                 }}
               >
