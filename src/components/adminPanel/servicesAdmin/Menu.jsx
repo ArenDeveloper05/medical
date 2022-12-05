@@ -120,7 +120,7 @@ const Menu = ({
                     parrent_id: item.parrent_id,
                     id: item.id,
                     description: item.Description ? item.Description : "",
-                    doctorsIdList: item.DoctorsIdList ? item.DoctorsIdList : "",
+                    doctorsIdList: item.DoctorsIdList ? item.DoctorsIdList : [],
                   });
                 }}
               >
