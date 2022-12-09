@@ -8,7 +8,7 @@ import { images } from "../enums";
 import { BsCaretRightFill, BsCaretDownFill } from "react-icons/bs";
 import MobileService from "./MobileService";
 
-const MobileMenu = ({ categories }) => {
+const MobileMenu = ({ categories, toggleMenu }) => {
   const { t } = useTranslation("common");
   const [servicesOpen, setServicesOpen] = useState(false);
 
@@ -53,7 +53,11 @@ const MobileMenu = ({ categories }) => {
                 )}
               </p>
               {servicesOpen && (
-                <MobileService key={uuid()} items={categories} />
+                <MobileService
+                  toggleMenu={toggleMenu}
+                  key={uuid()}
+                  items={categories}
+                />
               )}
             </li>
             {CONFIG.headerConfig.map((item) => {

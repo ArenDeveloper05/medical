@@ -12,6 +12,8 @@ import { useEffect } from "react";
 import { getCategories, getServices } from "../DataServices";
 import { useState } from "react";
 import HeaderMenu from "./HeaderMenu";
+import { AiOutlineClose } from "react-icons/ai";
+import { HiMenuAlt2 } from "react-icons/hi";
 
 const Header = ({ toggleMenu, toggle }) => {
   const { t, lang } = useTranslation("common");
@@ -42,14 +44,28 @@ const Header = ({ toggleMenu, toggle }) => {
   return (
     <header id="header" className="header">
       {/* MOBILE HEADER */}
-      <div className="wsmobileheader clearfix">
-        <a
-          id="wsnavtoggle"
-          onClick={() => toggleMenu((prev) => !prev)}
-          className="wsanimated-arrow"
-        >
-          <span />
-        </a>
+      <div className="wsmobileheader clearfix d-flex align-items-baseline justify-content-around">
+        <div id="wsnavtoggle" onClick={() => toggleMenu((prev) => !prev)}>
+          {!toggle ? (
+            <HiMenuAlt2
+              className="text-secondary"
+              style={{
+                transform: "scale(2.5)",
+                marginBottom: "42px",
+                cursor: "pointer",
+              }}
+            />
+          ) : (
+            <AiOutlineClose
+              className="text-secondary"
+              style={{
+                transform: "scale(3,2.4)",
+                marginBottom: "42px",
+                cursor: "pointer",
+              }}
+            />
+          )}
+        </div>
         <span className="smllogo">
           <Image
             src="/images/logo.png"
@@ -131,9 +147,7 @@ const Header = ({ toggleMenu, toggle }) => {
               {CONFIG.headerConfig.map(({ link, name }) => {
                 return (
                   <li key={uuid()}>
-                    <Link href={`/${link}`}>
-                      <a>{t(name)}</a>
-                    </Link>
+                    <Link href={`/${link}`}>{t(name)}</Link>
                   </li>
                 );
               })}
@@ -335,7 +349,12 @@ const Header = ({ toggleMenu, toggle }) => {
           {/* END MAIN MENU */}
         </div>
       </div>
-      {toggle && <MobileMenu categories={hierarchy(categories)} />}
+      {toggle && (
+        <MobileMenu
+          toggleMenu={toggleMenu}
+          categories={hierarchy(categories)}
+        />
+      )}
 
       {/* END NAVIGATION MENU */}
     </header>

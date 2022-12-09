@@ -3,7 +3,7 @@ import { useState } from "react";
 import { BsCaretDownFill, BsCaretRightFill } from "react-icons/bs";
 import uuid from "react-uuid";
 
-const MobileService = ({ items }) => {
+const MobileService = ({ items, toggleMenu }) => {
   const [displayChildren, setDisplayChildren] = useState({});
 
   return (
@@ -22,8 +22,18 @@ const MobileService = ({ items }) => {
               {item.children.length !== 0 ? (
                 item.name
               ) : (
-                <Link href={`/services/${item.name}`}>
-                  <a>{item.name}</a>
+                <Link
+                  href={`/services/${item.name}?id=${
+                    item.id ? item.id : item.ID
+                  }`}
+                >
+                  <a
+                    onClick={() => {
+                      toggleMenu((prev) => !prev);
+                    }}
+                  >
+                    {item.name}
+                  </a>
                 </Link>
               )}
               {item.children.length !== 0 && (
@@ -47,7 +57,7 @@ const MobileService = ({ items }) => {
               )}
             </p>
             {displayChildren[item.name] && item.children && (
-              <MobileService items={item.children} />
+              <MobileService toggleMenu={toggleMenu} items={item.children} />
             )}
           </li>
         );

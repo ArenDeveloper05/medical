@@ -63,7 +63,7 @@ const Menu = ({
                 }}
                 onClick={() => {
                   if (item.DoctorsIdList) {
-                    console.log("clicked service");
+                    console.log("clicked service", item.DoctorsIdList, item.ID);
                     setClickable(() => {
                       return {
                         isClickable: true,

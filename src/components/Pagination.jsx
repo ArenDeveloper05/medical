@@ -77,6 +77,7 @@ const Pagination = ({
                   ? {
                       backgroundColor: "rgb(0 163 200)",
                       color: "white",
+                      boxShadow: "0 8px 8px rgb(0 0 0 / 15%)",
                     }
                   : null
               }

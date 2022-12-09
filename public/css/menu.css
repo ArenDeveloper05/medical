@@ -797,7 +797,9 @@ video {
 --------------------------------------------*/
 
 .wsmobileheader {
-    display: none;
+    /* display: none !important; */
+    position: absolute;
+    top: -100%;
 }
 
 .overlapblackbg {
@@ -1194,7 +1196,7 @@ video {
     /* ================== Mobile Header CSS ================== */
     .wsmobileheader {
         width: 100%;
-        display: block;
+        /* display: block !important; */
         position: fixed;
         top: 0;
         left: 0;
@@ -1497,12 +1499,12 @@ video {
     animation-name: mobile-menu;
     animation-duration: 0.5s;
     animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    display: none !important;
 }
 
 .mobile-menu-list {
     animation-name: mobile-menu-list;
     animation-duration: 0.3s;
-    /* animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1); */
     animation-fill-mode: forwards;
     animation-timing-function: ease-in-out;
     transform-origin: top center;
@@ -1530,5 +1532,11 @@ video {
 
     100% {
         transform: scaleY(1)
+    }
+}
+
+@media only screen and (max-width:991px) {
+    .mobile-menu {
+        display: block !important;
     }
 }

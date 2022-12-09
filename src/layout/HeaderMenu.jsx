@@ -15,7 +15,7 @@ const HeaderMenu = ({ items }) => {
             {item.isFinal === 0 ? (
               <p>{item.name}</p>
             ) : (
-              <Link href={`/services/${item.name}`}>
+              <Link href={`/services/${item.name}?id=${item.ID}`}>
                 <a>{item.name}</a>
               </Link>
             )}

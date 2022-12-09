@@ -44,6 +44,10 @@ export const getCategories = async (lang) => {
 export const getServices = async (lang) => {
   return await api.get(`/services/${lang}`);
 };
+
+export const getSingleService = async (lang, id) => {
+  return await api.get(`/services/${lang}/${id}`);
+};
 //POST
 export const login = async (loginData) => {
   return await api.post("/login", loginData);
