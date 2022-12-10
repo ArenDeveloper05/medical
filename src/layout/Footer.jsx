@@ -1,6 +1,6 @@
 import useTranslation from "next-translate/useTranslation";
 import Link from "next/dist/client/link";
-import React from "react";
+import { memo } from "react";
 
 const Footer = () => {
   const { t } = useTranslation("common");
@@ -120,4 +120,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default memo(Footer);

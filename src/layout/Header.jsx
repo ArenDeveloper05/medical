@@ -8,9 +8,8 @@ import { CONFIG } from "../config";
 import { socialLinks } from "../enums";
 import { useRouter } from "next/router";
 import { changeIdName, generateLanguage, hierarchy } from "../utils";
-import { useEffect } from "react";
 import { getCategories, getServices } from "../DataServices";
-import { useState } from "react";
+import { useState, useEffect, memo } from "react";
 import HeaderMenu from "./HeaderMenu";
 import { AiOutlineClose } from "react-icons/ai";
 import { HiMenuAlt2 } from "react-icons/hi";
@@ -361,4 +360,4 @@ const Header = ({ toggleMenu, toggle }) => {
   );
 };
 
-export default Header;
+export default memo(Header);

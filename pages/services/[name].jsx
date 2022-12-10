@@ -70,7 +70,7 @@ const Service = () => {
                   !loading &&
                   doctorsList &&
                   doctorsList.map((item) => {
-                    if (item) {
+                    if (item !== undefined && item !== null) {
                       return (
                         <div
                           className="shadow"
@@ -100,7 +100,7 @@ const Service = () => {
                                 href={`/all-doctors/${
                                   item.FirstName && item.LastName
                                     ? item.FirstName + item.LastName
-                                    : ID
+                                    : item.ID
                                 }?id=${item.ID}`}
                               >
                                 <a className="btn btn-sm btn-blue blue-hover mt-15">

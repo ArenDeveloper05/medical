@@ -1,5 +1,6 @@
 import Link from "next/link";
 import uuid from "react-uuid";
+import { memo } from "react";
 
 const HeaderMenu = ({ items }) => {
   return (
@@ -26,4 +27,4 @@ const HeaderMenu = ({ items }) => {
   );
 };
 
-export default HeaderMenu;
+export default memo(HeaderMenu);

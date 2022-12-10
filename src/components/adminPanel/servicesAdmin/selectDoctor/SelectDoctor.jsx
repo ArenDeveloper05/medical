@@ -1,5 +1,5 @@
 import useTranslation from "next-translate/useTranslation";
-import { useEffect, useState } from "react";
+import { useEffect, useState, memo } from "react";
 import uuid from "react-uuid";
 import { getAllDoctors } from "../../../../DataServices";
 import { generateLanguage } from "../../../../utils";
@@ -50,4 +50,4 @@ const SelectDoctor = ({ setClickableServiceData, clickableServiceData }) => {
   );
 };
 
-export default SelectDoctor;
+export default memo(SelectDoctor);

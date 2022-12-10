@@ -71,6 +71,7 @@ const DoctorsTable = ({
       setDeleteDoctor((prev) => !prev);
     }
   };
+
   return (
     <>
       <table

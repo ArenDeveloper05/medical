@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import { stickyNav } from "../utils";
 import Header from "./Header";
 import Footer from "./Footer";
@@ -34,4 +34,4 @@ const Layout = ({ children }) => {
   );
 };
 
-export default Layout;
+export default memo(Layout);
