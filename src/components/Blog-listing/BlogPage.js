@@ -30,7 +30,7 @@ const newsData = [
     text: " Donec sodales, nibh vel tristique aliquet, nisi liberosuscipit diam, sed tempus ante nulla ut purus. Donec dolormagna, suscipit in magna dignissim, porttitor hendrerit.gravida ultrices felis ..."
   },
   {
-    id:4,
+    id: 4,
     popular: true,
     img: "images/blog/post-6-img.jpg",
     title: "20 Years of Caring. 15 Fact About MedService,Melbourne's First Choice for Healthcare",
@@ -41,19 +41,19 @@ const newsData = [
 
 const popularData = [
   {
-    id:1,
+    id: 1,
     img: "images/blog/latest-post-1.jpg",
     title: "Title",
     desc: "Etiam sapien accumsan molestie ante empor ..."
   },
   {
-    id:2,
+    id: 2,
     img: "images/blog/latest-post-2.jpg",
     title: "Title",
     desc: "Blandit tempor sapien ipsum, porta justo ..."
   },
   {
-    id:3,
+    id: 3,
     img: "images/blog/latest-post-3.jpg",
     title: "Title",
     desc: "Cursus risus laoreet turpis auctor varius ..."
@@ -69,7 +69,7 @@ const BlogPage = () => {
     pagination(".blog-post", sort, active);
     let list = document.querySelectorAll(".blog-post");
     setstate(getPagination(list.length, sort));
-  }, [active,sort]);
+  }, [active, sort]);
   return (
     <div id="blog-page" className="wide-100 blog-page-section division">
       {video && <Popup close={setVideo} />}
@@ -81,71 +81,71 @@ const BlogPage = () => {
               {/* BLOG POST #1 */}
               <div className="posts-holder-pr-30-left">
 
-                {newsData && newsData.map((item) => 
-                   <div key ={item.id}className="blog-post">
-                   {/* BLOG POST IMAGE */}
-                   <div className="blog-post-img">
-                     <img
-                       className="img-fluid"
-                       src={item.img}
-                       alt="blog-post-image"
-                     />
-                   </div>
-                   {/* BLOG POST TITLE */}
-                   <div className="blog-post-txt">
-                     {/* Post Title */}
-                     <h5 className="h5-xl steelblue-color">
-                       <Link href={`/blog-listing/${item.id}`}>
-                         <a>{item.title}</a>
-                       </Link>
-                       {/* Testing single page routing */}
-                     </h5>
-                     {/* Post Data */}
-                     <span>
-                       {item.data}
-                     </span>
-                     {/* Post Text */}
-                     <p>
-                       {item.text}
-                     </p>
-                   </div>
-                 </div>
-                )}
-            </div>
-          {/* SIDEBAR */}
-          <aside id="sidebar" className="col-lg-4">
-             {/* POPULAR POSTS */}
-             <div className="popular-posts sidebar-div mb-50">
-              {/* Title */}
-              <h5 className="h5-sm steelblue-color">{t("news.popularposts")}</h5>
-              <ul className="popular-posts">
-                  {popularData && popularData.map((item,idx) =>
-                      <li 
-                      key = {item.id}
-                      className="clearfix d-flex align-items-center">
+                {newsData && newsData.map((item) =>
+                  <div key={item.id} className="blog-post">
+                    {/* BLOG POST IMAGE */}
+                    <div className="blog-post-img">
                       <img
                         className="img-fluid"
                         src={item.img}
-                        alt="blog-post-preview"
+                        alt="blog-post-image"
                       />
-                      <div className="post-summary">
-                       <h5>{item.title}</h5>
-                        <Link href={`/single-post ${item.id}`}>
-                          <a>{item.desc}</a>
+                    </div>
+                    {/* BLOG POST TITLE */}
+                    <div className="blog-post-txt">
+                      {/* Post Title */}
+                      <h5 className="h5-xl steelblue-color">
+                        <Link href={`/blog-listing/${item.id}`}>
+                          <a>{item.title}</a>
                         </Link>
-                      </div>
-                    </li>
-                   )}
-              </ul>
-            </div>
-            {/*END POPULAR POSTS */}
-          </aside>
+                        {/* Testing single page routing */}
+                      </h5>
+                      {/* Post Data */}
+                      <span>
+                        {item.data}
+                      </span>
+                      {/* Post Text */}
+                      <p>
+                        {item.text}
+                      </p>
+                    </div>
+                  </div>
+                )}
+              </div>
+              {/* SIDEBAR */}
+              <aside id="sidebar" className="col-lg-4">
+                {/* POPULAR POSTS */}
+                <div className="popular-posts sidebar-div mb-50">
+                  {/* Title */}
+                  <h5 className="h5-sm steelblue-color">{t("news.popularposts")}</h5>
+                  <ul className="popular-posts">
+                    {popularData && popularData.map((item, idx) =>
+                      <li
+                        key={item.id}
+                        className="clearfix d-flex align-items-center">
+                        <img
+                          className="img-fluid"
+                          src={item.img}
+                          alt="blog-post-preview"
+                        />
+                        <div className="post-summary">
+                          <h5>{item.title}</h5>
+                          <Link href={`/single-post ${item.id}`}>
+                            <a>{item.desc}</a>
+                          </Link>
+                        </div>
+                      </li>
+                    )}
+                  </ul>
+                </div>
+                {/*END POPULAR POSTS */}
+              </aside>
 
-          {/* END SIDEBAR */}
-            
+              {/* END SIDEBAR */}
+
             </div>
-          {/* BLOG PAGE PAGINATION */}
-          <div className="blog-page-pagination b-top">
+            {/* BLOG PAGE PAGINATION */}
+            <div className="blog-page-pagination b-top">
               <nav aria-label="Page navigation">
                 <ul className="pagination justify-content-center primary-theme">
                   <li className="page-item disabled">

@@ -1,13 +1,13 @@
 import TermsPage from "../src/components/Terms/TermsPage";
-import Layouts from "../src/layout/Layouts";
+import Layout from "../src/layout/Layout";
 import PageBanner from "../src/layout/PageBanner";
 
 const Terms = () => {
   return (
-    <Layouts>
+    <Layout>
       <PageBanner pageTitle="Terms & Privacy" />
       <TermsPage />
-    </Layouts>
+    </Layout>
   );
 };
 

@@ -1,0 +1,19 @@
+import Layout from "../../src/layout/Layout";
+import PageBanner from "../../src/layout/PageBanner";
+import SinglePostBlogPage from "../../src/components/Single-post/SinglePostBlogPage"
+
+const BlogPost = () => {
+    return (
+        <Layout>
+            <h1>This is a single post for future changing</h1>
+            <PageBanner
+                pageTitle="5 Benefits of ..."
+                url="blog-listing"
+                motherTitle="Our Blog"
+            />
+            <SinglePostBlogPage />
+        </Layout>
+    );
+};
+
+export default BlogPost;

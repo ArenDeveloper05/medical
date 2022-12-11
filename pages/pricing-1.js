@@ -2,12 +2,12 @@ import Banner5 from "../src/components/Common/Banner-5";
 import Pricing1Pricing1 from "../src/components/Pricing-1/Pricing1Pricing1";
 import Pricing1Pricing2 from "../src/components/Pricing-1/Pricing1Pricing2";
 import Pricing1reviews2 from "../src/components/Pricing-1/Pricing1reviews2";
-import Layouts from "../src/layout/Layouts";
+import Layout from "../src/layout/Layout";
 import PageBanner from "../src/layout/PageBanner";
 
 const Pricing1 = () => {
   return (
-    <Layouts>
+    <Layout>
       <PageBanner pageTitle="Our Pricing" />
       {/* END BREADCRUMB */}
       {/* PRICING-1
@@ -25,7 +25,7 @@ const Pricing1 = () => {
       {/* BANNER-5
 			============================================= */}
       <Banner5 />
-    </Layouts>
+    </Layout>
   );
 };
 

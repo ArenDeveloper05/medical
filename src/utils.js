@@ -62,3 +62,41 @@ export const getPagination = (totalNumber, sort) => {
     .map((_, idx) => idx + 1);
   return arr;
 };
+
+export const generateLanguage = (lang) => {
+  if (lang == "ru") {
+    return "ru_ru"
+  } else if (lang == "en") {
+    return "en_us"
+  } else {
+    return "am_hy"
+  }
+}
+
+export const hierarchy = (data) => {
+  const tree = [];
+  const childOf = {};
+  data.forEach((item) => {
+    const { id, parrent_id } = item;
+    childOf[id] = childOf[id] || [];
+    item.children = childOf[id];
+    parrent_id
+      ? (childOf[parrent_id] = childOf[parrent_id] || []).push(item)
+      : tree.push(item);
+  });
+  return tree;
+};
+
+export function changeIdName(arr) {
+
+  return arr.map((item) => {
+
+    return {
+      ...item,
+      "name": item.Name,
+      "parrent_id": item.CategoryID
+    }
+
+  })
+}
+
