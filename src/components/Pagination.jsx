@@ -1,6 +1,6 @@
-import { useEffect, useRef } from "react";
-import { memo, useState } from "react";
+import { memo, useState, useEffect, useRef } from "react";
 import uuid from "react-uuid";
+
 const Pagination = ({
   dataLength,
   itemsPerPage,
@@ -10,8 +10,9 @@ const Pagination = ({
 }) => {
   const firstRenderForArr = useRef(true);
   const firstRenderForSelectedPage = useRef(true);
-  // console.log(dataLength, "dataLengthhhh");
+
   const countOfPages = Math.ceil(dataLength / itemsPerPage);
+
   const initialArr =
     countOfPages == 0
       ? []
@@ -20,18 +21,17 @@ const Pagination = ({
       : countOfPages == 2
       ? [1, 2]
       : [1, 2, 3];
+
   let [currArr, setCurrArr] = useState(initialArr);
-  // useEffect(() => {
-  //   setSelectedPage(1);
-  // }, [count]);
+
   useEffect(() => {
     if (firstRenderForArr.current) {
       firstRenderForArr.current = false;
     } else {
       setCurrArr(initialArr);
-      console.log("poxvec");
     }
   }, [countOfPages]);
+
   useEffect(() => {
     if (firstRenderForSelectedPage.current) {
       firstRenderForSelectedPage.current = false;
@@ -41,7 +41,9 @@ const Pagination = ({
       }
     }
   }, [selectedPage]);
+
   //!!Not put the getData function in useEffect dependency(infinite loop);
+
   return (
     <div className="d-flex">
       <button
@@ -63,6 +65,7 @@ const Pagination = ({
       >
         <i className="fas fa-long-arrow-alt-left" />
       </button>
+
       {dataLength !== 0 &&
         currArr.map((item) => {
           return (
@@ -74,6 +77,7 @@ const Pagination = ({
                   ? {
                       backgroundColor: "rgb(0 163 200)",
                       color: "white",
+                      boxShadow: "0 8px 8px rgb(0 0 0 / 15%)",
                     }
                   : null
               }
@@ -91,6 +95,7 @@ const Pagination = ({
             </div>
           );
         })}
+
       <button
         className="pagination-page p-3 rounded m-1"
         disabled={selectedPage.page == countOfPages}
@@ -113,4 +118,5 @@ const Pagination = ({
     </div>
   );
 };
+
 export default memo(Pagination);

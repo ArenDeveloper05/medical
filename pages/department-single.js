@@ -1,12 +1,12 @@
 import About5 from "../src/components/Common/About-5";
 import DepartmentDoctors1 from "../src/components/Department-single/DepartmentDoctors1";
 import DepartmentPage from "../src/components/Department-single/DepartmentPage";
-import Layouts from "../src/layout/Layouts";
+import Layout from "../src/layout/Layout";
 import PageBanner from "../src/layout/PageBanner";
 
 const DepartmentSingle = () => {
   return (
-    <Layouts>
+    <Layout>
       <PageBanner
         pageTitle="Cardiology"
         motherTitle="Departments"
@@ -15,7 +15,7 @@ const DepartmentSingle = () => {
       <DepartmentPage />
       <DepartmentDoctors1 />
       <About5 />
-    </Layouts>
+    </Layout>
   );
 };
 

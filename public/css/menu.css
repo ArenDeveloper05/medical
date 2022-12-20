@@ -451,6 +451,7 @@ video {
     padding: 8px 15px 8px 23px;
 }
 
+
 .wsmenu>.wsmenu-list>li>ul.sub-menu>li>a>i {
     position: absolute;
     top: 12px;
@@ -796,7 +797,9 @@ video {
 --------------------------------------------*/
 
 .wsmobileheader {
-    display: none;
+    /* display: none !important; */
+    position: absolute;
+    top: -100%;
 }
 
 .overlapblackbg {
@@ -979,6 +982,8 @@ video {
         display: none;
     }
 
+
+
     .wsmenu>.wsmenu-list>li>ul.sub-menu>li>a:hover {
         background-color: #e7e7e7;
         color: #666666;
@@ -988,6 +993,7 @@ video {
     .wsmenu>.wsmenu-list>li>ul.sub-menu li:hover>a {
         background-color: #e7e7e7;
         color: #666666;
+
     }
 
     .wsmenu>.wsmenu-list>li>ul.sub-menu>li>ul.sub-menu {
@@ -1190,7 +1196,7 @@ video {
     /* ================== Mobile Header CSS ================== */
     .wsmobileheader {
         width: 100%;
-        display: block;
+        /* display: block !important; */
         position: fixed;
         top: 0;
         left: 0;
@@ -1486,5 +1492,51 @@ video {
     .wsmenu>.wsmenu-list>li a.menuhomeicon {
         padding-left: 22px;
         padding-right: 22px;
+    }
+}
+
+.mobile-menu {
+    animation-name: mobile-menu;
+    animation-duration: 0.5s;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    display: none !important;
+}
+
+.mobile-menu-list {
+    animation-name: mobile-menu-list;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    transform-origin: top center;
+}
+
+
+@keyframes mobile-menu {
+    0% {
+        left: -80%;
+    }
+
+    100% {
+        left: 0;
+    }
+}
+
+@keyframes mobile-menu-list {
+    0% {
+        transform: scaleY(0)
+    }
+
+    80% {
+        transform: scaleY(1.1)
+    }
+
+    100% {
+        transform: scaleY(1)
+    }
+}
+
+@media only screen and (max-width:991px) {
+    .mobile-menu {
+        display: block !important;
     }
 }

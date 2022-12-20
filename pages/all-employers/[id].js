@@ -1,6 +1,6 @@
 import React from 'react'
 import { useRouter } from 'next/router'
-import Layouts from '../../src/layout/Layouts'
+import Layout from '../../src/layout/Layout'
 import EmployerDetails from '../../src/components/employer/EmployerDetails';
 
 const SingleEmployer = () => {
@@ -8,7 +8,7 @@ const SingleEmployer = () => {
     const { fullName } = router.query;
     const { position } = router.query;
     return (
-        <Layouts>
+        <Layout>
             <section
                 id="doctor-breadcrumbs"
                 className="bg-fixed doctor-details-section division"
@@ -26,8 +26,8 @@ const SingleEmployer = () => {
                     </div>
                 </div>
             </section>
-            <EmployerDetails/>
-        </Layouts>
+            <EmployerDetails />
+        </Layout>
     )
 }
 
