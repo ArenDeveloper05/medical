@@ -1796,6 +1796,22 @@ span.id-color {
 }
 
 @media only screen and (min-width: 230px) and (max-width: 991px) {
+  .doctors-search {
+    margin: auto;
+    flex-direction: column;
+  }
+
+  .doctors-search input {
+    width: 100%;
+    height: 30px;
+    margin: 10px;
+  }
+
+  .doctors-search button {
+    margin-top: 10px;
+    padding: 6px 26px;
+  }
+
   .headtoppart {
     display: none;
   }
@@ -6521,19 +6537,29 @@ nav a#pull {
 
 .doctor-search-input {
   width: 40%;
-  border-radius: 8px;
+  outline: none;
   border: none;
-  box-shadow: 0 0 5px rgb(10 10 10 / 20%);
-  padding-left: 10px;
+  box-shadow: 4px 3px 3px #c7c7c7;
+  text-indent: 8px;
 }
 
 .doctor-search-button {
-  border-radius: 6px;
   border: none;
-  box-shadow: 0 0 5px rgb(10 10 10 / 20%);
+  padding: 0px 8px;
+  box-shadow: 2px 2px 5px #525252;
+  outline: none;
   background-color: #00a3c8;
   color: #fff;
-  cursor: pointer;
+}
+
+
+.doctor-search-button:active {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+
+.doctor-search-button:focus {
+  outline: none;
 }
 
 .pr-31 {
@@ -6789,6 +6815,10 @@ nav a#pull {
 .button:active {
   transform: translate(2px, 2px);
   box-shadow: none;
+}
+
+.button:focus {
+  outline: none;
 }
 
 .modal-parent {
@@ -7068,4 +7098,186 @@ nav a#pull {
 .services-admin-base-add span {
   font-size: 30px;
   font-weight: 600;
+}
+
+figure img {
+  width: 100%;
+}
+
+/* MedicalLoader */
+@use postcss-cssnext;
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+:root {
+  --EASE_INOUT_QUAD: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  --EASE_IN_QUAD: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  --EASE_OUT_QUAD: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  --COLOR_UI_PHARMACY: #237db5;
+  --loaderPill_DURATION: 1800ms;
+}
+
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
+
+.loaderPill {
+  text-align: center;
+}
+
+.loaderPill-anim {
+  height: 160px;
+}
+
+.loaderPill-anim-bounce {
+  animation: loaderPillBounce var(--loaderPill_DURATION) linear infinite;
+}
+
+.loaderPill-anim-flop {
+  transform-origin: 50% 50%;
+  animation: loaderPillFlop var(--loaderPill_DURATION) linear infinite;
+}
+
+.loaderPill-pill {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 80px;
+  height: 30px;
+  border-radius: 15px;
+  border: 1px solid var(--COLOR_UI_PHARMACY);
+  background-image: linear-gradient(to right, var(--COLOR_UI_PHARMACY) 50%, #ffffff 50%);
+}
+
+.loaderPill-floor {
+  display: block;
+  text-align: center;
+}
+
+.loaderPill-floor-shadow {
+  display: inline-block;
+  width: 70px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: color(var(--COLOR_UI_PHARMACY) alpha(26%));
+  transform: translateY(-15px);
+  animation: loaderPillScale var(--loaderPill_DURATION) linear infinite;
+}
+
+.loaderPill-text {
+  font-weight: bold;
+  color: var(--COLOR_UI_PHARMACY);
+  text-transform: uppercase;
+}
+
+@keyframes loaderPillBounce {
+  0% {
+    transform: translateY(123px);
+    animation-timing-function: var(--EASE_OUT_QUAD);
+  }
+
+  25% {
+    transform: translateY(40px);
+    animation-timing-function: var(--EASE_IN_QUAD);
+  }
+
+  50% {
+    transform: translateY(120px);
+    animation-timing-function: var(--EASE_OUT_QUAD);
+  }
+
+  75% {
+    transform: translateY(20px);
+    animation-timing-function: var(--EASE_IN_QUAD);
+  }
+
+  100% {
+    transform: translateY(120px);
+  }
+}
+
+@keyframes loaderPillFlop {
+  0% {
+    transform: rotate(0);
+  }
+
+  25% {
+    transform: rotate(90deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  75% {
+    transform: rotate(450deg);
+  }
+
+  100% {
+    transform: rotate(720deg);
+  }
+}
+
+@keyframes loaderPillScale {
+  0% {
+    transform: translateY(-15px) scale(1, 1);
+    animation-timing-function: var(--EASE_OUT_QUAD);
+  }
+
+  25% {
+    transform: translateY(-15px) scale(0.7, 1);
+    animation-timing-function: var(--EASE_IN_QUAD);
+  }
+
+  50% {
+    transform: translateY(-15px) scale(1, 1);
+    animation-timing-function: var(--EASE_OUT_QUAD);
+  }
+
+  75% {
+    transform: translateY(-15px) scale(0.6, 1);
+    animation-timing-function: var(--EASE_IN_QUAD);
+  }
+
+  100% {
+    transform: translateY(-15px) scale(1, 1);
+  }
+}
+
+.card-appear {
+  animation-name: appear;
+  animation-duration: 0.8s;
+}
+
+@keyframes appear {
+  0% {
+    transform: scale(0.7);
+  }
+
+  100% {
+    transform: 1;
+  }
+}
+
+.load-appear {
+  animation-name: load-appear;
+  animation-duration: 0.2s;
+}
+
+@keyframes load-appear {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }

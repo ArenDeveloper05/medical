@@ -13,8 +13,6 @@ const api = axios.create({
     Authorization: `Bearer ${token}`,
   },
 });
-//Stex petq a back-y ta tokeny normal tesqov, aranc Authorization=....
-//dzerov tokeny 15rd toxum dneluc ashxatum a
 
 //GET
 export const getAllDoctors = async (lang) => {

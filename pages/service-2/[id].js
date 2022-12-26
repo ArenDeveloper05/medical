@@ -9,6 +9,7 @@ const Service2 = () => {
   const router = useRouter();
   const { name } = router.query;
   const { t } = useTranslation('common');
+
   return (
     <Layout>
       <PageBanner

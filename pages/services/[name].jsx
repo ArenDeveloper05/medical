@@ -9,6 +9,7 @@ import parse from "html-react-parser";
 import Link from "next/link";
 import Image from "next/image";
 import Loader from "../../src/components/adminPanel/Loader";
+import MedLoader from "../../src/components/MedLoader";
 
 const Service = () => {
   const { query } = useRouter();
@@ -17,9 +18,9 @@ const Service = () => {
   const [serviceInfo, setServiceInfo] = useState({});
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    console.log(doctorsList, "array of Doctors");
-  }, [doctorsList]);
+  // useEffect(() => {
+  //   console.log(doctorsList, "array of Doctors");
+  // }, [doctorsList]);
 
   useEffect(() => {
     let doctors = [];
@@ -38,10 +39,14 @@ const Service = () => {
               data: { data },
             } = await getSingleDoctor(generateLanguage(lang), Number(doctorId));
             const doctorResponse = data[0][0];
-            doctors.push(doctorResponse);
+            doctorResponse && doctors.push(doctorResponse);
           }
           setDoctorsList(() => {
             return [...doctors];
+          });
+        } else {
+          setDoctorsList(() => {
+            return [];
           });
         }
       } catch (error) {
@@ -50,22 +55,21 @@ const Service = () => {
       setLoading(false);
     }
     fetchInfo();
-
-    // return () => {
-
-    //   console.log("out");
-    // };
   }, [lang, query.id]);
 
   return (
     <Layout>
       <section id="tabs-2" className="wide-100 tabs-section division">
         <div className="container">
-          {loading && <Loader />}
+          {loading && <MedLoader />}
           <div className="row">
             <div className="col-lg-4">
-              <div className="list-group text-center clearfix">
-                {!loading && <h3>Բժիշկներ</h3>}
+              <div
+                className="list-group text-center clearfix"
+                style={{ minHeight: "300px" }}
+              >
+                {loading && <MedLoader />}
+                {!loading && <h3>{t("header-doctors")}</h3>}
                 {doctorsList.length !== 0 &&
                   !loading &&
                   doctorsList &&
@@ -73,7 +77,7 @@ const Service = () => {
                     if (item !== undefined && item !== null) {
                       return (
                         <div
-                          className="shadow"
+                          className="shadow card-appear"
                           style={{ transform: "scale(0.85" }}
                           key={uuid()}
                         >
@@ -115,10 +119,12 @@ const Service = () => {
                   })}
               </div>
             </div>
-            <div className="col-lg-8">
+            <div className="col-lg-8 card-appear">
               {!loading && (
                 <h1>
-                  {serviceInfo.Name !== null && serviceInfo.Name !== undefined
+                  {serviceInfo &&
+                  serviceInfo.Name !== null &&
+                  serviceInfo.Name !== undefined
                     ? serviceInfo.Name
                     : ""}
                 </h1>

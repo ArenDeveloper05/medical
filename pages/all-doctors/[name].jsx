@@ -39,14 +39,14 @@ const SingleDoctor = () => {
         <div className="container">
           <div className="row">
             <div className="col-md-7 offset-md-5">
-              <div className="doctor-data white-color">
+              <div className="doctor-data white-color card-appear">
                 <h2 className="h2-xs">
                   {singleDoctor.FirstName ? singleDoctor.FirstName : ""}{" "}
                   {singleDoctor.FirstName ? singleDoctor.LastName : ""}
                 </h2>
                 <h5 className="h5-md">
                   {singleDoctor.Position ? singleDoctor.Position : ""}
-                  {" / "}
+                  {!singleDoctorLoading && " / "}
                   {singleDoctor.Services ? singleDoctor.Services : ""}
                 </h5>
               </div>

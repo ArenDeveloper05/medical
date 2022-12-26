@@ -1,7 +1,12 @@
 import { memo, useEffect, useState } from "react";
 import { stickyNav } from "../utils";
-import Header from "./Header";
-import Footer from "./Footer";
+import dynamic from "next/dynamic";
+
+const Header = dynamic(() => import("./Header"))
+const Footer = dynamic(() => import("./Footer"))
+
+// import Header from "./Header";
+// import Footer from "./Footer";
 
 const Layout = ({ children }) => {
   const [toggle, setToggle] = useState(false);

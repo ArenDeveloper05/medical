@@ -1,14 +1,16 @@
+import dynamic from "next/dynamic";
 import useTranslation from "next-translate/useTranslation";
 import { useState, useEffect } from "react";
 import Pagination from "../../src/components/Pagination";
 import { getDoctorsLength, getPaginateDoctors } from "../../src/DataServices";
-import Layout from "../../src/layout/Layout";
+const Layout = dynamic (() => import("../../src/layout/Layout"));
 import PageBanner from "../../src/layout/PageBanner";
 import { generateLanguage } from "../../src/utils";
 import AllDoctors from "../../src/components/All-doctors/AllDoctors";
+import { useCallback } from "react";
 
 const AllDoctorsPage = () => {
-  const { lang } = useTranslation("common");
+  const { t, lang } = useTranslation("common");
 
   const [doctorsData, setDoctorsData] = useState([]);
   const [doctorsDataLoading, setDoctorsDataLoading] = useState(false);
@@ -22,6 +24,7 @@ const AllDoctorsPage = () => {
   });
 
   const getPageDoctors = async (page) => {
+    window.scrollTo({ top: 0 });
     setDoctorsDataLoading(true);
     try {
       const {
@@ -57,7 +60,7 @@ const AllDoctorsPage = () => {
 
   return (
     <Layout>
-      <PageBanner pageTitle="Meet the Doctors" />
+      <PageBanner pageTitle={t("banner.doctors")} />
       <AllDoctors
         doctorsData={doctorsData}
         setDoctorsData={setDoctorsData}

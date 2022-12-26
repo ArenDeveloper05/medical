@@ -7,7 +7,7 @@ const AllDoctorsCards = ({ doctorsData }) => {
     <>
       {doctorsData.map(({ ID, FirstName, LastName, Position, Picture }) => {
         return (
-          <div className="col-md-6 col-lg-4 " key={ID}>
+          <div className="col-md-6 col-lg-4 card-appear" key={ID}>
             <div className="doctor-2 shadow">
               <div className="hover-overlay">
                 <Image

@@ -127,9 +127,9 @@
     "title1": "MedServices",
     "title2": "All rights reserved"
   },
-  "aboutUs":{
-    "title":"Our Staff",
-    "button":"Meet All Employers"
+  "aboutUs": {
+    "title": "Our Staff",
+    "button": "Meet All Employers"
   },
   "departments": {
     "page-banner-title": "Our Departments",
@@ -138,9 +138,9 @@
       "description": "Lorem ipsum dolor"
     }
   },
-  "news":{
+  "news": {
     "page-banner-title": "Latest News",
-    "popularposts":"Popular Posts"
+    "popularposts": "Popular Posts"
   },
   "contactus": {
     "phone": "Phone:",
@@ -159,9 +159,12 @@
       "sunday": "Sunday"
     }
   },
-  "doctorsearchfields":{
-    "doctorName":"Doctor Name",
-    "doctorSurname":"Doctor SurName",
-    "searchButton":"Search"
+  "doctorsearchfields": {
+    "doctorName": "Doctor Name",
+    "doctorSurname": "Doctor SurName",
+    "searchButton": "Search"
+  },
+  "banner": {
+    "doctors": "Meet all doctors"
   }
 }
