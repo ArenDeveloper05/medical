@@ -1,6 +1,7 @@
 import React from "react";
 import OurStaff from "./OurStaff";
 import Image from "next/image";
+
 const AboutUsInfo4 = () => {
     return (
         <section id="info-4" className="wide-100 info-section division">

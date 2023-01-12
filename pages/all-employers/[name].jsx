@@ -1,6 +1,6 @@
 import React from 'react'
 import { useRouter } from 'next/router'
-import Layouts from '../../src/layout/Layouts'
+import Layouts from '../../src/layout/Layout'
 import EmployerDetails from '../../src/components/employer/EmployerDetails';
 import useTranslation from "next-translate/useTranslation";
 import { getSingleDoctor } from '../../src/DataServices';

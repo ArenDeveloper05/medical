@@ -1,5 +1,4 @@
 import React, { useCallback, useState,useRef,useEffect } from 'react'
-import { getAllNews } from '../../../DataServices';
 import { getPaginatedNews,getNewsLength,addNews,changeNews } from '../../../DataServices';
 import { generateLanguage } from '../../../utils';
 import useTranslation from 'next-translate/useTranslation';
@@ -14,7 +13,7 @@ const NewsAdmin = () => {
         min_description:"",
         imageUrl:"",
         isTop:"nontop",
-        lang:generateLanguage(lang),
+        lang:"",
     });
     const [fetchedNewsData, setFetchedNewsData] = useState([]);
     const [newsDataLoading, setNewsDataLoading] = useState(false);
@@ -25,16 +24,16 @@ const NewsAdmin = () => {
     const itemsPerPage = 10;
     const [selectedPage, setSelectedPage] = useState({page:0,request:true});
   
-
       //Refs
     const titleRef = useRef(null);
     const min_descriptionRef = useRef(null);
     const isTopRef = useRef(null);
     // const descriptionRef = useRef(null);
+    const language =
+    lang == "hy" ? "հայերեն" : lang == "ru" ? "ռուսերեն" : "անգլերեն"; 
 
     const handleChange = (event) =>{
         const value = event.target.value;
-        
         setNewsData((prevData =>{
             return {
                 ...prevData,
@@ -59,10 +58,6 @@ const NewsAdmin = () => {
       setNewsDataLoading(false);
   },[lang, newsDataError])
 
-      // useEffect(() => {
-      //   console.log(newsData)
-      // },[newsData])
-
       useEffect(() => {
         async function getNews() {
           setNewsDataLoading(true);
@@ -72,8 +67,14 @@ const NewsAdmin = () => {
             } = await getPaginatedNews(generateLanguage(lang), itemsPerPage, 1);
             setFetchedNewsData(data[0]);
             const length = await getNewsLength();
-            // console.log(length.data.data, "asddsadas");
             setDataLength(length.data.data);
+            setSelectedPage((prev) => {
+              return{
+                ...prev,
+                page: Math.ceil(length.data.data / itemsPerPage) !== 0? 1:prev.page,
+                request:false
+              }
+            });
             // newsDataError && setNewsDataError(false);
             setNewsDataLoading(false);
           } catch (error) {
@@ -128,10 +129,8 @@ const NewsAdmin = () => {
           // ){
            
             if (edit) {
-              
-              await addNews(newsData);
+              await addNews({...newsData, lang: generateLanguage(lang)});
               clearInputValues();
-              // console.log("avelacvec ")
             } else {
               console.log(newsData,"xmbagrvac data")
               await changeNews(newsData,generateLanguage(lang), selectedNews.ID);
@@ -139,24 +138,26 @@ const NewsAdmin = () => {
               setEdit((prev) => !prev)
           }
           fetchData(1);
-          // console.log(newsData,"avelacav")
         }
         
         // } 
         catch (error) {
           console.log(error, "chavelacav");
-        }
-          
-          
+        }  
       }, [newsData, edit, selectedNews, fetchData, lang]);
 
     return (
-        <div className='news-admin-panel'>
+        <div className='doctors-admin-panel'>
+          <h1 style={{ textAlign: "center" }}>
+          Ընտրված լեզուն՝{" "}
+          {lang == "hy" ? "հայերեն" : lang == "ru" ? "ռուսերեն" : "անգլերեն"}
+        </h1>
           <div>
            <div className="doctors-admin-panel-edit-row">
                 <label htmlFor="title">Վերնագիր</label>
                 <input
                 type = "text"
+                placeholder={`Գրեք ${language} լեզվի ձեր տարբերակը`}
                 id = "title"
                 name = "title"
                 value = {newsData.title}
@@ -169,6 +170,7 @@ const NewsAdmin = () => {
             <label htmlFor="min_description">Կարճ նկարագիր</label>
             <input
                 type = "text"
+                placeholder={`Գրեք ${language} լեզվի ձեր տարբերակը`}
                 id = "min_description"
                 name = "min_description"
                 ref = {min_descriptionRef}
@@ -177,7 +179,7 @@ const NewsAdmin = () => {
             />
             </div>
 
-            <input 
+            {/* <input 
             type = "file"
             className='file-input'
             name = "imageUrl"
@@ -188,12 +190,13 @@ const NewsAdmin = () => {
                 imageUrl: e.target.files[0]
               }
             })}}
-            />
+            /> */}
 
             <div className="doctors-admin-panel-edit-row">
             <label htmlFor="description">Տեքստ</label>
                 <textarea
                 className='news-text-area'
+                placeholder={`Գրեք ${language} լեզվի ձեր տարբերակը`}
                 id  = "description"
                 name = "description"
                 value = {newsData.description}

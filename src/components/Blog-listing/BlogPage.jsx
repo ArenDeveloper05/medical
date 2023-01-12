@@ -2,9 +2,11 @@ import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import { generateLanguage} from "../../utils";
 import useTranslation from "next-translate/useTranslation";
-import { getPaginatedNews,getAllNews,getNewsLength, getPopularNews } from "../../DataServices";
+import { getPaginatedNews,getNewsLength, getPopularNews } from "../../DataServices";
 import Loader from "../adminPanel/Loader";
 import Pagination from "../Pagination";
+import Image from "next/image";
+
 const BlogPage = () => {
 
   const [state, setState] = useState([]);
@@ -17,7 +19,6 @@ const BlogPage = () => {
   const [selectedPage, setSelectedPage] = useState({page:0,request:true});
   const itemsPerPage = 10;
   
-
    const getPageNews = async (page) => {
     setNewsDataLoading(true);
     try {
@@ -41,12 +42,17 @@ const BlogPage = () => {
           data: { data },
         } = await getPaginatedNews(generateLanguage(lang), itemsPerPage, 1);
         const length = await getNewsLength();
-        console.log(length.data.data, "asddsadas");
         setDataLength(length.data.data);
+        setSelectedPage((prev) => {
+              return{
+                ...prev,
+                page: Math.ceil(length.data.data / itemsPerPage) !== 0? 1:prev.page,
+                request:false
+              }
+            });
         setNewsData(data[0]);
         newsDataError && setNewsDataError(false);
         const result  = await getPopularNews(generateLanguage(lang))
-        console.log(result.data.data[0])
         setPopularData(result.data.data[0])
       
       } catch (error) {
@@ -56,7 +62,6 @@ const BlogPage = () => {
     }
     getNews();
   }, []);
-
 
   return (
     <div id="blog-page" className="wide-100 blog-page-section division">
@@ -79,11 +84,16 @@ const BlogPage = () => {
                 return(
                    <div key ={ID && ID}className="blog-post">
                    <div className="blog-post-img">
-                     <img
-                       className="img-fluid"
-                       src={ImageURL && ImageURL}
-                       alt="blog-post-image"
-                     />
+                   <Image
+                          className="img-fluid"
+                          // src= {"/" + ImageURL}
+                          src = "/images/image-07.png"
+                          alt="newsImage"
+                          layout="responsive"
+                          objectFit="contain"
+                          width={"100%"}
+                          height={"100%"}
+                        />
                    </div>
                    <div className="blog-post-txt">
                      <h5 className="h5-xl steelblue-color">
@@ -91,6 +101,7 @@ const BlogPage = () => {
                          <a>{Title && Title}</a>
                        </Link>
                      </h5>
+                     <span>{UpdatedAt.slice(0, 10)}</span>
                      <span>
                        {TextShort && TextShort}
                      </span>
@@ -103,7 +114,6 @@ const BlogPage = () => {
                 }
                 )}
             </div>
-
           {/* SIDEBAR */}
           <aside id="sidebar" className="col-lg-4">
              {/* POPULAR POSTS */}
@@ -116,16 +126,22 @@ const BlogPage = () => {
                       ImageURL,
                       Title,
                       TextShort} ) =>{
-                      
                       return(
                         <li 
                         key = {ID && ID}
                         className="clearfix d-flex align-items-center">
-                        <img
+                          <div>
+                         <Image
                           className="img-fluid"
-                          src={ImageURL && ImageURL}
-                          alt="blog-post-preview"
+                          // src= {"/" + ImageURL}
+                          src = "/images/image-07.png"
+                          alt="newsImage"
+                          layout="responsive"
+                          objectFit="contain"
+                          width={"100%"}
+                          height={"100%"}
                         />
+                        </div>
                         <div className="post-summary">
                          <h5>{Title && Title}</h5>
                           <Link href={`/blog-listing/${ID}?id=${ID}`}>

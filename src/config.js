@@ -1,7 +1,9 @@
 //Admin Panel
 import NewsAdmin from "./components/adminPanel/newsAdmin/NewsAdmin";
 import DoctorsAdmin from "./components/adminPanel/doctorsAdmin/DoctorsAdmin";
-import ServicesAdmin from "./components/adminPanel/servicesAdmin/ServicesAdmin";import GalleryAdmin from "./components/adminPanel/GalleryAdmin";
+import ServicesAdmin from "./components/adminPanel/servicesAdmin/ServicesAdmin";
+import GalleryAdmin from "./components/adminPanel/GalleryAdmin";
+
 
 export const CONFIG = {
     headerConfig: [

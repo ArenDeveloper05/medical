@@ -1,15 +1,15 @@
-import AboutUsInfo from "../src/components/About-us/AboutUsInfo"
+import AboutUsInfo4 from "../src/components/About-us/AboutUsInfo4";
 import Banner5 from "../src/components/Common/Banner-5";
-import Layouts from "../src/layout/Layouts";
+import Layout from "../src/layout/Layout"
 import PageBanner from "../src/layout/PageBanner";
 
 const AboutUs = () => {
   return (
-    <Layouts>
+    <Layout>
       <PageBanner pageTitle="About Us" />
-      <AboutUsInfo/>
+      <AboutUsInfo4/>
       <Banner5 />
-    </Layouts>
+    </Layout>
   );
 };
 

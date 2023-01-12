@@ -19,7 +19,7 @@ const OurStaff = () => {
               data: { data },
             } = await searchEmployer(generateLanguage(lang));
             setEmployerData(data[0]);
-            setPrintedData(data[0].filter((item,idx) => idx < 4))
+            // setPrintedData(data[0].filter((item,idx) => idx < 4))
           } catch (error) {
             console.log(error);
             // setNewsDataError(true);

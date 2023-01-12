@@ -1,12 +1,13 @@
 
 import useTranslation from "next-translate/useTranslation";
 import { useEffect, useState } from "react";
-import Loader from "../Loader";
+// import Loader from "../Loader";
 import { generateLanguage } from "../../../utils";
 import Modal from "../Modal"
 import Pagination from "../../../components/Pagination";
 import Image from "next/image";
-import { deleteNewsFunction } from "../../../DataServices";
+import { deleteSingleNews } from "../../../DataServices";
+
 const NewsTable = (
   {
   setFetchedNewsData,
@@ -28,14 +29,9 @@ const NewsTable = (
     const {lang} = useTranslation("common");
     const [modalOpen, setModalOpen] = useState(false);
   
-    useEffect(() => {
-      // console.log(selectedNews, "yntrvacy esa")
-      
-    },[selectedNews])
-
     const delFunctions = async ()=>{
       try{
-        await deleteNewsFunction(selectedNews.ID);
+        await deleteSingleNews(selectedNews.ID)
         setModalOpen((prev) => !prev);
         setFetchedNewsData(fetchedNewsData.filter((item)=>item.ID !== selectedNews.ID))
       }
@@ -100,7 +96,6 @@ const NewsTable = (
                           <button
                             className="rounded button edit-button"
                             onClick={() => {
-                              
                               setNewsData({
                                   title: dataValues.Title,
                                   description: dataValues.Text,
@@ -112,7 +107,6 @@ const NewsTable = (
                               edit && setEdit((prev) => !prev);
                               selectedNews !== dataValues &&
                                 setSelectedNews(dataValues);
-                            
                             }}
                           >
                             Խմբագրել
@@ -120,7 +114,6 @@ const NewsTable = (
                         </td>
                       </tr>
                     )
-                
                }
                 )}
           </tbody>

@@ -7093,8 +7093,9 @@ nav a#pull {
   flex-direction: column;
   justify-content: space-around;
 }
-.news-admin-panel>textarea{
+.news-text-area{
     min-height: 200px;
+    width: 1200px;
     border-radius: 20px;
     padding: 10px;
 }
@@ -7102,6 +7103,7 @@ nav a#pull {
   width: 30px;
   height: 30px;
   margin-left: 10px;
+  margin-top: 20px;
   cursor: pointer;
 }
 .news-title{
@@ -7117,5 +7119,12 @@ nav a#pull {
   border: none;
   cursor: pointer;
 }
-
+.home-news{
+  display: flex;
+  justify-content: space-between;
+}
+.news-cards{
+  width:30%;
+  height:100%;
+}
   

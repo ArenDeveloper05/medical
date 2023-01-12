@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-
 function Editor({
   editorValue,
   setEditorValue,
@@ -8,7 +7,6 @@ function Editor({
 }) {
   const editorRef = useRef();
   const { CKEditor, ClassicEditor } = editorRef.current || {};
-
   useEffect(() => {
     editorRef.current = {
       CKEditor: require("@ckeditor/ckeditor5-react").CKEditor,
@@ -16,7 +14,6 @@ function Editor({
     };
     setEditorLoaded(true);
   }, []);
-
   return (
     <div>
       {editorLoaded ? (
@@ -37,5 +34,4 @@ function Editor({
     </div>
   );
 }
-
 export default Editor;
