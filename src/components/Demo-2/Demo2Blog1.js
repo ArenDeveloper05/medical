@@ -1,7 +1,35 @@
 import Link from "next/link";
 import React from "react";
+import { useState,useEffect } from "react";
+import Image from "next/image";
+import Loader from "../adminPanel/Loader";
+import { generateLanguage } from "../../utils";
+import useTranslation from "next-translate/useTranslation";
+import { getPaginatedNews } from "../../DataServices";
 
 const Demo2Blog1 = () => {
+    const [newsData,setNewsData] = useState("");
+    const [newsDataError, setNewsDataError] = useState(false);
+    const [newsDataLoading, setNewsDataLoading] = useState(false);
+    const {lang } = useTranslation('common');
+
+    useEffect(() => {
+        async function getNews() {
+          setNewsDataLoading(true);
+          try {
+            const {
+              data: { data },
+            } = await getPaginatedNews(generateLanguage(lang), 3, 1);
+            setNewsData(data[0]);
+            newsDataError && setNewsDataError(false);
+          } catch (error) {
+            setNewsDataError(true);
+          }
+          setNewsDataLoading(false);
+        }
+        getNews();
+      }, []);
+    
     return (
         <section id="blog-1" className="wide-60 blog-section division home-news">
             <div className="container">
@@ -21,120 +49,58 @@ const Demo2Blog1 = () => {
                     </div>
                 </div>
                 {/* BLOG POSTS HOLDER */}
-                <div className="row">
+                <div className="row home-news">
                     {/* BLOG POST #1 */}
-                    <div className="col-lg-4">
-                        <div
+                    {newsDataLoading && <Loader></Loader>}
+                {!newsDataLoading && newsData && newsData.map(({
+                  ID,
+                  ImageURL,
+                  CreatedAt,
+                  Title,
+                  TextShort}) => {
+                return(
+                    <div
                             className="blog-post wow fadeInUp news-cards"
                             data-wow-delay="0.4s"
+                            key = {ID && ID}
                         >
                             {/* BLOG POST IMAGE */}
                             <div className="blog-post-img">
-                                <img
-                                    className="img-fluid"
-                                    src="images/blog/post-1-img.jpg"
-                                    alt="blog-post-image"
-                                />
+                            <Image
+                                className="img-fluid"
+                                // src= {"/" + ImageURL}
+                                src = "/images/image-07.png"
+                                alt="newsImage"
+                                layout="responsive"
+                                objectFit="contain"
+                                width={"100%"}
+                                height={"100%"}
+                            />
                             </div>
                             {/* BLOG POST TITLE */}
                             <div className="blog-post-txt">
                                 {/* Post Title */}
                                 <h5 className="h5-sm steelblue-color">
-                                    <Link href="/single-post">
+                                    <Link href={`/blog-listing/${ID}?id=${ID}`}>
                                         <a>
-                                            5 Benefits Of Integrative Medicine
+                                            {Title && Title}
                                         </a>
                                     </Link>
                                 </h5>
                                 {/* Post Data */}
                                 <span>
-                                    May 03, 2019 by
-                                    <span>Dr.Jeremy Smith</span>
+                                   {CreatedAt.slice(0, 10)}
                                 </span>
                                 {/* Post Text */}
                                 <p>
-                                    Quaerat neque purus ipsum neque dolor primis
-                                    libero tempus impedit tempor blandit sapien
-                                    at gravida donec ipsum, at porta justo...
+                                   {TextShort && TextShort}
                                 </p>
                             </div>
                         </div>
-                    </div>
+                )
+            }
+            )}    
                     {/* END  BLOG POST #1 */}
-                    {/* BLOG POST #2 */}
-                    <div className="col-lg-4">
-                        <div
-                            className="blog-post wow fadeInUp news-cards"
-                            data-wow-delay="0.6s"
-                        >
-                            {/* BLOG POST IMAGE */}
-                            <div className="blog-post-img">
-                                <img
-                                    className="img-fluid"
-                                    src="images/blog/post-2-img.jpg"
-                                    alt="blog-post-image"
-                                />
-                            </div>
-                            {/* BLOG POST TEXT */}
-                            <div className="blog-post-txt">
-                                {/* Post Title */}
-                                <h5 className="h5-sm steelblue-color">
-                                    <Link href="/single-post">
-                                        <a>Your Health Is In Your Hands</a>
-                                    </Link>
-                                </h5>
-                                {/* Post Data */}
-                                <span>
-                                    Apr 28, 2019 by
-                                    <span>Dr.Jonathan Barnes</span>
-                                </span>
-                                {/* Post Text */}
-                                <p>
-                                    Quaerat neque purus ipsum neque dolor primis
-                                    libero tempus impedit tempor blandit sapien
-                                    at gravida donec ipsum, at porta justo...
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    {/* END  BLOG POST #2 */}
-                    {/* BLOG POST #3 */}
-                    <div className="col-lg-4">
-                        <div
-                            className="blog-post wow fadeInUp news-cards"
-                            data-wow-delay="0.8s"
-                        >
-                            {/* BLOG POST IMAGE */}
-                            <div className="blog-post-img">
-                                <img
-                                    className="img-fluid"
-                                    src="images/blog/post-3-img.jpg"
-                                    alt="blog-post-image"
-                                />
-                            </div>
-                            {/* BLOG POST TEXT */}
-                            <div className="blog-post-txt">
-                                {/* Post Title */}
-                                <h5 className="h5-sm steelblue-color">
-                                    <Link href="/single-post">
-                                        <a>How Weather Impacts Your Health</a>
-                                    </Link>
-                                </h5>
-                                {/* Post Data */}
-                                <span>
-                                    Apr 17, 2019 by
-                                    <span>Dr.Megan Coleman</span>
-                                </span>
-                                {/* Post Text */}
-                                <p>
-                                    Quaerat neque purus ipsum neque dolor primis
-                                    libero tempus impedit tempor blandit sapien
-                                    at gravida donec ipsum, at porta justo...
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    {/* END  BLOG POST #3 */}
                 </div>
                 {/* END BLOG POSTS HOLDER */}
                 {/* ALL POSTS BUTTON */}

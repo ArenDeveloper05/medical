@@ -2,6 +2,8 @@
 import NewsAdmin from "./components/adminPanel/newsAdmin/NewsAdmin";
 import DoctorsAdmin from "./components/adminPanel/doctorsAdmin/DoctorsAdmin";
 import ServicesAdmin from "./components/adminPanel/servicesAdmin/ServicesAdmin";
+import GalleryAdmin from "./components/adminPanel/GalleryAdmin";
+
 
 export const CONFIG = {
     headerConfig: [
@@ -40,7 +42,8 @@ export const CONFIG = {
             component: <DoctorsAdmin />
         },
         {
-            name: "Տեսադարան"
+            name: "Տեսադարան",
+            component: <GalleryAdmin/>
         },
         {
             name: "Ծառայություններ",
