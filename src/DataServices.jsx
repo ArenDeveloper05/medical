@@ -13,10 +13,10 @@ const api = axios.create({
     Authorization: `Bearer ${token}`,
   },
 });
-//Stex petq a back-y ta tokeny normal tesqov, aranc Authorization=....
-//dzerov tokeny 15rd toxum dneluc ashxatum a
+// Stex petq a back-y ta tokeny normal tesqov, aranc Authorization=....
+// dzerov tokeny 15rd toxum dneluc ashxatum a
 
-//GET
+// GET
 export const getAllDoctors = async (lang) => {
   return await api.get(`/doctors/${lang}`);
 };
@@ -69,7 +69,7 @@ export const getSingleNews = async (lang, id) => {
   return await api.get(`/news/${lang}/${id}`);
 };
 
-//POST
+// POST
 export const login = async (loginData) => {
   return await api.post("/login", loginData);
 };
@@ -127,3 +127,4 @@ export const changeClickableService = async (changedData, lang, id) => {
 export const changeNews = async (changedData,  lang, id) => {
   return await api.put(`/news/${lang}/${id}`, changedData);
 };
+
