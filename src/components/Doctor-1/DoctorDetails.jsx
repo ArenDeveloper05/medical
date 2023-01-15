@@ -1,21 +1,37 @@
 import parse from "html-react-parser";
 import Image from "next/image";
+import { APIUrl } from "../../DataServices";
 import MedLoader from "../MedLoader";
 
 const DoctorDetails = ({ singleDoctor, singleDoctorLoading }) => {
+  console.log(singleDoctor);
   return (
     <section id="doctor-1-details" className="doctor-details-section division">
       <div className="container">
         <div className="row">
           <div className="col-md-5">
             <div className="doctor-photo mb-40">
-              {!singleDoctorLoading && (
+              {!singleDoctorLoading && singleDoctor.Picture !== null ? (
                 <Image
+                  loader={() =>
+                    `${APIUrl}/images/doctors/${singleDoctor.Picture}`
+                  }
+                  crossOrigin="anonymous"
                   className="img-fluid card-appear"
-                  src="/images/dc1e402e9f6d3bccebcce5f6a3e4ef96"
+                  src={`${APIUrl}/images/doctors/${singleDoctor.Picture}`}
                   alt="doctor-foto"
                   layout="responsive"
-                  objectFit="contain"
+                  objectFit="cover"
+                  width={"100%"}
+                  height={"100%"}
+                />
+              ) : (
+                <Image
+                  className="img-fluid card-appear"
+                  src={`/images/no-image.jpg`}
+                  alt="doctor-foto"
+                  layout="responsive"
+                  objectFit="cover"
                   width={"100%"}
                   height={"100%"}
                 />
@@ -24,8 +40,11 @@ const DoctorDetails = ({ singleDoctor, singleDoctorLoading }) => {
                 <table className="table table-striped">
                   <tbody>
                     <tr>
-                      <td>{typeof singleDoctor.Picture}</td>
-                      <td>M.D. of Medicine</td>
+                      <td>
+                        {singleDoctor.FirstName ? singleDoctor.FirstName : ""}{" "}
+                        {singleDoctor.LastName ? singleDoctor.LastName : ""}{" "}
+                        {singleDoctor.Patronymic ? singleDoctor.Patronymic : ""}{" "}
+                      </td>
                     </tr>
                     <tr>
                       <td>Areas of Expertise</td>

@@ -103,6 +103,7 @@ const DoctorsTable = ({
                 Position,
                 Services,
                 Specialization,
+                Picture,
               }) => {
                 return (
                   <tr key={ID}>
@@ -134,6 +135,7 @@ const DoctorsTable = ({
                               Position,
                               Services,
                               Biography,
+                              Picture,
                             },
                             id: ID,
                           });
@@ -156,6 +158,7 @@ const DoctorsTable = ({
                             position: Position ? Position || "" : "",
                             services: Services ? Services || "" : "",
                             staffGroup: StaffGroup == 1 ? true : false,
+                            picture: Picture ? Picture || "" : "",
                             biography:
                               Biography !== null || Biography !== undefined
                                 ? Biography || ""
@@ -172,6 +175,7 @@ const DoctorsTable = ({
                               position: Position,
                               services: Services,
                               biography: Biography,
+                              picture: Picture,
                             } &&
                             setSelectedDoctor({
                               firstName: FirstName ? FirstName || "" : "",
@@ -183,6 +187,7 @@ const DoctorsTable = ({
                               position: Position ? Position || "" : "",
                               services: Services ? Services || "" : "",
                               staffGroup: StaffGroup ? StaffGroup || "" : "",
+                              picture: Picture ? Picture || "" : "",
                               biography:
                                 Biography !== null || Biography !== undefined
                                   ? Biography || ""
@@ -190,6 +195,7 @@ const DoctorsTable = ({
 
                               id: ID,
                             });
+                          window.scrollTo({ top: 0, behavior: "smooth" });
                         }}
                       >
                         Խմբագրել

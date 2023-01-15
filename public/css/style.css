@@ -7281,3 +7281,12 @@ body {
     opacity: 1;
   }
 }
+
+#picture-input {
+  max-width: 200px;
+  margin-left: 3rem;
+  outline: none;
+  border: none;
+  box-shadow: 4px 3px 3px #c7c7c7;
+  text-indent: 8px;
+}

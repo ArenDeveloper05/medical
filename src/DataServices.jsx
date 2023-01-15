@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const APIUrl = "http://165.227.98.199:8880";
+export const APIUrl = "http://165.227.98.199:8880";
 
 export let token;
 if (process.browser) {
@@ -10,6 +10,14 @@ const api = axios.create({
   baseURL: APIUrl,
   headers: {
     "Content-Type": "application/json",
+    Authorization: `Bearer ${token}`,
+  },
+});
+
+const apiImage = axios.create({
+  baseURL: APIUrl,
+  headers: {
+    "Content-Type": "multipart/form-data",
     Authorization: `Bearer ${token}`,
   },
 });
@@ -63,8 +71,8 @@ export const addClickableService = async (serviceData) => {
   return await api.post(`/services`, serviceData);
 };
 
-// export const addDoctorPicture = async (doctorData, id) => {
-//     return await api.post(`/upload/${id}`, doctorData)
+// export const addDoctorPicture = async (image, id) => {
+//   return await apiImage.post(`/file`, image);
 // };
 
 //Delete
