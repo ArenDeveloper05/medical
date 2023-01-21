@@ -6,6 +6,9 @@ import Loader from "../adminPanel/Loader";
 import { generateLanguage } from "../../utils";
 import { searchDoctor } from "../../DataServices";
 import AllDoctorsCards from "./AllDoctorsCards";
+import Preloader from "../Preloader";
+import MedLoader from "../MedLoader";
+import { useEffect } from "react";
 
 const AllDoctors = ({
   doctorsData,
@@ -30,6 +33,7 @@ const AllDoctors = ({
   const { t, lang } = useTranslation("common");
 
   const getSearchedDoctor = () => {
+    window.scrollTo({ top: 0, left: 100 });
     setDoctorsDataLoading(true);
     async function fetchSearchData() {
       try {
@@ -53,6 +57,41 @@ const AllDoctors = ({
     }
     fetchSearchData();
   };
+
+  const searchWithValidation = () => {
+    if (!searchedDoctor.fName.trim() && !searchedDoctor.lName.trim()) {
+      setSearchValidation(() => {
+        return {
+          fName: false,
+          lName: false,
+        };
+      });
+    } else {
+      setSearchValidation(() => {
+        return {
+          fName: true,
+          lName: true,
+        };
+      });
+    }
+    if (searchedDoctor.fName.trim() || searchedDoctor.lName.trim()) {
+      getSearchedDoctor();
+    }
+  };
+
+  const handleUserKeyPress = (e) => {
+    if (e.keyCode === 13) {
+      searchWithValidation();
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("keydown", handleUserKeyPress);
+
+    return () => {
+      window.removeEventListener("keydown", handleUserKeyPress);
+    };
+  });
 
   return (
     <section
@@ -105,32 +144,7 @@ const AllDoctors = ({
             ></input>
             <button
               type="button"
-              onClick={() => {
-                if (
-                  !searchedDoctor.fName.trim() &&
-                  !searchedDoctor.lName.trim()
-                ) {
-                  setSearchValidation(() => {
-                    return {
-                      fName: false,
-                      lName: false,
-                    };
-                  });
-                } else {
-                  setSearchValidation(() => {
-                    return {
-                      fName: true,
-                      lName: true,
-                    };
-                  });
-                }
-                if (
-                  searchedDoctor.fName.trim() ||
-                  searchedDoctor.lName.trim()
-                ) {
-                  getSearchedDoctor();
-                }
-              }}
+              onClick={searchWithValidation}
               className="doctor-search-button"
             >
               {t("doctorsearchfields.searchButton")}
@@ -141,11 +155,11 @@ const AllDoctors = ({
         <div className="row" style={{ minHeight: "100vh" }}>
           {doctorsDataLoading && (
             <div style={{ minHeight: "200px" }}>
-              <Loader />
+              <MedLoader />
             </div>
           )}
           {!doctorsDataLoading && doctorsData.length === 0 && (
-            <div>
+            <div className="card-appear">
               <h1>Ոչինչ չի գտնվել</h1>
             </div>
           )}

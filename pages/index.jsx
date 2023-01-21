@@ -1,18 +1,18 @@
-import About5 from "../src/components/Common/About-5";
-import Demo2Blog1 from "../src/components/Demo-2/Demo2Blog1";
-import Demo2Doctors1 from "../src/components/Demo-2/Demo2Doctors1";
-import Demo2Gallery1 from "../src/components/Demo-2/Demo2Gallery1";
-import Demo2Hero2 from "../src/components/Demo-2/Demo2Hero2";
+import HomeDirector from "../src/components/home/HomeDirector";
+import HomeNews from "../src/components/home/HomeNews";
+import HomeDoctors from "../src/components/home/HomeDoctors";
+import HomeGallery from "../src/components/home/HomeGallery";
+import HomeSlider from "../src/components/home/HomeSlider";
 import Layout from "../src/layout/Layout";
 
 const Home = () => {
   return (
     <Layout>
-      <Demo2Hero2 />
-      <About5 />
-      <Demo2Blog1 />
-      <Demo2Doctors1 />
-      <Demo2Gallery1 />
+      <HomeSlider />
+      <HomeDirector />
+      <HomeNews />
+      <HomeDoctors />
+      <HomeGallery />
     </Layout>
   );
 };

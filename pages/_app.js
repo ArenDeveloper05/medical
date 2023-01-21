@@ -26,11 +26,11 @@ function MyApp({ Component, pageProps }) {
         <title>
           MedService - Medical & Medical Health Landing Page Template
         </title>
-        <link
+        {/* <link
           rel="shortcut icon"
           href="images/favicon.ico"
           type="image/x-icon"
-        />
+        /> */}
         <link rel="icon" href="/images/favicon.ico" type="image/x-icon"></link>
       </Head>
       {loader && <Preloader />}

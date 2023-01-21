@@ -56,6 +56,7 @@ const Login = () => {
           <input
             type="email"
             className="form-control"
+            style={{ borderRadius: "20px", width: "250px", height: "45px" }}
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
             placeholder="Մուտքագրեք email"
@@ -70,6 +71,7 @@ const Login = () => {
             type="password"
             className="form-control"
             id="exampleInputPassword1"
+            style={{ borderRadius: "20px", width: "250px", height: "45px" }}
             placeholder="գաղտնաբառ..."
             value={password}
             onChange={(e) => setPassword(() => e.target.value)}
@@ -78,7 +80,11 @@ const Login = () => {
         </div>
         <div className="form-check"></div>
         <br />
-        <button type="submit" className={error ? "error" : "btn-primary"}>
+        <button
+          type="submit"
+          className={error ? "error" : "btn-primary"}
+          style={{ borderRadius: "20px", width: "100px", height: "40px" }}
+        >
           Մուտք
         </button>
       </form>

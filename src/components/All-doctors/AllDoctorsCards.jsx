@@ -1,25 +1,41 @@
+import useTranslation from "next-translate/useTranslation";
 import Image from "next/image";
 import Link from "next/link";
 import { memo } from "react";
+import { APIUrl } from "../../DataServices";
 
 const AllDoctorsCards = ({ doctorsData }) => {
+  const { t } = useTranslation("common");
   return (
     <>
       {doctorsData.map(({ ID, FirstName, LastName, Position, Picture }) => {
         return (
-          <div className="col-md-6 col-lg-4 " key={ID}>
+          <div className="col-md-6 col-lg-4 card-appear" key={ID}>
             <div className="doctor-2 shadow">
               <div className="hover-overlay">
-                <Image
-                  className="img-fluid"
-                  // src={`/` + Picture}
-                  src={"/images/doctor-3.jpg"}
-                  alt={`${FirstName}`}
-                  layout="responsive"
-                  objectFit="contain"
-                  width={"100%"}
-                  height={"100%"}
-                />
+                {Picture !== null ? (
+                  <Image
+                    className="img-fluid"
+                    crossOrigin="anonymous"
+                    loader={() => `${APIUrl}/images/doctors/${Picture}`}
+                    src={`${APIUrl}/images/doctors/${Picture}`}
+                    alt={`${FirstName}`}
+                    layout="responsive"
+                    objectFit="cover"
+                    width={"100%"}
+                    height={"100%"}
+                  />
+                ) : (
+                  <Image
+                    className="img-fluid card-appear"
+                    src={`/images/no-image.jpg`}
+                    alt="doctor-foto"
+                    layout="responsive"
+                    objectFit="cover"
+                    width={"100%"}
+                    height={"100%"}
+                  />
+                )}
               </div>
               <div className="doctor-meta">
                 <div className="h5-xs blue-color">
@@ -28,12 +44,12 @@ const AllDoctorsCards = ({ doctorsData }) => {
                 </div>
                 <span>{Position ? Position : ""}</span>
                 <Link
-                  href={`/all-doctors/${
+                  href={`/doctors/${
                     FirstName && LastName ? FirstName + LastName : ID
                   }?id=${ID}`}
                 >
                   <a className="btn btn-sm btn-blue blue-hover mt-15">
-                    View More Info
+                    {t("button-more")}
                   </a>
                 </Link>
               </div>

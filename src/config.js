@@ -21,7 +21,7 @@ export const CONFIG = {
         },
         {
             name: "header-doctors",
-            link: "all-doctors"
+            link: "doctors"
         },
         {
             name: "header-gallery",
@@ -43,7 +43,7 @@ export const CONFIG = {
         },
         {
             name: "Տեսադարան",
-            component: <GalleryAdmin/>
+            component: <GalleryAdmin />
         },
         {
             name: "Ծառայություններ",

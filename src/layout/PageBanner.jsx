@@ -1,7 +1,7 @@
 import Link from "next/dist/client/link";
 import useTranslation from "next-translate/useTranslation";
 const PageBanner = ({ pageTitle, motherTitle, url }) => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation("common");
   return (
     <div id="breadcrumb" className="division">
       <div className="container">

@@ -25,7 +25,7 @@ const Gallery3 = () => {
         },
       });
     }, 300);
-    return () => isotope.current.destroy();
+    // return () => isotope.current.destroy();
   }, []);
 
   return (

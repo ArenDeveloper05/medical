@@ -3,6 +3,7 @@ import { useCallback, useEffect, useState, useRef } from "react";
 import {
   addDoctor,
   addDoctorPicture,
+  APIUrl,
   changeDoctor,
   getDoctorsLength,
   getPaginateDoctors,
@@ -11,6 +12,7 @@ import { generateLanguage } from "../../../utils";
 import Pagination from "../../Pagination";
 import Editor from "../../Editor";
 import DoctorsTable from "./DoctorsTable";
+import Image from "next/image";
 
 const DoctorsAdmin = () => {
   //First Render
@@ -39,10 +41,11 @@ const DoctorsAdmin = () => {
     services: "",
     staffGroup: false,
     biography: "",
+    picture: "",
   });
 
   //Test
-  // const [doctorPicture, setDoctorPicture] = useState("");
+  // const [doctorPicture, setDoctorPicture] = useState(null);
 
   //Validation if firstName, lastName or patronymic are false
   const [fieldsValidation, setFieldsValidation] = useState({
@@ -52,7 +55,7 @@ const DoctorsAdmin = () => {
   });
 
   //All doctors Data
-  // const [allDoctors, setAllDoctors] = useState([]);
+  // const [allDoctors, setAllDoctors] = useState([])
 
   //Loader for doctors Data
   const [loadDoctors, setLoadDoctors] = useState(false);
@@ -92,6 +95,10 @@ const DoctorsAdmin = () => {
     }
   }, [lang]);
 
+  useEffect(() => {
+    console.log(doctorData);
+  }, [doctorData]);
+
   //Functions
   const getPageDoctors = useCallback(
     async (page, perPage) => {
@@ -120,6 +127,7 @@ const DoctorsAdmin = () => {
       position: "",
       services: "",
       biography: "",
+      picture: "",
     });
   };
 
@@ -217,7 +225,11 @@ const DoctorsAdmin = () => {
         doctorData.patronymic.trim()
       ) {
         if (edit) {
-          await addDoctor({
+          const {
+            data: {
+              data: { dataValues },
+            },
+          } = await addDoctor({
             ...doctorData,
             lang: generateLanguage(lang),
             staffGroup: doctorData.staffGroup ? "1" : "0",
@@ -231,8 +243,6 @@ const DoctorsAdmin = () => {
             selectedDoctor.id,
             generateLanguage(lang)
           );
-          //TEST
-          // await addDoctorPicture({ dimage: doctorPicture }, selectedDoctor.id);
         }
         const length = await getDoctorsLength();
         setDataLength(length.data.data);
@@ -282,16 +292,53 @@ const DoctorsAdmin = () => {
           Ընտրված լեզուն՝{" "}
           {lang == "hy" ? "հայերեն" : lang == "ru" ? "ռուսերեն" : "անգլերեն"}
         </h1>
-        {/* <div className="doctors-admin-panel-edit-row">
-          <label htmlFor="picture">Նկար</label>
-          <input
-            type="file"
-            id="picture"
-            name="picture"
-            value={doctorPicture}
-            onChange={(e) => setDoctorPicture}
-          />
-        </div> */}
+        <div className="doctors-admin-panel-edit-row">
+          <div className="doctors-admin-panel-edit-row-picture">
+            <label htmlFor="picture-input">Նկար</label>
+            <input
+              type="text"
+              id="picture-input"
+              name="picture"
+              placeholder="Գրեք նկար-ի id-n"
+              value={doctorData.picture}
+              onChange={(e) => handleChange(e)}
+            />
+            <div
+              className="doctors-admin-panel-edit-row-picture-img"
+              style={{
+                width: "200px",
+                height: "200px",
+                boxShadow: "2px 2px 10px grey",
+              }}
+            >
+              {doctorData.picture !== "" ? (
+                <Image
+                  loader={() =>
+                    `${APIUrl}/images/doctors/${doctorData.picture}`
+                  }
+                  crossOrigin="anonymous"
+                  className="img-fluid card-appear"
+                  src={`${APIUrl}/images/doctors/${doctorData.picture}`}
+                  alt="doctor-foto"
+                  layout="responsive"
+                  objectFit="cover"
+                  width={"100%"}
+                  height={"100%"}
+                />
+              ) : (
+                <Image
+                  className="img-fluid card-appear"
+                  src={`/images/no-image.jpg`}
+                  alt="doctor-foto"
+                  layout="responsive"
+                  objectFit="cover"
+                  width={"100%"}
+                  height={"100%"}
+                />
+              )}
+            </div>
+          </div>
+        </div>
         <div className="staff">
           <label htmlFor="staffGroup">Աշխատակազմ</label>
           <input

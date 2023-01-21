@@ -1,4 +1,4 @@
-import AdminPanel from "../src/layout/AdminPanel";
+import AdminPanel from "../src/components/adminPanel/AdminPanel";
 
 const Admin = () => {
   return <AdminPanel />;

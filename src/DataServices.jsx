@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const APIUrl = "http://165.227.98.199:8880";
+export const APIUrl = "http://165.227.98.199:8880";
 
 export let token;
 if (process.browser) {

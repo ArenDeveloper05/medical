@@ -40,6 +40,11 @@ const MobileMenu = ({ categories, toggleMenu }) => {
         <nav className="clearfix" id="responsive-nav">
           <ul>
             <li className="mobile-service">
+              <Link href="/">
+                <a>{t("header-home")}</a>
+              </Link>
+            </li>
+            <li className="mobile-service">
               <p onClick={() => setServicesOpen((prev) => !prev)}>
                 {t("header-services.title")}
                 {servicesOpen ? (

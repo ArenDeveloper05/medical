@@ -6,7 +6,7 @@ import Autoformat from '@ckeditor/ckeditor5-autoformat/src/autoformat';
 import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold';
 import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic';
 import BlockQuote from '@ckeditor/ckeditor5-block-quote/src/blockquote';
-import FindAndReplace from '@ckeditor/ckeditor5-find-and-replace/src/findandreplace';
+// import FindAndReplace from '@ckeditor/ckeditor5-find-and-replace/src/findandreplace';
 import Heading from '@ckeditor/ckeditor5-heading/src/heading';
 import Image from '@ckeditor/ckeditor5-image/src/image';
 import ImageInsert from '@ckeditor/ckeditor5-image/src/imageinsert';
@@ -33,7 +33,7 @@ import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
 import Font from '@ckeditor/ckeditor5-font/src/font';
 import Highlight from '@ckeditor/ckeditor5-highlight/src/highlight';
 import HorizontalLine from '@ckeditor/ckeditor5-horizontal-line/src/horizontalline';
-import HtmlEmbed from '@ckeditor/ckeditor5-html-embed/src/htmlembed';
+// import HtmlEmbed from '@ckeditor/ckeditor5-html-embed/src/htmlembed';
 import PageBreak from '@ckeditor/ckeditor5-page-break/src/pagebreak';
 import RemoveFormat from '@ckeditor/ckeditor5-remove-format/src/removeformat';
 import SpecialCharacters from '@ckeditor/ckeditor5-special-characters/src/specialcharacters';
@@ -43,7 +43,7 @@ import SpecialCharactersEssentials from '@ckeditor/ckeditor5-special-characters/
 import SpecialCharactersLatin from '@ckeditor/ckeditor5-special-characters/src/specialcharacterslatin.js';
 import SpecialCharactersMathematical from '@ckeditor/ckeditor5-special-characters/src/specialcharactersmathematical.js';
 import SpecialCharactersText from '@ckeditor/ckeditor5-special-characters/src/specialcharacterstext.js';
-export default class ClassicEditor extends ClassicEditorBase {}
+export default class ClassicEditor extends ClassicEditorBase { }
 
 // Plugins to include in the build.
 ClassicEditor.builtinPlugins = [
@@ -53,7 +53,7 @@ ClassicEditor.builtinPlugins = [
 	Bold,
 	Italic,
 	BlockQuote,
-	FindAndReplace,
+	// FindAndReplace,
 	Heading,
 	Image,
 	ImageResize,
@@ -75,7 +75,7 @@ ClassicEditor.builtinPlugins = [
 	Font,
 	Highlight,
 	HorizontalLine,
-	HtmlEmbed,
+	// HtmlEmbed,
 	PageBreak,
 	RemoveFormat,
 	SpecialCharacters,
@@ -127,13 +127,13 @@ ClassicEditor.defaultConfig = {
 			'insertTable',
 			'tabletoolbar',
 			'|',
-			'htmlembed',
+			// 'htmlembed',
 			'link',
 			'|',
 			'horizontalline',
 			'pagebreak',
 			'|',
-			'findAndReplace',
+			// 'findAndReplace',
 			'undo',
 			'redo'
 		]
@@ -152,28 +152,28 @@ ClassicEditor.defaultConfig = {
 		styles: [
 			'alignLeft', 'alignCenter', 'alignRight'
 		],
-		resizeOptions :  [
+		resizeOptions: [
 			{
-				name :  'resizeImage: original' ,
-				value :  null ,
-				icon :  'original'
-			} ,
-			{
-				name :  'resizeImage: 25' ,
-				value :  '25',
-				icon :  'small'
+				name: 'resizeImage: original',
+				value: null,
+				icon: 'original'
 			},
 			{
-				name :  'resizeImage: 50' ,
-				value :  '50' ,
-				icon :  'medium'
-			} ,
+				name: 'resizeImage: 25',
+				value: '25',
+				icon: 'small'
+			},
 			{
-				name :  'resizeImage: 75' ,
-				value :  '75',
-				icon :  'large'
+				name: 'resizeImage: 50',
+				value: '50',
+				icon: 'medium'
+			},
+			{
+				name: 'resizeImage: 75',
+				value: '75',
+				icon: 'large'
 			}
-		] ,
+		],
 		toolbar: [
 			'imageStyle:full',
 			'imageStyle:alignLeft', 'imageStyle:alignCenter', 'imageStyle:alignRight',
@@ -181,9 +181,9 @@ ClassicEditor.defaultConfig = {
 			'imageTextAlternative',
 			'|',
 			'resizeImage: 25',
-			'resizeImage: 50' ,
+			'resizeImage: 50',
 			'resizeImage: 75',
-			'resizeImage: original' ,
+			'resizeImage: original',
 		]
 	},
 	fontSize: {
@@ -210,6 +210,9 @@ ClassicEditor.defaultConfig = {
 	htmlEmbed: {
 		showPreviews: true
 	},
+	mediaEmbed: {
+		previewsInData: true
+	},
 	// This value must be kept in sync with the language defined in webpack.config.js.
-	language: 'en'
+	language: 'ru'
 };

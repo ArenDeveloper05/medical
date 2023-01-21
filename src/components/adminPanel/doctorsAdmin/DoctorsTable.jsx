@@ -1,5 +1,5 @@
 import useTranslation from "next-translate/useTranslation";
-import { useState, memo } from "react";
+import { useState, memo, useEffect } from "react";
 import Modal from "../Modal";
 import Loader from "../Loader";
 import { generateLanguage } from "../../../utils";
@@ -26,6 +26,10 @@ const DoctorsTable = ({
   const [deleteDoctor, setDeleteDoctor] = useState(false);
   const { lang } = useTranslation("common");
 
+  useEffect(() => {
+    console.log(selectedPage.page);
+  }, [selectedPage.page]);
+
   const removeDoctor = async () => {
     try {
       await deleteSingleDoctor(
@@ -44,6 +48,7 @@ const DoctorsTable = ({
       const length = await getDoctorsLength();
       setDataLength(length.data.data);
       if (data.length === 1 && selectedPage.page > 1) {
+        console.log("mtav stex");
         //If selected page is 3,in my page is only one doctor and i delete doctor, my selected page will change to 2
         setSelectedPage((prev) => {
           return {
@@ -103,6 +108,7 @@ const DoctorsTable = ({
                 Position,
                 Services,
                 Specialization,
+                Picture,
               }) => {
                 return (
                   <tr key={ID}>
@@ -134,6 +140,7 @@ const DoctorsTable = ({
                               Position,
                               Services,
                               Biography,
+                              Picture,
                             },
                             id: ID,
                           });
@@ -156,6 +163,7 @@ const DoctorsTable = ({
                             position: Position ? Position || "" : "",
                             services: Services ? Services || "" : "",
                             staffGroup: StaffGroup == 1 ? true : false,
+                            picture: Picture ? Picture || "" : "",
                             biography:
                               Biography !== null || Biography !== undefined
                                 ? Biography || ""
@@ -172,6 +180,7 @@ const DoctorsTable = ({
                               position: Position,
                               services: Services,
                               biography: Biography,
+                              picture: Picture,
                             } &&
                             setSelectedDoctor({
                               firstName: FirstName ? FirstName || "" : "",
@@ -183,6 +192,7 @@ const DoctorsTable = ({
                               position: Position ? Position || "" : "",
                               services: Services ? Services || "" : "",
                               staffGroup: StaffGroup ? StaffGroup || "" : "",
+                              picture: Picture ? Picture || "" : "",
                               biography:
                                 Biography !== null || Biography !== undefined
                                   ? Biography || ""
@@ -190,6 +200,7 @@ const DoctorsTable = ({
 
                               id: ID,
                             });
+                          window.scrollTo({ top: 0, behavior: "smooth" });
                         }}
                       >
                         Խմբագրել
