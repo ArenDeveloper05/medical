@@ -5,3 +5,21 @@ export const socialLinks = [{
     href: "https://m.facebook.com/profile.php?id=100063733520827&eav=Afa_3zdwrn7fb65T3Y718ghcohcp_KcDd7MEFZb1twex0KMFMhu0ZeJ8EeIcZ0RL_pg&ref=page_internal&paipv=0&_rdr",
     className: "facebookicon"
 }]
+export const slider = [
+    {
+        id: 1,
+        href: "/images/slider/slide-image1.jpg"
+    },
+    {
+        id: 2,
+        href: "/images/slider/slide-image2.jpg"
+    },
+    {
+        id: 3,
+        href: "/images/slider/slide-image3.jpg"
+    },
+    {
+        id: 4,
+        href: "/images/slider/slide-image4.jpg"
+    }
+] 

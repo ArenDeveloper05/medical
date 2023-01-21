@@ -1,5 +1,5 @@
 import useTranslation from "next-translate/useTranslation";
-import AboutUsInfo4 from "../src/components/About-us/AboutUsInfo4";
+import AboutUsInfo4 from "../src/components/About-us/AboutUsInfo";
 import Banner5 from "../src/components/Common/Banner-5";
 import Layout from "../src/layout/Layout";
 import PageBanner from "../src/layout/PageBanner";

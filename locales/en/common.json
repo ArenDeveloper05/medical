@@ -63,29 +63,6 @@
   "header-doctors": "Doctors",
   "header-gallery": "Gallery",
   "header-contactus": "Contact Us",
-  "home-slide1": {
-    "title": {
-      "1": "WE WILL HELP YOU",
-      "2": "BECOME HEALTY"
-    },
-    "description": "Lorem ipsum dolor",
-    "button": "MORE ABOUT CLINIC"
-  },
-  "home-slide2": {
-    "title": {
-      "1": "HIGHEST QUALITY",
-      "2": "MEDICAL TREATMENT"
-    },
-    "description": "Lorem ipsum dolor",
-    "button": "OUR DEPARTMENTS"
-  },
-  "home-slide3": {
-    "title": {
-      "1": "SOLUTIONS TO COMPLEX",
-      "2": "MEDICAL PROBLEMS"
-    },
-    "description": "Lorem ipsum dolor"
-  },
   "home-welcome": {
     "title": "WELCOME TO MED SERVICE",
     "description": "Lorem ipsum dolor"
@@ -166,5 +143,6 @@
   },
   "banner": {
     "doctors": "Meet all doctors"
-  }
+  },
+  "button-more": "VIEW MORE INFO"
 }

@@ -14,7 +14,6 @@ const MedLoader = () => {
         <div className="loaderPill-floor">
           <div className="loaderPill-floor-shadow"></div>
         </div>
-        {/* <div className="loaderPill-text">Loading your RX</div> */}
       </div>
     </div>
   );

@@ -17,12 +17,6 @@ import { HiMenuAlt2 } from "react-icons/hi";
 const Header = ({ toggleMenu, toggle }) => {
   const { t, lang } = useTranslation("common");
   const { asPath } = useRouter();
-
-  //For future test
-  // const router = useRouter();
-  // console.log(router);
-  //For future test
-
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
@@ -150,168 +144,6 @@ const Header = ({ toggleMenu, toggle }) => {
                   </li>
                 );
               })}
-              {/* <li>
-                <Link href="/about-us">
-                  <a>{t("header-aboutus")}</a>
-                </Link>
-              </li>
-              <li>
-                <Link href="blog-listing">
-                  <a>{t("header-news")}</a>
-                </Link>
-              </li>
-              <li>
-                <Link href="all-doctors">
-                  <a>{t("header-doctors")}</a>
-                </Link>
-              </li>
-              <li>
-                <Link href="gallery">
-                  <a>{t("header-gallery")}</a>
-                </Link>
-              </li>
-              <li>
-                <Link href="contact-us">
-                  <a>{t("header-contactus")}</a>
-                </Link>
-              </li> */}
-
-              <li>
-                <a href="#">
-                  Pages <span className="wsarrow" />
-                </a>
-                <div className="wsmegamenu clearfix">
-                  <div className="container">
-                    <div className="row">
-                      {/* MEGAMENU LINKS */}
-                      <ul className="col-lg-3 col-md-12 col-xs-12 link-list">
-                        <li className="title">Standard Pages:</li>
-                        <li>
-                          <Link href="/about-us">
-                            <a>About Us Page</a>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link href="/who-we-are">
-                            <a>Who We Are</a>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link href="/all-services">
-                            <a>Our Services</a>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link href="/service-1">
-                            <a>Service Single #1</a>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link href="/service-2">
-                            <a>Service Single #2</a>
-                          </Link>
-                        </li>
-                      </ul>
-                      {/* MEGAMENU LINKS */}
-                      <ul className="col-lg-3 col-md-12 col-xs-12 link-list">
-                        <li className="title">Medical Pages:</li>
-                        <li>
-                          <Link href="/all-departments">
-                            <a>Our Departments</a>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link href="/department-single">
-                            <a>Department Single</a>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link href="/all-doctors">
-                            <a>Meet the Doctors</a>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link href="/doctor-1">
-                            <a>{`Doctor's Profile #1`}</a>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link href="/doctor-2">
-                            <a>{`Doctor's Profile #2`}</a>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link href="/timetable">
-                            <a>Doctors Timetable</a>
-                          </Link>
-                        </li>
-                      </ul>
-                      {/* MEGAMENU LINKS */}
-                      <ul className="col-lg-3 col-md-12 col-xs-12 link-list">
-                        <li className="title">Special Pages:</li>
-                        <li>
-                          <Link href="/pricing-1">
-                            <a>Pricing Packages #1</a>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link href="/pricing-2">
-                            <a>Pricing Packages #2</a>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link href="/appointment">
-                            <a>Make an Appointment</a>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link href="/faqs">
-                            <a>FAQs Page</a>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link href="/terms">
-                            <a>Terms of Use</a>
-                          </Link>
-                        </li>
-                      </ul>
-                      {/* MEGAMENU LINKS */}
-                      <ul className="col-lg-3 col-md-12 col-xs-12 link-list">
-                        <li className="title">Auxiliary Pages:</li>
-                        <li>
-                          <Link href="/gallery">
-                            <a>Our Gallery</a>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link href="/blog-listing">
-                            <a>Blog Listing Page</a>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link href="/single-post">
-                            <a>Single Blog Post</a>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link href="/contacts-1">
-                            <a>Contact Us #1</a>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link href="/contacts-2">
-                            <a>Contact Us #2</a>
-                          </Link>
-                        </li>
-                      </ul>
-                    </div>
-                    {/* End row */}
-                  </div>
-                  {/* End container */}
-                </div>
-                {/* End wsmegamenu */}
-              </li>
-              {/* END PAGES */}
               {/* LANGUAGES */}
               <li className="nl-languages d-flex">
                 {images.map((image) => {
@@ -326,7 +158,7 @@ const Header = ({ toggleMenu, toggle }) => {
                           onClick={() =>
                             setTimeout(() => {
                               location.reload();
-                            }, 300)
+                            })
                           }
                         >
                           <Image

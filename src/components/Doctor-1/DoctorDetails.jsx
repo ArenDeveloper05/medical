@@ -4,7 +4,6 @@ import { APIUrl } from "../../DataServices";
 import MedLoader from "../MedLoader";
 
 const DoctorDetails = ({ singleDoctor, singleDoctorLoading }) => {
-  console.log(singleDoctor);
   return (
     <section id="doctor-1-details" className="doctor-details-section division">
       <div className="container">
@@ -41,35 +40,17 @@ const DoctorDetails = ({ singleDoctor, singleDoctorLoading }) => {
                   <tbody>
                     <tr>
                       <td>
-                        {singleDoctor.FirstName ? singleDoctor.FirstName : ""}{" "}
-                        {singleDoctor.LastName ? singleDoctor.LastName : ""}{" "}
-                        {singleDoctor.Patronymic ? singleDoctor.Patronymic : ""}{" "}
+                        {singleDoctor.FirstName ? singleDoctor.FirstName : ""}
+                        {"  "}
+                        {singleDoctor.LastName ? singleDoctor.LastName : ""}
+                        {"  "}
+                        {singleDoctor.Patronymic ? singleDoctor.Patronymic : ""}
+                        {"  "}
                       </td>
-                    </tr>
-                    <tr>
-                      <td>Areas of Expertise</td>
+
                       <td>
-                        <span>
-                          <i className="fas fa-angle-double-right" />
-                          Neurology
-                        </span>
-                        <span>
-                          <i className="fas fa-angle-double-right" />
-                          Immunology
-                        </span>
-                        <span>
-                          <i className="fas fa-angle-double-right" />
-                          Internal Medicine
-                        </span>
+                        {singleDoctor.Patronymic ? singleDoctor.Position : ""}{" "}
                       </td>
-                    </tr>
-                    <tr>
-                      <td>Language(s)</td>
-                      <td>English / Spanish / German</td>
-                    </tr>
-                    <tr className="last-tr">
-                      <td>Work Days</td>
-                      <td>Tuesday - Thursday</td>
                     </tr>
                   </tbody>
                 </table>

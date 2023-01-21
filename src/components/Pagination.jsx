@@ -1,4 +1,5 @@
-import { memo, useState, useEffect, useRef } from "react";
+import { memo, useState, useEffect, useRef, useMemo } from "react";
+import { HiArrowNarrowLeft, HiArrowNarrowRight } from "react-icons/hi";
 import uuid from "react-uuid";
 
 const Pagination = ({
@@ -24,6 +25,15 @@ const Pagination = ({
 
   let [currArr, setCurrArr] = useState(initialArr);
 
+  if (!currArr.includes(selectedPage.page) && selectedPage.page > 1) {
+    console.log("chi parunakum ste mi ban poxi");
+    setCurrArr([
+      selectedPage.page - 2,
+      selectedPage.page - 1,
+      selectedPage.page,
+    ]);
+  }
+
   useEffect(() => {
     if (firstRenderForArr.current) {
       firstRenderForArr.current = false;
@@ -40,7 +50,7 @@ const Pagination = ({
         getData(selectedPage.page, itemsPerPage);
       }
     }
-  }, [selectedPage]);
+  }, [selectedPage.page]);
 
   //!!Not put the getData function in useEffect dependency(infinite loop);
 
@@ -63,7 +73,7 @@ const Pagination = ({
           }
         }}
       >
-        <i className="fas fa-long-arrow-alt-left" />
+        <HiArrowNarrowLeft />
       </button>
 
       {dataLength !== 0 &&
@@ -113,7 +123,7 @@ const Pagination = ({
           }
         }}
       >
-        <i className="fas fa-long-arrow-alt-right" />
+        <HiArrowNarrowRight />
       </button>
     </div>
   );

@@ -1,9 +1,11 @@
+import useTranslation from "next-translate/useTranslation";
 import Image from "next/image";
 import Link from "next/link";
 import { memo } from "react";
 import { APIUrl } from "../../DataServices";
 
 const AllDoctorsCards = ({ doctorsData }) => {
+  const { t } = useTranslation("common");
   return (
     <>
       {doctorsData.map(({ ID, FirstName, LastName, Position, Picture }) => {
@@ -42,12 +44,12 @@ const AllDoctorsCards = ({ doctorsData }) => {
                 </div>
                 <span>{Position ? Position : ""}</span>
                 <Link
-                  href={`/all-doctors/${
+                  href={`/doctors/${
                     FirstName && LastName ? FirstName + LastName : ID
                   }?id=${ID}`}
                 >
                   <a className="btn btn-sm btn-blue blue-hover mt-15">
-                    View More Info
+                    {t("button-more")}
                   </a>
                 </Link>
               </div>

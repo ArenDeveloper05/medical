@@ -2,7 +2,11 @@ import useTranslation from "next-translate/useTranslation";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import uuid from "react-uuid";
-import { getSingleDoctor, getSingleService } from "../../src/DataServices";
+import {
+  APIUrl,
+  getSingleDoctor,
+  getSingleService,
+} from "../../src/DataServices";
 import Layout from "../../src/layout/Layout";
 import { generateLanguage } from "../../src/utils";
 import parse from "html-react-parser";
@@ -83,16 +87,33 @@ const Service = () => {
                         >
                           <div className="doctor-2" style={{ margin: "0" }}>
                             <div className="hover-overlay">
-                              <Image
-                                className="img-fluid"
-                                // src={`/` + Picture}
-                                src={"/images/doctor-3.jpg"}
-                                alt={`${item.FirstName ? item.FirstName : ""}`}
-                                layout="responsive"
-                                objectFit="contain"
-                                width={"100%"}
-                                height={"100%"}
-                              />
+                              {item.Picture !== null ? (
+                                <Image
+                                  className="img-fluid"
+                                  crossOrigin="anonymous"
+                                  loader={() =>
+                                    `${APIUrl}/images/doctors/${item.Picture}`
+                                  }
+                                  src={`${APIUrl}/images/doctors/${item.Picture}`}
+                                  alt={`${
+                                    item.FirstName ? item.FirstName : ""
+                                  }`}
+                                  layout="responsive"
+                                  objectFit="cover"
+                                  width={"100%"}
+                                  height={"100%"}
+                                />
+                              ) : (
+                                <Image
+                                  className="img-fluid card-appear"
+                                  src={`/images/no-image.jpg`}
+                                  alt="doctor-foto"
+                                  layout="responsive"
+                                  objectFit="cover"
+                                  width={"100%"}
+                                  height={"100%"}
+                                />
+                              )}
                             </div>
                             <div className="doctor-meta">
                               <div className="h5-xs blue-color">
@@ -101,7 +122,7 @@ const Service = () => {
                               </div>
                               <span>{item.Position ? item.Position : ""}</span>
                               <Link
-                                href={`/all-doctors/${
+                                href={`/doctors/${
                                   item.FirstName && item.LastName
                                     ? item.FirstName + item.LastName
                                     : item.ID

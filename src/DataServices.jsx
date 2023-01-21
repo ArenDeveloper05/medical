@@ -13,16 +13,10 @@ const api = axios.create({
     Authorization: `Bearer ${token}`,
   },
 });
+// Stex petq a back-y ta tokeny normal tesqov, aranc Authorization=....
+// dzerov tokeny 15rd toxum dneluc ashxatum a
 
-const apiImage = axios.create({
-  baseURL: APIUrl,
-  headers: {
-    "Content-Type": "multipart/form-data",
-    Authorization: `Bearer ${token}`,
-  },
-});
-
-//GET
+// GET
 export const getAllDoctors = async (lang) => {
   return await api.get(`/doctors/${lang}`);
 };
@@ -54,7 +48,28 @@ export const getServices = async (lang) => {
 export const getSingleService = async (lang, id) => {
   return await api.get(`/services/${lang}/${id}`);
 };
-//POST
+
+export const getPaginatedNews = async (lang, itemsPerPage, page) =>{
+  return await api.get(`/news/${lang}/${itemsPerPage}/${page}`)
+};
+
+export const getNewsLength = async () => {
+  return await api.get("/news/length");
+};
+
+export const getPopularNews = async (lang) => {
+  return await api.get(`/news/${lang}/search?Status=1`);
+};
+
+export const searchEmployer = async (lang) => {
+  return await api.get(`/doctors/${lang}/search?StaffGroup=1`);
+};
+
+export const getSingleNews = async (lang, id) => {
+  return await api.get(`/news/${lang}/${id}`);
+};
+
+// POST
 export const login = async (loginData) => {
   return await api.post("/login", loginData);
 };
@@ -71,8 +86,12 @@ export const addClickableService = async (serviceData) => {
   return await api.post(`/services`, serviceData);
 };
 
-// export const addDoctorPicture = async (image, id) => {
-//   return await apiImage.post(`/file`, image);
+export const addNews = async (newsData) => {
+  return await api.post("/news", newsData);
+};
+
+// export const addDoctorPicture = async (doctorData, id) => {
+//     return await api.post(`/upload/${id}`, doctorData)
 // };
 
 //Delete
@@ -88,6 +107,10 @@ export const deleteClickableService = async (id) => {
   return await api.delete(`/services/${id}`);
 };
 
+export const deleteSingleNews = async ( id) => {
+  return await api.delete(`/news/${id}`, );
+};
+
 //PUT
 export const changeDoctor = async (changedData, id, lang) => {
   return await api.put(`/doctors/${lang}/${id}`, changedData);
@@ -100,3 +123,8 @@ export const changeService = async (changedData, lang, id) => {
 export const changeClickableService = async (changedData, lang, id) => {
   return await api.put(`/services/${lang}/${id}`, changedData);
 };
+
+export const changeNews = async (changedData,  lang, id) => {
+  return await api.put(`/news/${lang}/${id}`, changedData);
+};
+

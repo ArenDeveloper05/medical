@@ -1,5 +1,5 @@
 import useTranslation from "next-translate/useTranslation";
-import { useState, memo } from "react";
+import { useState, memo, useEffect } from "react";
 import Modal from "../Modal";
 import Loader from "../Loader";
 import { generateLanguage } from "../../../utils";
@@ -26,6 +26,10 @@ const DoctorsTable = ({
   const [deleteDoctor, setDeleteDoctor] = useState(false);
   const { lang } = useTranslation("common");
 
+  useEffect(() => {
+    console.log(selectedPage.page);
+  }, [selectedPage.page]);
+
   const removeDoctor = async () => {
     try {
       await deleteSingleDoctor(
@@ -44,6 +48,7 @@ const DoctorsTable = ({
       const length = await getDoctorsLength();
       setDataLength(length.data.data);
       if (data.length === 1 && selectedPage.page > 1) {
+        console.log("mtav stex");
         //If selected page is 3,in my page is only one doctor and i delete doctor, my selected page will change to 2
         setSelectedPage((prev) => {
           return {

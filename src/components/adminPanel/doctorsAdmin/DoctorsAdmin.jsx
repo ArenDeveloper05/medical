@@ -224,9 +224,6 @@ const DoctorsAdmin = () => {
         doctorData.lastName.trim() &&
         doctorData.patronymic.trim()
       ) {
-        // const formData = new FormData();
-        // formData.append("file", doctorPicture);
-
         if (edit) {
           const {
             data: {

@@ -58,44 +58,38 @@ const AllDoctors = ({
     fetchSearchData();
   };
 
- const searchWithValidation = () => {
-  if (
-    !searchedDoctor.fName.trim() &&
-    !searchedDoctor.lName.trim()
-  ) {
-    setSearchValidation(() => {
-      return {
-        fName: false,
-        lName: false,
-      };
-    });
-  } else {
-    setSearchValidation(() => {
-      return {
-        fName: true,
-        lName: true,
-      };
-    });
-  }
-  if (
-    searchedDoctor.fName.trim() ||
-    searchedDoctor.lName.trim()
-  ) {
-    getSearchedDoctor();
-  }
-};
+  const searchWithValidation = () => {
+    if (!searchedDoctor.fName.trim() && !searchedDoctor.lName.trim()) {
+      setSearchValidation(() => {
+        return {
+          fName: false,
+          lName: false,
+        };
+      });
+    } else {
+      setSearchValidation(() => {
+        return {
+          fName: true,
+          lName: true,
+        };
+      });
+    }
+    if (searchedDoctor.fName.trim() || searchedDoctor.lName.trim()) {
+      getSearchedDoctor();
+    }
+  };
 
-  const handleUserKeyPress = e => {
+  const handleUserKeyPress = (e) => {
     if (e.keyCode === 13) {
       searchWithValidation();
     }
   };
 
   useEffect(() => {
-    window.addEventListener('keydown', handleUserKeyPress);
+    window.addEventListener("keydown", handleUserKeyPress);
 
     return () => {
-      window.removeEventListener('keydown', handleUserKeyPress);
+      window.removeEventListener("keydown", handleUserKeyPress);
     };
   });
 
