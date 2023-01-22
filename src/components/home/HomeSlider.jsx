@@ -11,12 +11,15 @@ const HomeSlider = () => {
     <section id="hero-2" className="hero-section division">
       <div className="slider blue-nav">
         <Swiper {...heroSliderProps} className="slides">
-          {slider.map(({ id, href }) => {
+          {slider.map(({ id, href, idClass }) => {
             return (
               <SwiperSlide className="li" key={id}>
                 <div
                   className="img"
-                  style={{ backgroundImage: `url(${href})` }}
+                  id={idClass}
+                  style={{
+                    backgroundImage: `url(${href})`,
+                  }}
                 ></div>
               </SwiperSlide>
             );

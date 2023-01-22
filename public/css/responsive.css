@@ -2777,10 +2777,11 @@
   /*------------------------------------------*/
   /*   BASE
     /*------------------------------------------*/
-  .col-md-new{
+  .col-md-new {
     max-width: 100%;
     margin: 0px 16px;
   }
+
   .wide-100 {
     padding-top: 80px;
     padding-bottom: 80px;
@@ -6264,10 +6265,30 @@
 /* ------------------------------------------------------------------------ */
 
 @media (max-width: 575.99px) {
-  .service-content{
+  .service-content {
     padding: 16px;
   }
+
+  #slide-image1 {
+    background-position-x: -104px;
+  }
+
+
+  #slide-image2 {
+    background-position-x: -33px;
+
+  }
+
+  #slide-image3 {
+    background-position-x: -264px;
+  }
+
+  #slide-image4 {
+    background-position-x: -42px;
+  }
+
 }
+
 
 
 
