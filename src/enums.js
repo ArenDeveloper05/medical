@@ -8,18 +8,23 @@ export const socialLinks = [{
 export const slider = [
     {
         id: 1,
-        href: "/images/slider/slide-image1.jpg"
+        href: "/images/slider/slide-image1.jpg",
+        idClass: "slide-image1"
     },
     {
         id: 2,
-        href: "/images/slider/slide-image2.jpg"
+        href: "/images/slider/slide-image2.jpg",
+        idClass: "slide-image2"
     },
     {
         id: 3,
-        href: "/images/slider/slide-image3.jpg"
+        href: "/images/slider/slide-image3.jpg",
+        idClass: "slide-image3"
+
     },
     {
         id: 4,
-        href: "/images/slider/slide-image4.jpg"
+        href: "/images/slider/slide-image4.jpg",
+        idClass: "slide-image4"
     }
 ] 
